@@ -2,5 +2,24 @@
 <head>
 <meta charset="utf-8">
 <title>Hello!!!</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" defer></script>
 </head>
+<body>
+        <p class="start-button"><a>🍅</a></p>
+          <p class="start-item"></p>
+          <p class="start-item"></p>
+      <script>
+window.onload = function(){
+          (function($) {
+    $(function() {
+        $('.start-button').click(function(){
+            $('.start-button').toggleClass('start-button-open');
+            $('.start-item').toggleClass('start-items-open');
+        });
+    });
+})(jQuery);
+}
+    </script>
+</body>
 </html>
