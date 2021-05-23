@@ -1,6 +1,9 @@
 body{
   text-align: center;
 }
+h1{
+  font-size: 7vmin;
+}
 .start-button {
     z-index: 1;
   width: 50vmin;
