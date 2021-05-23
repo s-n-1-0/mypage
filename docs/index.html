@@ -6,18 +6,28 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" defer></script>
 </head>
 <body>
-        <p class="start-button"><a>🍅</a></p>
-          <p class="start-item"></p>
-          <p class="start-item"></p>
+    <p class="label-center">
+        <span>MADE</span>
+        <span> 👈Apps</span>
+        <span>Codes👉</span>
+    </p>
+    <div>
+        <p class="start-button"><a class="start-a">🍅</a></p>
+          <p class="start-item"><a class="start-a">📱</a></p>
+          <p class="start-item"><a class="start-a">📃</a></p>
+     </div>    
       <script>
 window.onload = function(){
           (function($) {
-    $(function() {
+
         $('.start-button').click(function(){
-            $('.start-button').toggleClass('start-button-open');
+            $(this).fadeOut();
+            $(".label-center").fadeIn();
             $('.start-item').toggleClass('start-items-open');
         });
-    });
+        $(".start-item").click(function(){
+          
+        })
 })(jQuery);
 }
     </script>
