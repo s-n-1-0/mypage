@@ -14,7 +14,9 @@
     <div>
         <p class="start-button"><a class="start-a">🍅</a></p>
           <p class="start-item"><a class="start-a">📱</a></p>
-          <p class="start-item"><a class="start-a">📃</a></p>
+          <p class="start-item"><a class="start-a">📃</a></p>  
+          <p class="start-item"><a class="start-a" style="font-size: 5vmin;"><b>Others</b></a></p>
+          <p id="start-byebutton" class="start-item"><a class="start-a" ><b>×</b></a></p>
      </div>    
       <script>
 window.onload = function(){
@@ -25,8 +27,10 @@ window.onload = function(){
             $(".label-center").fadeIn();
             $('.start-item').toggleClass('start-items-open');
         });
-        $(".start-item").click(function(){
-          
+        $("#start-byebutton").click(function(){
+          $(".start-button").fadeIn();
+          $(".label-center").fadeOut();
+          $('.start-item').toggleClass('start-items-open');
         })
 })(jQuery);
 }

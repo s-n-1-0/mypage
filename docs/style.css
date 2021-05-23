@@ -29,7 +29,7 @@ body{
   font-size: 20vmin;
 }
 .start-item > a{
-  font-size: 5vmin;
+  font-size: 7vmin;
 }
 
 
@@ -43,6 +43,7 @@ body{
   transform: translate(-50%, -50%);
   border-radius: 50%;
   border: 1vmin solid;
+  color: #4d6a87ff;
   border-color: #4d6a87ff;
   transition: transform 500ms;
 }
@@ -54,6 +55,18 @@ body{
 }
 .start-items-open:nth-child(3) {
   transform: translate(-50%, -50%) rotate(-90deg) translateY(30vmin) rotate(90deg);
+  transition-timing-function:linear;
+  transition-delay: 0.1s;
+  transition: 0.5s;
+}
+.start-items-open:nth-child(4) {
+  transform: translate(-50%, -50%)  translateY(30vmin) ;
+  transition-timing-function:linear;
+  transition-delay: 0.1s;
+  transition: 0.5s;
+}
+.start-items-open:nth-child(5) {
+  transform: translate(-50%, -50%) translateY(-30vmin);
   transition-timing-function:linear;
   transition-delay: 0.1s;
   transition: 0.5s;
