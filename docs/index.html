@@ -7,7 +7,7 @@
 </head>
 <body>
     <p>
-    <h1>_(:3」∠)_</h1>
+    <!--<h1>_(:3」∠)_</h1>-->
     </p>
     <p class="label-center">
         <span>MADE</span>
@@ -16,11 +16,25 @@
     </p>
     <div>
         <p class="start-button"><a class="start-a">🍅</a></p>
-          <p class="start-item"><a class="start-a">📱</a></p>
+          <p id="start-appsbutton" class="start-item"><a class="start-a">📱</a></p>
           <p class="start-item"><a class="start-a">📃</a></p>  
           <p class="start-item"><a class="start-a" style="font-size: 5vmin;"><b>Others</b></a></p>
           <p id="start-byebutton" class="start-item"><a class="start-a" ><b>×</b></a></p>
-     </div>    
+     </div>
+     <div id="slideL">
+        <div class="close" style="margin: 5px 5px 5px auto;"></div>
+        <div class="slide-block">
+           <h2 style="color: #4d6a87ff;">ちくわ日記</h2>
+           <div style=" flex-direction: column; display: flex; justify-content: space-evenly;align-items: center;">
+            <a href="https://apps.apple.com/jp/app/id1506707650">
+           <img src="https://user-images.githubusercontent.com/72431055/119313937-160a3b00-bcaf-11eb-9af6-5ff1938c00ff.png" height="150px" width="150px"></a>
+           <a href="https://apps.apple.com/jp/app/id1506707650?itsct=apps_box_badge&amp;itscg=30200" style=" padding-top: 50px; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1586390400&h=4a11186c37cc573e0bb1b16a49890a8c" alt="Download on the App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
+        </div>
+        </div>
+        <div class="slide-block" style="text-align: center;">
+            開発者個人用のアプリは<a href="https://blog.sn-10.net/">こちら</a>から確認できます。
+        </div>
+    </div>
       <script>
 window.onload = function(){
           (function($) {
@@ -35,8 +49,23 @@ window.onload = function(){
           $(".label-center").fadeOut();
           $('.start-item').toggleClass('start-items-open');
         })
+        $("#start-appsbutton").click(function(){
+            $('#slideL').toggleClass('slide-on')
+            checkSlide();
+        })
+        $(".close").click(function(){
+            $('#slideL').removeClass('slide-on');
+            checkSlide();
+        });
 })(jQuery);
 }
+    function checkSlide(){
+        if($('#slideL').hasClass('slide-on')){
+             $('#slideL').animate({'marginLeft':'100vw'},300)
+             }else{
+             $('#slideL').animate({'marginLeft':'0px'},300);
+             }
+    }
     </script>
 </body>
 </html>
