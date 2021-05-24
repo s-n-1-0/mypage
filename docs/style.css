@@ -10,6 +10,14 @@ body{
 h1{
   font-size: 7vmin;
 }
+footer{
+  position: absolute; 
+  bottom: 0; left: 50%;
+  text-align: center; 
+  transform: translate(-50%, 0%); 
+  color:gray;
+  font-size: 1.5rem;
+}
 .start-button {
     z-index: 1;
   width: 50vmin;
@@ -145,7 +153,7 @@ h1{
   }
 }
 .close {
-	font-size: 100px;
+	font-size: 3rem;
 	position: relative;
 	width: 1em;
 }
@@ -155,7 +163,6 @@ h1{
 }
 
 #slideL {
-  
   z-index:3;
   position: fixed;
   top: 0;
