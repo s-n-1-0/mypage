@@ -19,11 +19,39 @@ h1{
   top: 50%;
   text-align: center;
   transform: translate(-50%, -50%);
-  border: 5vmin solid;
+  border: 2.5vmin solid;
   border-color: rgb(245, 77, 47);
   border-radius: 50%;
   background: #ffffff;
 }
+.start-button::after,
+.start-button::before {
+  content: '';
+  position: absolute;
+  left: -25%;
+  top: -25%;
+  border: 0.5vmin solid rgb(245, 77, 47);
+  width: 150%;
+  height: 150%;
+  border-radius: 50%;
+  opacity: 0;
+  animation:1.5s StartButton-Circle linear infinite;
+}
+.start-button::before {
+  animation-delay:.75s; 
+}
+@keyframes StartButton-Circle{
+  0%{
+    transform: scale(0.7);
+  }
+  25%{
+   opacity: 1;
+  }
+  100%{
+    transform: scale(1.15);
+    opacity: 0;
+  }
+  }
 .start-item > a,.start-button > a{
     position: absolute;
     top: 50%;
