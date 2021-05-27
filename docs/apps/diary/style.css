@@ -1,3 +1,7 @@
+html{
+    font-size: 1
+    2px;
+}
 body{
     font-family: Meiryo,
     "Helvetica Neue",
@@ -5,6 +9,7 @@ body{
      "Hiragino Kaku Gothic ProN",
      "Hiragino Sans",
      sans-serif;
+     font-size: 1rem;
 }
 .head-block{
     height:100%;
@@ -19,14 +24,21 @@ body{
     font-size: 9rem;
     color: rgba(0, 0, 0, 0.568);
 }
+.guide{
+    margin: 0 10%;
+}
+.guide>h1,h2{
+    text-align: center;
+}
 #title-block{
     position: absolute;
     top: 50%;
     left: 50%;
+    white-space: nowrap;
     transform: translate(-50%, -50%);
-    font-size: 1.2rem;;
     text-align: center;
+    font-size: 5vmin;
 }
 #title{
-    font-size: 3rem;
+    font-size: 9vmin;
 }
