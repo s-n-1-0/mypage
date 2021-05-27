@@ -1,12 +1,32 @@
-.headBlock{
+body{
+    font-family: Meiryo,
+    "Helvetica Neue",
+     Arial,
+     "Hiragino Kaku Gothic ProN",
+     "Hiragino Sans",
+     sans-serif;
+}
+.head-block{
     height:100%;
     overflow-wrap:  break-word;
     overflow: hidden;
 }
-.headBlock>#title{
+.start-button{
+    position: absolute;
+    right: 0;
+    bottom: 0%;
+    margin: auto;
+    font-size: 9rem;
+    color: rgba(0, 0, 0, 0.568);
+}
+#title-block{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 1.5rem;
+    font-size: 1.2rem;;
+    text-align: center;
+}
+#title{
+    font-size: 3rem;
 }

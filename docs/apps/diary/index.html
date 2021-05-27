@@ -6,14 +6,25 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" defer></script>
 </head>
 <body>
-    <div class="headBlock">
+    <div class="head-block">
+    <div id="title-block">
     <div id="title">
-    ちくわ<p id="title-tail" style="display:inline;"></p></p>
+    ちくわ<p id="title-tail" style="display:inline;"></p>
     </div>
+    日々の記録アプリ
+    </div>
+    <p class="start-button">👇</p>
+    </div>
+    <hr/>
     <script>
         let tails = ["日記","書籍","映画","ゲーム記録","旅行","🍅","作業進捗","学習","成長記録"]; 
        window.onload = function(){
         ChangeTailLoop();
+        (function($) {
+            $('start-button').click(function(){
+
+            });
+        })(jQuery);
         }
         var loop = 0;
         function ChangeTailLoop(){
