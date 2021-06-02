@@ -1,9 +1,38 @@
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ちくわ日記 - アップデート</title>
-<link rel="stylesheet" href="./style.css">
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ちくわ日記 - アップデート</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
 </head>
+<body>
+  <div style="height:60px;width: 100%; display: table;    text-align: center;">
+    <h2 style="display: table-cell;vertical-align: middle;">🔧アップデート情報🔧</h2>
+  </div>
+  <hr>
+  <div class="section" id="mini-update">
+    <h3>小さな更新</h3>
+    <li class="list-item"> <a v-bind:class="{active:selectedVer == '1.14.2'}" @click="dropdown('1.14.2')">1.14.2</a>
+      <ul v-if="selectedVer == '1.14.2'" > 内容 </ul>
+    </li>
+    <li class="list-item"> <a v-bind:class="{active:selectedVer == '1.14.1'}" @click="dropdown('1.14.1')">1.14.1</a>
+      <ul v-if="selectedVer == '1.14.1'" > 内容 </ul>
+    </li>
+  </div>
+  <script>
+    var list = new Vue({
+	el:"#mini-update",
+  data:{
+    selectedVer:"1.14.1"
+        },
+        methods:{
+  	dropdown(v){
+      this.selectedVer = v;
+    }
+        }
+        });
+  </script>
+</body>
 </html>
