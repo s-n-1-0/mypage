@@ -14,18 +14,24 @@
   <hr>
   <div class="section" id="mini-update">
     <h3>小さな更新</h3>
-    <li class="list-item"> <a v-bind:class="{active:selectedVer == '1.14.2'}" @click="dropdown('1.14.2')">1.14.2</a>
-      <ul v-if="selectedVer == '1.14.2'" > 内容 </ul>
+    <list-item ver="1.14.2" content="これはてすと<br>" v-bind:vue="this"></list-item>
+  <list-item ver="1.14.1" content="" v-bind:vue="this"></list-item>
+</div>
+  <script type="text/x-template" id="list-item-source">
+    <li class="list-item"> <a v-bind:class="{active:vue.selectedVer == ver}" @click="vue.dropdown(ver)">{{ver}}</a>
+      <ul v-if="vue.selectedVer == ver" v-html="content"></ul>
     </li>
-    <li class="list-item"> <a v-bind:class="{active:selectedVer == '1.14.1'}" @click="dropdown('1.14.1')">1.14.1</a>
-      <ul v-if="selectedVer == '1.14.1'" > 内容 </ul>
-    </li>
-  </div>
+  </script>
+
   <script>
+  Vue.component('list-item', {
+  props: ['ver','vue','content'],
+  template: "#list-item-source"
+})
     var list = new Vue({
 	el:"#mini-update",
   data:{
-    selectedVer:"1.14.1"
+    selectedVer:"1.14.2"
         },
         methods:{
   	dropdown(v){
