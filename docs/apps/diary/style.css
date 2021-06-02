@@ -1,15 +1,23 @@
+@media (max-width: 1024px) {
 html{
-    font-size: 1
-    2px;
+    font-size: 14px;
+}
+h1{
+    font-size: 3rem;
+}
+}
+h1,h2,h3{
+    font-weight: normal;
 }
 body{
+    -webkit-text-size-adjust:100%;
     font-family: Meiryo,
     "Helvetica Neue",
      Arial,
      "Hiragino Kaku Gothic ProN",
      "Hiragino Sans",
      sans-serif;
-     font-size: 1rem;
+     background-color: rgb(240, 240, 240);
 }
 .head-block{
     height:100%;
@@ -25,10 +33,26 @@ body{
     color: rgba(0, 0, 0, 0.568);
 }
 .guide{
-    margin: 0 10%;
+    margin: 0 5%;
+    padding: 0 5%;
+    border-radius: 15px;
+    background-color: white;
+    overflow-wrap:  break-word;
+    font-size: 1rem;
 }
 .guide>h1,h2{
     text-align: center;
+}
+.feature-item{
+    display: inline-block;
+    font-size: 2rem;
+    padding: 10px;
+    font-weight: bold;
+    color: #4d6a87ff;
+    border: solid 3px #4d6a87ff;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
 }
 #title-block{
     position: absolute;
