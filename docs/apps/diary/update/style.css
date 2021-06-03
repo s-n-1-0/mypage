@@ -44,12 +44,11 @@ body{
   ul{
     padding: 0;
   }
-  li{
-    list-style:none;
-  }
   .list{
     padding: 0;
     border:solid 1px #ccc;
+  }.list-item{
+    list-style:none;
   }
   .list-item>a{
     position: relative;
@@ -67,4 +66,7 @@ body{
   }
   .list-item >a.active::after{
     content:"▲";
+  }
+  .list-item > ul{
+    margin: 10px 20px;
   }

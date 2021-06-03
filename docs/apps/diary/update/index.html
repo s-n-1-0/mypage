@@ -9,34 +9,43 @@
 </head>
 <body>
   <div style="height:60px;width: 100%; display: table;    text-align: center;">
-    <h2 style="display: table-cell;vertical-align: middle;">🔧アップデート情報🔧</h2>
+    <h2 style="display: table-cell;vertical-align: middle;">🔧 アップデート情報 🔧</h2>
   </div>
   <hr>
   <div class="section" id="mini-update">
     <h3>最近の更新</h3>
-    <list-item ver="1.14.2" content="" v-bind:vue="this"></list-item>
-  <list-item ver="1.14.1" content="" v-bind:vue="this"></list-item>
+    <list-item ver="1.14.2(---)" content="
+    <li>この画面を作成</li>
+      " v-bind:vue="this"></list-item>
+  <list-item ver="1.14.1(6/1)" 
+  link = ""
+  content="このアップデートはバグ修正を中心としたアップデートです。" v-bind:vue="this">
+  </list-item>
 </div>
+<div class="section">
+  <h3> 大きな更新</h3>
+  <div style="margin-left: auto; margin-right: auto;">
+  <a class="button" >1.14.0</a><br>
+  <a class="button" >1.13.0</a>
+  </div>
+  </div>
   <script type="text/x-template" id="list-item-source">
     <li class="list-item"> <a v-bind:class="{active:vue.selectedVer == ver}" @click="vue.dropdown(ver)">{{ver}}</a>
-      <ul v-if="vue.selectedVer == ver" v-html="content"></ul>
+      <ul v-if="vue.selectedVer == ver">
+        <div v-html="content"></div>
+        <div style="text-align:right;" ><a v-bind:href ="link"><u>詳細</u></a><div>
+      </ul>
     </li>
   </script>
-  <div class="section">
-    <h3> 大きな更新</h3>
-    <a class="button" style="width: 100%;">1.14.0</a><br>
-    <a class="button" style="width: 100%;">1.13.0</a>
-    </div>
-
   <script>
   Vue.component('list-item', {
-  props: ['ver','vue','content'],
+  props: ['ver','vue','content','link'],
   template: "#list-item-source"
 })
     var list = new Vue({
 	el:"#mini-update",
   data:{
-    selectedVer:"1.14.2"
+    selectedVer:"1.14.2(---)"
         },
         methods:{
   	dropdown(v){
