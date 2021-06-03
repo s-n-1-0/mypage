@@ -13,8 +13,8 @@
   </div>
   <hr>
   <div class="section" id="mini-update">
-    <h3>小さな更新</h3>
-    <list-item ver="1.14.2" content="これはてすと<br>" v-bind:vue="this"></list-item>
+    <h3>最近の更新</h3>
+    <list-item ver="1.14.2" content="" v-bind:vue="this"></list-item>
   <list-item ver="1.14.1" content="" v-bind:vue="this"></list-item>
 </div>
   <script type="text/x-template" id="list-item-source">
@@ -22,6 +22,11 @@
       <ul v-if="vue.selectedVer == ver" v-html="content"></ul>
     </li>
   </script>
+  <div class="section">
+    <h3> 大きな更新</h3>
+    <a class="button" style="width: 100%;">1.14.0</a><br>
+    <a class="button" style="width: 100%;">1.13.0</a>
+    </div>
 
   <script>
   Vue.component('list-item', {
