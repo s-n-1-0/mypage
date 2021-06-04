@@ -45,7 +45,6 @@ body{
 }
 .feature-item{
     display: inline-block;
-    font-size: 2rem;
     padding: 10px;
     font-weight: bold;
     color: #4d6a87ff;
@@ -55,9 +54,27 @@ body{
 .main-item{
     border: solid 3px #4d6a87ff;
     border-radius: 10px;
+    font-size: 2rem;
 }
 .sub-item{
+    font-size: 1.3rem;
     background:linear-gradient(transparent 95%, #4d6a87ff 0%);
+}
+
+.ss-item img{
+    width: 450px;
+ }
+ .ss-item{
+    margin: 0 auto;
+    height: 235px;
+ }
+@media (max-width: 450px) {
+.ss-item img{
+   width: 100%;
+}
+.ss-item{
+    height: 45vw;
+}
 }
 #title-block{
     position: absolute;

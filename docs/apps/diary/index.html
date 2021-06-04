@@ -4,7 +4,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ちくわ日記 iOS</title>
 <link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
 </head>
 <body>
     <div style="text-align: right;">
@@ -27,14 +29,23 @@
     ✓アプリに無い機能を提案することも可能です!<br>
     ✓記録はバックアップが可能です。
     </p>
+
     <div style="text-align: center; ">
     <span class="feature-item main-item">📚日記</span>
     <span class="feature-item main-item">📷写真</span>
     <span class="feature-item main-item">📖書籍</span>
     <span class="feature-item main-item">🎬映画</span>
-    </div><br>
+    </div>
+    <div style=" flex-direction: column; display: flex; justify-content: space-evenly;align-items: center;">
+        <a href="https://apps.apple.com/jp/app/id1506707650?itsct=apps_box_badge&amp;itscg=30200#?platform=iphone" style=" padding-top: 50px; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1586390400&h=4a11186c37cc573e0bb1b16a49890a8c" alt="Download on the App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
+     </div>
+     <br>
     <hr>
     <h2>補助機能</h2>
+    <div class="ss-item">
+        <figure><img src="https://user-images.githubusercontent.com/72431055/120744922-07d1df80-c537-11eb-8a30-8c6ddfc83636.png" /></figure>
+        <figure><img src="https://user-images.githubusercontent.com/72431055/120744925-09030c80-c537-11eb-92ef-a5e2f6978cc4.png" /></figure>
+      </div><br>
     <div style="text-align: center;">
     <span class="feature-item sub-item">🔑画面ロック</span>
     <span class="feature-item sub-item">🔳ウィジェット</span>
@@ -53,9 +64,10 @@
        window.onload = function(){
         ChangeTailLoop();
         (function($) {
-            $('start-button').click(function(){
-
-            });
+            $('.ss-item').slick({
+                arrows:false,
+                autoplay:true,
+            }); 
               $('a[href^="#"]').click(function(){
             var adjust = -90;
             var speed = 400;
