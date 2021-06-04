@@ -1,0 +1,63 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ちくわ日記 - アップデート</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="canonical" href="https://http://hello.sn-10.net/apps/diary/update/">
+  <link rel="shortcut icon" href="../favicon32.png">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
+</head>
+<body>
+  <div style="height:60px;width: 100%; display: table;    text-align: center;">
+    <div style="display: table-cell;vertical-align: middle;">
+    <h2 >🔧 アップデート情報 🔧</h2>
+   <a style="color: gray;" href="https://scrapbox.io/diary10/%E3%82%A2%E3%83%83%E3%83%97%E3%83%87%E3%83%BC%E3%83%88%E6%83%85%E5%A0%B1%E9%80%9A%E7%9F%A5%E3%82%92%E9%9D%9E%E8%A1%A8%E7%A4%BA%E3%81%AB%E3%81%99%E3%82%8B"> アップデートの通知をしない場合</a>
+  </div>
+  </div>
+  <hr>
+  <div class="section" id="mini-update">
+    <h3>最近の更新</h3>
+    <list-item ver="1.14.2(---)" content="
+    <li>編集中</li>
+      " v-bind:vue="this"></list-item>
+  <list-item ver="1.14.1(6/1)" 
+  link = ""
+  content="このアップデートはバグ修正を中心としたアップデートです。" v-bind:vue="this">
+  </list-item>
+</div>
+<div class="section">
+  <h3> 大きな更新</h3>
+  <div style="margin-left: auto; margin-right: auto;">
+  <a class="button" >1.14.0</a><br>
+  <a class="button" >1.13.0</a>
+  </div>
+  </div>
+  <script type="text/x-template" id="list-item-source">
+    <li class="list-item"> <a v-bind:class="{active:vue.selectedVer == ver}" @click="vue.dropdown(ver)">{{ver}}</a>
+      <ul v-if="vue.selectedVer == ver">
+        <div v-html="content"></div>
+        <div style="text-align:right;" ><a v-bind:href ="link"><u>詳細</u></a><div>
+      </ul>
+    </li>
+  </script>
+  <script>
+  Vue.component('list-item', {
+  props: ['ver','vue','content','link'],
+  template: "#list-item-source"
+})
+    var list = new Vue({
+	el:"#mini-update",
+  data:{
+    selectedVer:"1.14.2(---)"
+        },
+        methods:{
+  	dropdown(v){
+      this.selectedVer = v;
+    }
+        }
+        });
+  </script>
+</body>
+</html>

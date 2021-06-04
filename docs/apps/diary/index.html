@@ -1,0 +1,126 @@
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="2021年もおすすめの日記アプリです! 画像、書籍、アニメ映画など様々な記録に対応しています!">
+<title>ちくわ日記 iOS</title>
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="canonical" href="https://http://hello.sn-10.net/apps/diary/">
+<link rel="shortcut icon" href="./favicon32.png">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js" ></script>
+</head>
+<body>
+    <div style="text-align: right;">
+    <u><a style="color: white;" href="https://apps.apple.com/us/app/id1506707650#?platform=iphone">English</a></u>
+    </div>
+    <div class="head-block">
+    <div id="title-block">
+    <div id="title">
+    ちくわ<p id="title-tail" style="display:inline;"></p>
+    </div>
+    日々の記録アプリ
+    </div>
+    <a href="#top" class="start-button" style="text-decoration:none;">👇</a>
+    </div>
+    <div class="section">
+        <br>
+        <img id= "top" src="https://user-images.githubusercontent.com/72431055/119313937-160a3b00-bcaf-11eb-9af6-5ff1938c00ff.png" height="50px" width="50px" />
+    <h1 >ご自由に!</h1>
+    <p style="margin: 0 10%;">
+        ちくわ日記は日記機能だけでなく、様々な拡張機能を提供しています。<br>
+    </p>
+
+    <div style="text-align: center; ">
+    <span class="feature-item main-item"><a href="https://note.com/sn_10/n/n5f055a964384">📚日記</a></span>
+    <span class="feature-item main-item"><a href="https://scrapbox.io/diary10/%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%81%BF%E7%94%BB%E5%83%8F%E5%AF%BE%E5%BF%9C%E5%BD%A2%E5%BC%8F">📷写真</a></span>
+    <span class="feature-item main-item"><a href="https://note.com/sn_10/n/ne4530313566c">📖書籍</a></span>
+    <span class="feature-item main-item">🎬映画</span>
+    </div>
+    <div style=" flex-direction: column; display: flex; justify-content: space-evenly;align-items: center;">
+        <a href="https://apps.apple.com/jp/app/id1506707650?itsct=apps_box_badge&amp;itscg=30200#?platform=iphone" style=" padding-top: 25px; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1586390400&h=4a11186c37cc573e0bb1b16a49890a8c" alt="Download on the App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
+     </div>
+     <br>
+    <hr>
+    <h2>サポート機能</h2>
+    <div class="ss-item">
+        <figure><img src="https://user-images.githubusercontent.com/72431055/120744922-07d1df80-c537-11eb-8a30-8c6ddfc83636.png" /></figure>
+        <figure><img src="https://user-images.githubusercontent.com/72431055/120744925-09030c80-c537-11eb-92ef-a5e2f6978cc4.png" /></figure>
+      </div><br>
+    <div id="sub-items" style="text-align: center;">
+    <span class="feature-item sub-item" @click="selected(0)">🔑
+        <a v-if="selectIdx==0" href="https://scrapbox.io/diary10/%E3%83%91%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89%E6%A9%9F%E8%83%BD%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9">画面ロック</a>
+    </span>
+    <span class="feature-item sub-item" @click="selected(1)">🔳
+        <a v-if="selectIdx==1" href="https://note.com/sn_10/n/ne4530313566c">ウィジェット</a>
+    </span>
+    <span class="feature-item sub-item" @click="selected(2)">⛅
+        <a v-if="selectIdx==2" href="https://note.com/sn_10/n/n58579b1ce35f">バックアップ</a>
+    </span>
+    <span class="feature-item sub-item" @click="selected(3)">🌙
+        <span v-if="selectIdx==3">ダークモード</span>
+    </span>
+    <span class="feature-item sub-item" @click="selected(4)">🟣
+        <span v-if="selectIdx==4">カラーテーマ</span>
+    </span>
+    </div><br>
+    などなど<br><br>
+    </div>
+    <div class="section">
+        <h2>🔧アップデート</h2>
+        <div style="margin: 0 10%;">
+       iOS14に対応し、ウィジェット機能をサポート。<br>
+       最新のアップデートは<a href="./update">こちら</a><br><br>
+       要望があればぜひ要望フォームで伝えてください!
+       </div>
+    </div>
+    <script>
+        let tails = ["日記","書籍","映画","ゲーム","旅行","🍅","作業進捗","学習","成長記録"]; 
+       window.onload = function(){
+        ChangeTailLoop();
+        (function($) {
+            $('.ss-item').slick({
+                arrows:false,
+                autoplay:true,
+            }); 
+              $('a[href^="#"]').click(function(){
+            var adjust = -90;
+            var speed = 400;
+            var href= $(this).attr("href");
+            var target = $(href == "#" || href == "" ? 'html' : href);
+            var position = target.offset().top + adjust;
+            $('body,html').animate({scrollTop:position}, speed, 'swing');
+            return false;
+            });
+        })(jQuery);
+        }
+        var loop = 0;
+        function ChangeTailLoop(){
+            if (loop == tails.length ) loop = 0;
+            let tail = tails[loop];
+            (function($) {
+                $('#title-tail').fadeOut(function(){
+            $('#title-tail').text(tail).fadeIn(function(){
+                setTimeout("ChangeTailLoop()", (loop == 1) ? 3000 : 0);
+            });
+                });
+            })(jQuery);
+            loop += 1;
+            
+        }
+        new Vue({
+	    el:"#sub-items",
+        data:{
+        selectIdx:0
+        },
+        methods:{
+  	    selected(i){
+              this.selectIdx = i
+        }
+        }
+        });
+        </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+@media (max-width: 1024px) {
+html{
+    font-size: 14px;
+}
+h1{
+    font-size: 3rem;
+}
+}
+h1,h2,h3{
+    font-weight: normal;
+    color: #4d6a87ff;
+}
+body{
+    background-color: rgb(240, 240, 240);
+    font-family: Meiryo,
+    "Helvetica Neue",
+     Arial,
+     "Hiragino Kaku Gothic ProN",
+     "Hiragino Sans",
+     sans-serif;
+}
+.section{
+    background-color: white;
+    margin: 5% 5%;
+    padding: 10px 5%;
+    border-radius: 10px;
+}
+.button{
+  display: block;
+  text-align: center;
+  font-size: 2rem;
+  padding: 10px;
+  font-weight: bold;
+  color: #4d6a87ff;
+  border: solid 3px #4d6a87ff;
+  border-radius: 10px;
+  transition: all 0.3s ease 0s;
+}
+.button:hover{
+  color: white;
+  background-color: #4d6a87ff;
+}
+
+  ul{
+    padding: 0;
+  }
+  .list{
+    padding: 0;
+    border:solid 1px #ccc;
+  }.list-item{
+    list-style:none;
+  }
+  .list-item>a{
+    position: relative;
+    padding: 8px;
+    border-bottom:solid 1px #ccc;
+  }
+  .list-item>a{
+    display: block;
+  }
+  .list-item > a::after{
+    content:"▼";
+    position: absolute;
+    top:12px;
+    right:10px;
+  }
+  .list-item >a.active::after{
+    content:"▲";
+  }
+  .list-item > ul{
+    margin: 10px 20px;
+  }
