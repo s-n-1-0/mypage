@@ -8,6 +8,7 @@ h1{
 }
 h1,h2,h3{
     font-weight: normal;
+    color: #4d6a87ff;
 }
 body{
     -webkit-text-size-adjust:100%;
@@ -17,7 +18,7 @@ body{
      "Hiragino Kaku Gothic ProN",
      "Hiragino Sans",
      sans-serif;
-     background-color: rgb(240, 240, 240);
+     background-color: #1b1b1b;
 }
 .head-block{
     height:100%;
@@ -32,40 +33,47 @@ body{
     font-size: 9rem;
     color: rgba(0, 0, 0, 0.568);
 }
-.guide{
+.section{
     margin: 0 5%;
     padding: 0 5%;
     border-radius: 15px;
     background-color: white;
     overflow-wrap:  break-word;
     font-size: 1rem;
-}
-.guide>h1,h2{
     text-align: center;
 }
 .feature-item{
     display: inline-block;
     padding: 10px;
     font-weight: bold;
-    color: #4d6a87ff;
+    color: rgb(51, 71, 90);
     margin-left: 10px;
     margin-top: 10px;
 }
+.feature-item>a{
+    color: rgb(51, 71, 90);
+}
 .main-item{
-    border: solid 3px #4d6a87ff;
+    border: solid 2px #4d6a87ff;
     border-radius: 10px;
     font-size: 2rem;
 }
+.main-item>a{
+    text-decoration: none;
+}
 .sub-item{
     font-size: 1.3rem;
-    background:linear-gradient(transparent 95%, #4d6a87ff 0%);
 }
+.sub-item>a{
+    text-decoration:underline;
+}
+
 
 .ss-item img{
     width: 450px;
+    margin: 0 auto;
  }
  .ss-item{
-    margin: 0 auto;
     height: 235px;
  }
 @media (max-width: 450px) {
@@ -84,6 +92,7 @@ body{
     transform: translate(-50%, -50%);
     text-align: center;
     font-size: 5vmin;
+    color: rgb(204, 204, 204);
 }
 #title{
     font-size: 9vmin;
