@@ -22,7 +22,11 @@
     <list-item ver="1.14.2(---)"
     link = "https://scrapbox.io/diary10/1.14.X%E3%82%A2%E3%83%83%E3%83%97%E3%83%87%E3%83%BC%E3%83%88_%E8%A9%B3%E7%B4%B0#60bf0427d0c8da0000d2beac"
     content="
-    <li>編集中</li>
+    <img style='height:100px;border-radius:5px;float: right; margin:5px;' src='https://user-images.githubusercontent.com/72431055/121528873-d37a8980-ca36-11eb-9daf-24b75d03388d.png'></img>
+    <li>この表示のアクティブ化</li>
+    <li>ウィジェットの色対応<br></li>
+    <li>イベントリストで進行中イベントを優先表示するように変更</li>
+    <li>その他:UI・バグ・翻訳修正</li>
       " v-bind:vue="this"></list-item>
   <list-item ver="1.14.1(6/1)" 
   link = "https://scrapbox.io/diary10/1.14.X%E3%82%A2%E3%83%83%E3%83%97%E3%83%87%E3%83%BC%E3%83%88_%E8%A9%B3%E7%B4%B0#60b84389d0c8da00007f5c1e"
@@ -42,10 +46,13 @@
   </div>
   <script type="text/x-template" id="list-item-source">
     <li class="list-item"> <a v-bind:class="{active:vue.selectedVer == ver}" @click="vue.dropdown(ver)">{{ver}}</a>
-      <ul v-if="vue.selectedVer == ver">
+      <div v-if="vue.selectedVer == ver">
+      <ul>
         <div v-html="content"></div>
-        <div style="text-align:right;" ><a v-bind:href ="link"><u>詳細</u></a><div>
       </ul>
+        <div style="text-align:right;" ><a v-bind:href ="link"><u>詳細</u></a><div>
+        </div>
+      
     </li>
   </script>
   <script>

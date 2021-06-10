@@ -67,6 +67,6 @@ body{
   .list-item >a.active::after{
     content:"▲";
   }
-  .list-item > ul{
+  .list-item > div{
     margin: 10px 20px;
   }
