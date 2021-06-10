@@ -50,6 +50,7 @@ body{
   border: solid 3px rgb(252, 149, 53);
   border-radius: 10px;
   transition: all 0.3s ease 0s;
+  text-decoration: none;
 }
 .review-button:hover{
   color: white;
