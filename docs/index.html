@@ -36,6 +36,15 @@
             開発者個人用のアプリは<a href="https://blog.sn-10.net/p/blog-page.html">こちら</a>から確認できます。
         </div>
     </div>
+    <div id="slideR">
+        <p class="close" style="margin: 5px 5px 5px auto;"></p>
+        <div class="slide-block">
+           <h2 style="color: #4d6a87ff;">Codes</h2>
+            <ul>
+                <li><a href="https://github.com/s-n-1-0">GitHub</a></li>
+            </ul>
+        </div>
+    </div>
     <footer>
         sn-10.netに関係するもののみ掲載
     </footer>
@@ -59,10 +68,12 @@ window.onload = function(){
         })
         $(".close").click(function(){
             $('#slideL').removeClass('slide-on');
+            $('#slideR').removeClass('slide-on');
             checkSlide();
         });
         $('#start-codesbutton').click(function(){
-            window.location.href = 'https://github.com/s-n-1-0';
+            $('#slideR').toggleClass('slide-on')
+            checkSlide();
         })
         $('#start-othersbutton').click(function(){
             window.location.href = 'https://blog.sn-10.net/p/blog-page.html';
@@ -75,6 +86,12 @@ window.onload = function(){
              }else{
              $('#slideL').animate({'marginLeft':'0px'},300);
              }
+
+        if($('#slideR').hasClass('slide-on')){
+             $('#slideR').animate({'marginRight':'100vw'},300)
+        }else{
+             $('#slideR').animate({'marginRight':'0px'},300);
+             }             
     }
     </script>
 </body>
