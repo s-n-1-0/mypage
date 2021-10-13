@@ -88,6 +88,9 @@ footer{
   top: 50%; 
   transform: translate(-50%, -50%);
 }
+.start-item > a > img.emoji{
+  height: 7vmin;
+}
 .start-button > a > img.emoji{
   height: 20vmin;
   max-height: 100px;
