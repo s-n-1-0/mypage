@@ -6,6 +6,7 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" defer></script>
 </head>
 <body>
+    <div id="app" style="display: none;">
     <p>
     <h2 style="text-align: right; color: gray;">_(:3」∠)_</h2>
     </p>
@@ -50,6 +51,7 @@
     <footer>
         sn-10.netに関係するもののみ掲載
     </footer>
+    </div>
     <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
       <script>
           
@@ -84,6 +86,7 @@ window.onload = function(){
             window.location.href = 'https://blog.sn-10.net/p/blog-page.html';
         })
 })(jQuery);
+    $("#app").fadeIn();
 }
     function checkSlide(){
         if($('#slideL').hasClass('slide-on')){

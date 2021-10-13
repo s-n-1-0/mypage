@@ -17,12 +17,14 @@ footer{
   text-align: center; 
   transform: translate(-50%, 0%); 
   color:gray;
-  font-size: 1.5rem;
+  
 }
 .start-button {
     z-index: 1;
   width: 50vmin;
   height: 50vmin;
+  max-height: 250px;
+  max-width: 250px;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -31,7 +33,7 @@ footer{
   border: 2.5vmin solid;
   border-color: #663399;
   border-radius: 50%;
-  background: #ffe870;
+  background: white;
 }
 .start-button::after,
 .start-button::before {
@@ -72,13 +74,23 @@ footer{
   user-select: none;
 }
 .emoji-frame{
-  display:  table-cell;       /* テーブルセルにする */
-  vertical-align:  middle;  
+  position: absolute;
+  left: 0%;
+  top: 0%;
   height:inherit;
+  max-height: inherit;
   width: inherit;
+  max-width: inherit;
+}
+.emoji-frame > img.emoji{
+  position: absolute;
+  left: 50%;
+  top: 50%; 
+  transform: translate(-50%, -50%);
 }
 .start-button > a > img.emoji{
   height: 20vmin;
+  max-height: 100px;
 }
 .start-item > a{
   font-size: 7vmin;
