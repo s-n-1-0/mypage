@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>I Love Tomatoes</title>
+<title>Trick or Treat!!!</title>
 <link rel="stylesheet" href="style.css">
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" defer></script>
 </head>
@@ -14,12 +14,13 @@
         <span> 👈Apps</span>
         <span>Codes👉</span>
     </p>
+    <div id="twemoji">
     <div>
-        <p class="start-button"><a class="start-a">🍅</a></p>
-          <p id="start-appsbutton" class="start-item"><a class="start-a">📱</a></p>
-          <p id="start-codesbutton" class="start-item"><a class="start-a">📃</a></p>  
-          <p id ="start-othersbutton" class="start-item"><a class="start-a" style="font-size: 5vmin;"><b>Others</b></a></p>
-          <p id="start-byebutton" class="start-item"><a class="start-a" ><b>×</b></a></p>
+        <p class="start-button"><a class="emoji-frame">🎃</a></p>
+          <p id="start-appsbutton" class="start-item"><a class="emoji-frame" >📱</a></p>
+          <p id="start-codesbutton" class="start-item"><a class="emoji-frame">📃</a></p>  
+          <p id ="start-othersbutton" class="start-item"><a style="font-size: 5vmin;"><b>Others</b></a></p>
+          <p id="start-byebutton" class="start-item"><a ><b>×</b></a></p>
      </div>
      <div id="slideL">
         <p class="close" style="margin: 5px 5px 5px auto;"></p>
@@ -45,11 +46,15 @@
             </ul>
         </div>
     </div>
+    </div>
     <footer>
         sn-10.netに関係するもののみ掲載
     </footer>
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
       <script>
+          
 window.onload = function(){
+    twemoji.parse($('#twemoji').get(0));
           (function($) {
 
         $('.start-button').click(function(){

@@ -6,6 +6,7 @@ body{
       "Hiragino Kaku Gothic ProN",
       "Hiragino Sans",
       sans-serif;
+      background-color: #130912;
 }
 h1{
   font-size: 7vmin;
@@ -28,9 +29,9 @@ footer{
   text-align: center;
   transform: translate(-50%, -50%);
   border: 2.5vmin solid;
-  border-color: rgb(245, 77, 47);
+  border-color: #663399;
   border-radius: 50%;
-  background: #ffffff;
+  background: #ffe870;
 }
 .start-button::after,
 .start-button::before {
@@ -38,7 +39,7 @@ footer{
   position: absolute;
   left: -25%;
   top: -25%;
-  border: 0.5vmin solid rgb(245, 77, 47);
+  border: 0.5vmin solid #663399;
   width: 150%;
   height: 150%;
   border-radius: 50%;
@@ -60,7 +61,7 @@ footer{
     opacity: 0;
   }
   }
-.start-item > a,.start-button > a{
+.start-item > a:not(.emoji-frame){
     position: absolute;
     top: 50%;
     right: 0;
@@ -70,8 +71,14 @@ footer{
   vertical-align: middle;
   user-select: none;
 }
-.start-button > a{
-  font-size: 20vmin;
+.emoji-frame{
+  display:  table-cell;       /* テーブルセルにする */
+  vertical-align:  middle;  
+  height:inherit;
+  width: inherit;
+}
+.start-button > a > img.emoji{
+  height: 20vmin;
 }
 .start-item > a{
   font-size: 7vmin;
@@ -88,8 +95,9 @@ footer{
   transform: translate(-50%, -50%);
   border-radius: 50%;
   border: 1vmin solid;
-  color: #4d6a87ff;
-  border-color: #4d6a87ff;
+  color: #FF6600;
+  border-color: #FF6600;
+  background: white;
   transition: transform 500ms;
 }
 .start-items-open:nth-child(2) {
@@ -126,6 +134,7 @@ footer{
   height: 9vmin;
   overflow-y: hidden;
   text-align: center;
+  color:white;
 }
 .label-center span{
   position: relative;
