@@ -20,7 +20,13 @@
   <hr>
   <div class="section" id="mini-update">
     <h3>最近の更新</h3>
-    <list-item ver="1.14.4 (8月12日頃)" 
+    <list-item ver="1.15.0アップデートの予定(10/28)" 
+    link = "https://scrapbox.io/diary10/1.15.0%E3%82%A2%E3%83%83%E3%83%97%E3%83%87%E3%83%BC%E3%83%88%E4%BA%88%E5%AE%9A"
+    v-bind:vue="this">
+    iOS15サポートを中心としたアプリのメジャーアップデートを予定しています。<br>
+    アップデート準備が完了次第改めて通知します。
+    </list-item>
+    <list-item ver="1.14.4 (8/12)" 
     link = "https://scrapbox.io/diary10/1.14.X%E3%82%A2%E3%83%83%E3%83%97%E3%83%87%E3%83%BC%E3%83%88_%E8%A9%B3%E7%B4%B0#61136d2fd0c8da0000b1cdca"
     v-bind:vue="this">
     <li>【コレクション画面の操作性向上】<br>コレクションの記録をしやすく、見やすくなります!</li>
@@ -88,7 +94,7 @@
     var list = new Vue({
 	el:"#mini-update",
   data:{
-    selectedVer:"1.14.4 (8月12日頃)"
+    selectedVer:"1.15.0アップデートの予定(10/28)"
         },
         methods:{
   	dropdown(v){
