@@ -89,7 +89,7 @@
       <ul>
         <slot></slot>
       </ul>
-        <div style="text-align:right;" ><a v-bind:href ="link"><u>詳細</u></a><div>
+        <div style="text-align:right;" ><a v-if="link != ''" v-bind:href ="link"><u>詳細</u></a><div>
         </div>
       
     </li>
