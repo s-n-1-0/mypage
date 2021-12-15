@@ -91,3 +91,6 @@ body{
   .list-item > div{
     margin: 10px 20px;
   }
+  [v-cloak] {
+    display: none;
+  }

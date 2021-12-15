@@ -23,7 +23,8 @@
   </div>
   </div>
   <hr>
-  <div class="section" id="mini-update">
+  <div id="app" v-cloak>
+  <div class="section">
     <h3>最近の更新</h3>
     <ul class="list-group">
     <list-item ver="1.15.2 (12月)" 
@@ -91,6 +92,7 @@
   <div style="text-align: center;">
     <a style="color: white;" href="../">HOME</a>
   </div>
+</div>
   <script type="text/x-template" id="list-item-source">
     <li class="list-group-item list-item">
       <a v-bind:class="{active:vue.selectedVer == ver}" @click="vue.dropdown(ver)" class="text-body">{{ver}}</a>
@@ -104,21 +106,26 @@
     </li>
   </script>
   <script>
-  Vue.component('list-item', {
-  props: ['ver','vue','link'],
-  template: "#list-item-source"
-})
-    var list = new Vue({
-	el:"#mini-update",
-  data:{
-    selectedVer:"1.15.2 (12月)"
+    window.addEventListener('DOMContentLoaded', async function () {
+      const listItemComponent = {
+        props: ['ver', 'vue', 'link'],
+        template: "#list-item-source"
+      }
+      var list = new Vue({
+        el: "#app",
+        data: {
+          selectedVer: "1.15.2 (12月)"
         },
-        methods:{
-  	dropdown(v){
-      this.selectedVer = v;
-    }
+        methods: {
+          dropdown(v) {
+            this.selectedVer = v;
+          }
+        },
+        components: {
+          "list-item":listItemComponent
         }
-        });
+      });
+    });
   </script>
 </body>
 </html>
