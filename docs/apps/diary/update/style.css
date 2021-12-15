@@ -65,17 +65,16 @@ body{
   }
   .list{
     padding: 0;
-    border:solid 1px #ccc;
   }.list-item{
     list-style:none;
   }
   .list-item>a{
-    position: relative;
+    text-decoration: none;
+    display: block;
+  }
+  .list-item>a.active{
     padding: 8px;
     border-bottom:solid 1px #ccc;
-  }
-  .list-item>a{
-    display: block;
   }
   .list-item > a::after{
     content:"▼";

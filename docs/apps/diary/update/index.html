@@ -11,6 +11,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
 </head>
 <body>
+  <br>
   <div style="height:60px;width: 100%; display: table;    text-align: center;">
     <div style="display: table-cell;vertical-align: middle;">
     <h2 >* アップデート情報 *</h2>
@@ -21,24 +22,27 @@
   <hr>
   <div class="section" id="mini-update">
     <h3>最近の更新</h3>
+    <ul class="list-group">
     <list-item ver="1.15.2 (12月)" 
     link = "https://scrapbox.io/diary10/1.15.X_%E3%82%A2%E3%83%83%E3%83%97%E3%83%87%E3%83%BC%E3%83%88%E8%A9%B3%E7%B4%B0#61b99512d0c8da00002ac22e"
     v-bind:vue="this">
     <li>
       日記検索バーの追加(右上の🔍を押すことで表示されます)
-    <p class="text-center pt-1">
+    <p class="text-center pt-2">
     <img class="rounded" style="height: 150px;" src="https://i.gyazo.com/1f9492d33c94d351fb21ed3a79af6d30.png"></p>
     </li>
     <li>
       バグ修正、翻訳修正しました。
     </li>
     </list-item>
-      <list-item ver="1.15.1(12/9)" 
+    <list-item ver="1.15.1(12/9)" 
       link = ""
-      v-bind:vue="this">バグ・翻訳修正</list-item>
+      v-bind:vue="this"><li>バグ・翻訳修正</li>
+    </list-item>
+    </ul>
     <br>
-    <a class="button" href="https://z-umon.net/space/id/2AUDRZZOxvZyUExSnS9P">1.15.0</a>
-    <hr/>
+    <a class="button" href="https://z-umon.net/space/id/2AUDRZZOxvZyUExSnS9P">1.15.0</a><br>
+    <ul class="list-group">
     <list-item ver="1.14.4 (8/12)" 
     link = "https://scrapbox.io/diary10/1.14.X%E3%82%A2%E3%83%83%E3%83%97%E3%83%87%E3%83%BC%E3%83%88_%E8%A9%B3%E7%B4%B0#61136d2fd0c8da0000b1cdca"
     v-bind:vue="this">
@@ -64,6 +68,7 @@
     <li>【イベント】<br>進行中イベントを優先表示するように変更</li>
     <li>その他:UI・バグ・翻訳修正</li>
   </list-item>
+  </ul>
 </div>
 <div class="section">
   <a class="review-button" href="https://itunes.apple.com/jp/app/id1506707650?mt=8&action=write-review">「★レビュー」に回答いただけると開発のモチベが上がります!</a><br>
@@ -84,9 +89,10 @@
     <a style="color: white;" href="../">HOME</a>
   </div>
   <script type="text/x-template" id="list-item-source">
-    <li class="list-item"> <a v-bind:class="{active:vue.selectedVer == ver}" @click="vue.dropdown(ver)">{{ver}}</a>
+    <li class="list-group-item list-item">
+      <a v-bind:class="{active:vue.selectedVer == ver}" @click="vue.dropdown(ver)" class="text-body">{{ver}}</a>
       <div v-if="vue.selectedVer == ver">
-      <ul>
+      <ul class="p-3">
         <slot></slot>
       </ul>
         <div style="text-align:right;" ><a v-if="link != ''" v-bind:href ="link"><u>詳細</u></a><div>
