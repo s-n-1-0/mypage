@@ -16,7 +16,10 @@ h3{
 }
 body{
     background-color: #4d6a87ff;
-    font-family: Meiryo,
+    font-family:
+    'Noto Sans JP',
+    sans-serif,
+    Meiryo,
     "Helvetica Neue",
      Arial,
      "Hiragino Kaku Gothic ProN",
