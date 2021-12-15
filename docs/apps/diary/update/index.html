@@ -3,6 +3,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>ちくわ日記 - アップデート情報</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="./style.css">
   <link rel="canonical" href="https://hello.sn-10.net/apps/diary/update/">
   <link rel="shortcut icon" href="../favicon32.png">
@@ -20,6 +21,19 @@
   <hr>
   <div class="section" id="mini-update">
     <h3>最近の更新</h3>
+    <list-item ver="1.15.2 (12月)" 
+    link = "https://scrapbox.io/diary10/1.15.X_%E3%82%A2%E3%83%83%E3%83%97%E3%83%87%E3%83%BC%E3%83%88%E8%A9%B3%E7%B4%B0#61b99512d0c8da00002ac22e"
+    v-bind:vue="this">
+    <li>
+      日記検索バーの追加(右上の🔍を押すことで表示されます)
+    <p class="text-center pt-1">
+    <img class="rounded" style="height: 150px;" src="https://i.gyazo.com/1f9492d33c94d351fb21ed3a79af6d30.png"></p>
+    </li>
+    <li>
+      バグ修正、翻訳修正しました。
+    </li>
+    </list-item>
+    <hr>
     <ul>
       <li>1.15.1(12/9) : バグ・翻訳修正</li>
       <li>12月1日
@@ -89,7 +103,7 @@
     var list = new Vue({
 	el:"#mini-update",
   data:{
-    selectedVer:"1.15.0アップデートの予定(11/17)"
+    selectedVer:"1.15.2 (12月)"
         },
         methods:{
   	dropdown(v){
