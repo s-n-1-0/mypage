@@ -25,11 +25,7 @@ footer{
   height: 50vmin;
   max-height: 250px;
   max-width: 250px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
   text-align: center;
-  transform: translate(-50%, -50%);
   border: 2.5vmin solid;
   border-color: rgb(245, 77, 47);
   border-radius: 50%;
@@ -73,23 +69,12 @@ footer{
   vertical-align: middle;
   user-select: none;
 }
-.emoji-frame{
-  position: absolute;
-  left: 0%;
-  top: 0%;
-  height:inherit;
-  max-height: inherit;
-  width: inherit;
-  max-width: inherit;
-}
-.emoji-frame > img.emoji{
-  position: absolute;
-  left: 50%;
-  top: 50%; 
-  transform: translate(-50%, -50%);
-}
 .start-item > a > img.emoji{
   height: 7vmin;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%); 
 }
 .start-button > a > img.emoji{
   height: 20vmin;
@@ -141,10 +126,6 @@ footer{
 }
 .label-center{
   display: none;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -100%);
   font-size: 7vmin;
   height: 9vmin;
   overflow-y: hidden;
@@ -174,31 +155,6 @@ footer{
   100%{
     top:0%;
   }
-}
-.close {
-	font-size: 3rem;
-	position: relative;
-	width: 1em;
-}
-.close::before{
-  color: #ffffff;
-  content: "×";
-}
-
-#slideL,#slideR{
-  z-index:3;
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  height: 100%;
-  background-color: #4d6a87ff;
-  overflow: scroll;
-}
-#slideL{
-  left: -100vw;
-}
-#slideR{
-  right: -100vw;
 }
 .slide-block {
    position: relative;
