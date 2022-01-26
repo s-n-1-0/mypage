@@ -45,6 +45,12 @@
                <a href="https://apps.apple.com/jp/app/id1506707650?itsct=apps_box_badge&amp;itscg=30200" style=" padding-top: 50px; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1586390400&h=4a11186c37cc573e0bb1b16a49890a8c" alt="Download on the App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
             <p style="margin-left: auto;" class="pt-2"><a href="./apps/diary">紹介ページ</a></p>
             </div>
+            <div id="zumon-block" class="slide-block" style="text-align: center; cursor: pointer;">
+            <h2>z-umon</h2>
+            マークダウン形式で書ける投稿サイト<br>
+            <small>(サーバーレスWebアプリ)</small>
+            <img style="width: 100%;" src="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F515818%2Fafacf6a3-a7a2-4b69-8b56-7cd96deb4e87.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&w=1400&fit=max&s=b892f131eabb4f471fd6a28ede9f0ebc"/>
+            </div>
             <div class="slide-block" style="text-align: center;">
                 開発者個人用のアプリは<a href="https://blog.sn-10.net/p/blog-page.html">こちら</a>から確認できます。
             </div>
@@ -85,7 +91,10 @@
           
 window.onload = function(){
     twemoji.parse($('#twemoji').get(0));
-          (($)=>{
+        (($)=>{
+          $('#zumon-block').click(function(){
+            window.location.href = "https://z-umon.net"
+          });
         $('.start-button').click(function(){
             $(this).fadeOut();
             $(".label-center").fadeIn();
