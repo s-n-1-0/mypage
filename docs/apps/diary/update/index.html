@@ -3,6 +3,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>ちくわ日記 - アップデート情報</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
@@ -17,7 +18,7 @@
   <br>
   <div style="height:60px;width: 100%; display: table;    text-align: center;">
     <div style="display: table-cell;vertical-align: middle;">
-    <h2 >* アップデート情報 *</h2>
+    <h2 ><i class="fa-solid fa-wrench" style=" transform: scale(-1, 1);"></i> アップデート情報 <i class="fa-solid fa-wrench"></i></h2>
    <a style="color: white;"  href="https://forms.gle/BAXPzetwA9cAbGMq8"> アプリ要望フォームはこちら</a><br>
    <a style="color: gray;" href="https://scrapbox.io/diary10/%E3%82%A2%E3%83%83%E3%83%97%E3%83%87%E3%83%BC%E3%83%88%E6%83%85%E5%A0%B1%E9%80%9A%E7%9F%A5%E3%82%92%E9%9D%9E%E8%A1%A8%E7%A4%BA%E3%81%AB%E3%81%99%E3%82%8B"> アップデートの通知をしない場合</a>
   </div>
@@ -26,7 +27,15 @@
   <div id="app" v-cloak>
   <div class="section">
     <h3>最近の更新</h3>
+    <p class="text-center"><a href="https://z-umon.net/space/id/UXR74e2tkUfT932gsSSE/#/"><i class="fa-solid fa-pencil pe-1"></i>ちくわ日記 2.0計画</a></p>
     <ul class="list-group">
+    <list-item ver="1.15.5 (2月末 予定)" 
+    link = "https://scrapbox.io/diary10/1.15.X_%E3%82%A2%E3%83%83%E3%83%97%E3%83%87%E3%83%BC%E3%83%88%E8%A9%B3%E7%B4%B0#621874c5d0c8da0000fec3ee"
+    v-bind:vue="this">
+    <li>
+      アプリの安定性向上アップデート(バグ修正等)
+    </li>
+    </list-item>
     <list-item ver="1.15.4 (1/4)" 
       link = ""
       v-bind:vue="this">
@@ -36,18 +45,6 @@
       link = ""
       v-bind:vue="this">
       <li>日記編集画面からバナー広告を撤去</li>
-    </list-item>
-    <list-item ver="1.15.2 (12/17)" 
-    link = "https://scrapbox.io/diary10/1.15.X_%E3%82%A2%E3%83%83%E3%83%97%E3%83%87%E3%83%BC%E3%83%88%E8%A9%B3%E7%B4%B0#61b99512d0c8da00002ac22e"
-    v-bind:vue="this">
-    <li>
-      日記検索バーの追加(右上の🔍を押すことで表示されます)
-    <p class="text-center pt-2">
-    <img class="w-100 rounded" style="max-height: 150px; object-fit: contain;" src="https://i.gyazo.com/1f9492d33c94d351fb21ed3a79af6d30.png"></p>
-    </li>
-    <li>
-      バグ修正、翻訳修正しました。
-    </li>
     </list-item>
     </ul>
     <br>
@@ -93,7 +90,7 @@
       var list = new Vue({
         el: "#app",
         data: {
-          selectedVer: "1.15.4 (1/4)"
+          selectedVer: "1.15.5 (2月末 予定)"
         },
         methods: {
           dropdown(v) {
