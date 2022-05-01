@@ -29,7 +29,7 @@
         </div>
         </div>
         <footer>
-            sn-10.netに関係するもののみ掲載
+            <span class="mb-3">sn-10.net</span>
         </footer>
         </div>
         <div class="offcanvas offcanvas-start" tabindex="-1" id="sideApps" aria-labelledby="sideAppsLabel" style="  background-color: #4d6a87ff;">
@@ -292,5 +292,8 @@ footer{
   background: #ffffff;
   margin-top: 50px;
   border-radius: 15px;
+}
+#app{
+  background: inherit;
 }
 </style>
