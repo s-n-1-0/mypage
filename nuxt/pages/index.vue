@@ -62,32 +62,27 @@
             </div>
             <div class="offcanvas-body">
                 <div class="slide-block">
-                <h2 style="color: #4d6a87ff;">Code</h2>
-                    <ul class="list-group">
-                        <a class="list-group-item" href="https://github.com/s-n-1-0"><i class="fab fa-github pe-2"></i><b>GitHub</b></a>
-                    </ul>
-                    <hr>
-                    <a class="list-group-item" href="https://www.npmjs.com/~sn-10">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1"><i class="fab fa-npm pe-2"></i>npm<small class="text-muted">(プロフィール)</small></h5>
-                    <small>Node.js</small>
-                    </div>
-                    </a>
-                    <a href="https://github.com/s-n-1-0/wrap-gyazo" class="list-group-item list-group-item-action ">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1"><i class="fas fa-image pe-2"></i>wrap-gyazo</h5>
-                        <small>TypeScript</small>
-                    </div>
-                    <small>Gyazo アップローダ―</small>
-                    </a>
-                    <a href="https://github.com/s-n-1-0/MMHeatmap" class="list-group-item list-group-item-action ">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1"><i class="far fa-calendar-alt pe-2"></i>MMHeatmap</h5>
-                        <small>SwiftUI</small>
-                    </div>
-                    <small>ヒートマップカレンダー</small>
-                    <img class="w-100" src="https://user-images.githubusercontent.com/72431055/115141826-5572b580-a079-11eb-822b-4e05cf9273ca.png" />
-                    </a>
+                  <p class="text-end mb-0" style="font-size:1.5rem;">
+                      <a class="text-body" href="https://github.com/s-n-1-0"><i class="fab fa-github pe-2"></i></a>
+                      <a class="text-body" href="https://www.npmjs.com/~sn-10">
+                      <i class="fab fa-npm pe-2"></i>
+                      </a>
+                  </p>
+                  <a href="https://github.com/s-n-1-0/wrap-gyazo" class="list-group-item list-group-item-action ">
+                  <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1"><i class="fas fa-image pe-2"></i>wrap-gyazo</h5>
+                      <small>TypeScript</small>
+                  </div>
+                  <small>Gyazo アップローダ―</small>
+                  </a>
+                  <a href="https://github.com/s-n-1-0/MMHeatmap" class="list-group-item list-group-item-action ">
+                  <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1"><i class="far fa-calendar-alt pe-2"></i>MMHeatmap</h5>
+                      <small>SwiftUI</small>
+                  </div>
+                  <small>ヒートマップカレンダー</small>
+                  <img class="w-100" src="https://user-images.githubusercontent.com/72431055/115141826-5572b580-a079-11eb-822b-4e05cf9273ca.png" />
+                  </a>
                 </div>
             </div>
         </div>
