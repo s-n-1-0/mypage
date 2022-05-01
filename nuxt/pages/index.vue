@@ -6,13 +6,12 @@
         <Title>I Love Tomatoese</Title>
         <Link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <Link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
-        <Script src="https://code.jquery.com/jquery-3.3.1.min.js" defer></Script>
         <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></Script>
         <Script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></Script>
         <Meta name="viewport" content="width=device-width,initial-scale=1"/>
     </Head>
     </Html>
-        <div id="app" style="display: none;">
+        <div id="app">
         <h2 style="text-align: right; color: gray;">_(:3」∠)_</h2>
         <p class="label-center position-absolute top-50 start-50 translate-middle">
             <span>MADE</span>
@@ -21,11 +20,11 @@
         </p>
         <div id="twemoji">
         <div>
-            <p class="start-button position-absolute top-50 start-50 translate-middle"><a class="position-absolute top-50 start-50 translate-middle">🍅</a></p>
-            <p id="start-appsbutton" class="start-item" data-bs-toggle="offcanvas" href="#sideApps"><a class="position-absolute top-50 start-50 translate-middle" >📱</a></p>
-            <p id="start-codesbutton" class="start-item" data-bs-toggle="offcanvas" href="#sideCode"><a class="position-absolute top-50 start-50 translate-middle">📃</a></p>  
-            <p id ="start-othersbutton" class="start-item"><a style="font-size: 5vmin;"><b>Others</b></a></p>
-            <p id="start-byebutton" class="start-item"><a ><b>×</b></a></p>
+            <p id="top-button" class="start-button position-absolute top-50 start-50 translate-middle" v-on:click="toggleStartItems()"><a class="position-absolute top-50 start-50 translate-middle">🍅</a></p>
+            <p id="start-appsbutton" class="start-item" data-bs-toggle="offcanvas" href="#sideApps" :class="getStartItemClass()"><a class="position-absolute top-50 start-50 translate-middle" >📱</a></p>
+            <p id="start-codesbutton" class="start-item" data-bs-toggle="offcanvas" href="#sideCode" :class="getStartItemClass()"><a class="position-absolute top-50 start-50 translate-middle">📃</a></p>  
+            <p class="start-item" :class="getStartItemClass()"><a style="font-size: 5vmin;" v-on:click="clickedOthersButton()"><b>Others</b></a></p>
+            <p id="start-byebutton" class="start-item" :class="getStartItemClass()" v-on:click="toggleStartItems()"><a ><b>×</b></a></p>
         </div>
         </div>
         <footer>
@@ -45,8 +44,8 @@
                 <a href="https://apps.apple.com/jp/app/id1506707650?itsct=apps_box_badge&amp;itscg=30200" style=" padding-top: 50px; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1586390400&h=4a11186c37cc573e0bb1b16a49890a8c" alt="Download on the App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
                 <p style="margin-left: auto;" class="pt-2"><a href="./apps/diary">紹介ページ</a></p>
                 </div>
-                <div id="zumon-block" class="slide-block" style="text-align: center; cursor: pointer;">
-                <h2>z-umon</h2>
+                <div class="slide-block" style="text-align: center; cursor: pointer;" v-on:click="clickedZumonButton()">
+                <h2 style="color: #4d6a87ff;">z-umon</h2>
                 マークダウン形式で書ける投稿サイト<br>
                 <small>(サーバーレスWebアプリ)</small>
                 <img style="width: 100%;" src="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F515818%2Fafacf6a3-a7a2-4b69-8b56-7cd96deb4e87.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&w=1400&fit=max&s=b892f131eabb4f471fd6a28ede9f0ebc"/>
@@ -95,37 +94,51 @@
 </div>
 </template>
 <script lang="ts">
-import { defineComponent,onMounted } from "vue";
+import { defineComponent,onMounted,ref,watch } from "vue";
 export default defineComponent({
     head:{
 
     },
   setup() {
+    const isStartItemsRef = ref(false);
     onMounted(()=>{
         //@ts-ignore
-    twemoji.parse($('#twemoji').get(0));
-        (($)=>{
-          $('#zumon-block').click(function(){
-            window.location.href = "https://z-umon.net"
-          });
-        $('.start-button').click(function(){
-            $(this).fadeOut();
-            $(".label-center").fadeIn();
-            $('.start-item').toggleClass('start-items-open');
-        });
-        $("#start-byebutton").click(function(){
-          $(".start-button").fadeIn();
-          $(".label-center").fadeOut();
-          $('.start-item').toggleClass('start-items-open');
+        twemoji.parse(document.getElementById("twemoji"));
+        document.getElementById("app").animate([{opacity: '0'}, {opacity: '1'}], {
+          duration:500,
+          fill: 'forwards'
         })
-        $('#start-othersbutton').click(function(){
-            window.location.href = 'https://blog.sn-10.net/p/blog-page.html';
-        })
-        //@ts-ignore
-})(jQuery);
-//@ts-ignore
-    $("#app").fadeIn();
     })
+    watch(()=>isStartItemsRef.value,(newFlag)=>{
+      if(newFlag){
+        document.getElementById("top-button").animate([{opacity: '1'}, {opacity: '0'}], {
+          duration:500,
+          fill: 'forwards'
+        })
+      }else{
+        document.getElementById("top-button").animate([{opacity: '0'}, {opacity: '1'}], {
+          duration:300,
+          fill: 'forwards'
+        })
+      }
+    })
+    return {
+      isStartItems:isStartItemsRef,
+      toggleStartItems(){
+        isStartItemsRef.value = !isStartItemsRef.value;
+      },
+      clickedZumonButton(){
+        window.location.href = "https://z-umon.net"
+      },
+      clickedOthersButton(){
+        window.location.href = 'https://blog.sn-10.net/p/blog-page.html';
+      },
+      getStartItemClass(){
+        return {
+          'start-items-open':isStartItemsRef.value
+        }
+      }
+    }
   },
 });
 </script>
@@ -253,7 +266,6 @@ footer{
   transition: 0.5s;
 }
 .label-center{
-  display: none;
   font-size: 7vmin;
   height: 10vmin;
   overflow-y: hidden;
@@ -294,6 +306,7 @@ footer{
   border-radius: 15px;
 }
 #app{
+  opacity: 0;
   background: inherit;
 }
 </style>
