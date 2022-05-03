@@ -16,13 +16,13 @@
             <span>Code👉</span>
         </p>
         <div id="twemoji">
-        <div>
-            <p id="top-button" class="start-button position-absolute top-50 start-50 translate-middle" v-on:click="toggleStartItems()"><a class="position-absolute top-50 start-50 translate-middle">🍅</a></p>
-            <p id="start-appsbutton" class="top-page-start-item" data-bs-toggle="offcanvas" href="#sideApps" :class="getStartItemClass()"><a class="position-absolute top-50 start-50 translate-middle" >📱</a></p>
-            <p id="start-codesbutton" class="top-page-start-item" data-bs-toggle="offcanvas" href="#sideCode" :class="getStartItemClass()"><a class="position-absolute top-50 start-50 translate-middle">📃</a></p>  
-            <p class="top-page-start-item" :class="getStartItemClass()"><a style="font-size: 5vmin;" v-on:click="clickedOthersButton()"><b>Others</b></a></p>
-            <p id="start-byebutton" class="top-page-start-item" :class="getStartItemClass()" v-on:click="toggleStartItems()"><a ><b>×</b></a></p>
-        </div>
+          <transition name="top-fade"><p id="top-button" v-show="!isStartItems" class="start-button position-absolute top-50 start-50 translate-middle" v-on:click="toggleStartItems()"><a class="position-absolute top-50 start-50 translate-middle">🍅</a></p></transition>
+          <div>
+              <p id="start-appsbutton" class="top-page-start-item" data-bs-toggle="offcanvas" href="#sideApps" :class="getStartItemClass()"><a class="position-absolute top-50 start-50 translate-middle" >📱</a></p>
+              <p id="start-codesbutton" class="top-page-start-item" data-bs-toggle="offcanvas" href="#sideCode" :class="getStartItemClass()"><a class="position-absolute top-50 start-50 translate-middle">📃</a></p>  
+              <p class="top-page-start-item" :class="getStartItemClass()"><a style="font-size: 5vmin;" v-on:click="clickedOthersButton()"><b>Others</b></a></p>
+              <p id="start-byebutton" class="top-page-start-item" :class="getStartItemClass()" v-on:click="toggleStartItems()"><a ><b>×</b></a></p>
+          </div>
         </div>
         <footer>
             <span class="mb-3">sn-10.net</span>
@@ -100,19 +100,6 @@ export default defineComponent({
           duration:500,
           fill: 'forwards'
         })
-    })
-    watch(()=>isStartItemsRef.value,(newFlag)=>{
-      if(newFlag){
-        document.getElementById("top-button").animate([{opacity: '1'}, {opacity: '0'}], {
-          duration:500,
-          fill: 'forwards'
-        })
-      }else{
-        document.getElementById("top-button").animate([{opacity: '0'}, {opacity: '1'}], {
-          duration:300,
-          fill: 'forwards'
-        })
-      }
     })
     return {
       isStartItems:isStartItemsRef,
@@ -208,25 +195,25 @@ footer{
   background: white;
   transition: transform 500ms;
 }
-.top-page-start-items-open:nth-child(2) {
+.top-page-start-items-open:nth-child(1) {
   transform: translate(-50%, -50%) rotate(90deg) translateY(30vmin) rotate(-90deg);
   transition-timing-function:linear;
   transition-delay: 0s;
   transition: 0.5s;
 }
-.top-page-start-items-open:nth-child(3) {
+.top-page-start-items-open:nth-child(2) {
   transform: translate(-50%, -50%) rotate(-90deg) translateY(30vmin) rotate(90deg);
   transition-timing-function:linear;
   transition-delay: 0.1s;
   transition: 0.5s;
 }
-.top-page-start-items-open:nth-child(4) {
+.top-page-start-items-open:nth-child(3) {
   transform: translate(-50%, -50%)  translateY(30vmin) ;
   transition-timing-function:linear;
   transition-delay: 0.1s;
   transition: 0.5s;
 }
-.top-page-start-items-open:nth-child(5) {
+.top-page-start-items-open:nth-child(4) {
   transform: translate(-50%, -50%) translateY(-30vmin);
   transition-timing-function:linear;
   transition-delay: 0.1s;
@@ -294,5 +281,14 @@ footer{
   top:50%;
   left:50%;
   transform: translate(-50%, -50%); 
+}
+.top-fade-enter-active,
+.top-fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.top-fade-enter-from,
+.top-fade-leave-to {
+  opacity: 0;
 }
 </style>
