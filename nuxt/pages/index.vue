@@ -18,10 +18,10 @@
         <div id="twemoji">
         <div>
             <p id="top-button" class="start-button position-absolute top-50 start-50 translate-middle" v-on:click="toggleStartItems()"><a class="position-absolute top-50 start-50 translate-middle">🍅</a></p>
-            <p id="start-appsbutton" class="start-item" data-bs-toggle="offcanvas" href="#sideApps" :class="getStartItemClass()"><a class="position-absolute top-50 start-50 translate-middle" >📱</a></p>
-            <p id="start-codesbutton" class="start-item" data-bs-toggle="offcanvas" href="#sideCode" :class="getStartItemClass()"><a class="position-absolute top-50 start-50 translate-middle">📃</a></p>  
-            <p class="start-item" :class="getStartItemClass()"><a style="font-size: 5vmin;" v-on:click="clickedOthersButton()"><b>Others</b></a></p>
-            <p id="start-byebutton" class="start-item" :class="getStartItemClass()" v-on:click="toggleStartItems()"><a ><b>×</b></a></p>
+            <p id="start-appsbutton" class="top-page-start-item" data-bs-toggle="offcanvas" href="#sideApps" :class="getStartItemClass()"><a class="position-absolute top-50 start-50 translate-middle" >📱</a></p>
+            <p id="start-codesbutton" class="top-page-start-item" data-bs-toggle="offcanvas" href="#sideCode" :class="getStartItemClass()"><a class="position-absolute top-50 start-50 translate-middle">📃</a></p>  
+            <p class="top-page-start-item" :class="getStartItemClass()"><a style="font-size: 5vmin;" v-on:click="clickedOthersButton()"><b>Others</b></a></p>
+            <p id="start-byebutton" class="top-page-start-item" :class="getStartItemClass()" v-on:click="toggleStartItems()"><a ><b>×</b></a></p>
         </div>
         </div>
         <footer>
@@ -127,7 +127,7 @@ export default defineComponent({
       },
       getStartItemClass(){
         return {
-          'start-items-open':isStartItemsRef.value
+          'top-page-start-items-open':isStartItemsRef.value
         }
       }
     }
@@ -183,33 +183,17 @@ footer{
     opacity: 0;
   }
   }
-.start-item > a:not(.emoji-frame){
-    position: absolute;
-    top: 50%;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  line-height: 0%;
-  vertical-align: middle;
-  user-select: none;
-}
-.start-item > a > img.emoji{
-  height: 7vmin;
-  position: absolute;
-  top:50%;
-  left:50%;
-  transform: translate(-50%, -50%); 
-}
+
 .start-button > a > img.emoji{
   height: 20vmin;
   max-height: 100px;
 }
-.start-item > a{
+.top-page-start-item > a{
   font-size: 7vmin;
 }
 
 
-.start-item{
+.top-page-start-item{
   width: 20vmin;
   height: 20vmin;
   position: absolute;
@@ -224,25 +208,25 @@ footer{
   background: white;
   transition: transform 500ms;
 }
-.start-items-open:nth-child(2) {
+.top-page-start-items-open:nth-child(2) {
   transform: translate(-50%, -50%) rotate(90deg) translateY(30vmin) rotate(-90deg);
   transition-timing-function:linear;
   transition-delay: 0s;
   transition: 0.5s;
 }
-.start-items-open:nth-child(3) {
+.top-page-start-items-open:nth-child(3) {
   transform: translate(-50%, -50%) rotate(-90deg) translateY(30vmin) rotate(90deg);
   transition-timing-function:linear;
   transition-delay: 0.1s;
   transition: 0.5s;
 }
-.start-items-open:nth-child(4) {
+.top-page-start-items-open:nth-child(4) {
   transform: translate(-50%, -50%)  translateY(30vmin) ;
   transition-timing-function:linear;
   transition-delay: 0.1s;
   transition: 0.5s;
 }
-.start-items-open:nth-child(5) {
+.top-page-start-items-open:nth-child(5) {
   transform: translate(-50%, -50%) translateY(-30vmin);
   transition-timing-function:linear;
   transition-delay: 0.1s;
@@ -291,5 +275,24 @@ footer{
 #app{
   opacity: 0;
   background: inherit;
+}
+</style>
+<style>
+.top-page-start-item > a:not(.emoji-frame){
+    position: absolute;
+    top: 50%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  line-height: 0%;
+  vertical-align: middle;
+  user-select: none;
+}
+.top-page-start-item > a > img.emoji{
+  height: 7vmin;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%); 
 }
 </style>

@@ -77,7 +77,7 @@ export default defineComponent({
     },
 })
 </script>
-<style>
+<style scoped>
 @media (max-width: 1024px) {
 html{
     font-size: 14px;
