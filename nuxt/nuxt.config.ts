@@ -6,5 +6,21 @@ export default defineNuxtConfig({
     target:"static",
     generate: {
         dir: 'app'
+      },
+    app:{
+      head:{
+        htmlAttrs: {
+          lang: 'ja'
+        },
+        charset: "utf-8",
+        viewport:"width=device-width,initial-scale=1",
+        meta:[],
+        link:[
+          {rel:"preconnect",href:"https://fonts.googleapis.com"},
+          {rel:"preconnect",href:"https://fonts.gstatic.com",crossorigin:""},
+          {rel:"stylesheet",href:"https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" }
+        ]
       }
+    },
+    css:["@/assets/common.css"]
 })

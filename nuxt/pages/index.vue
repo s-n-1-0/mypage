@@ -1,6 +1,5 @@
 <template>
 <div>
-  <Html lang="ja">
     <Head>
         <Meta charset="utf-8"/>
         <Title>I Love Tomatoese</Title>
@@ -8,9 +7,7 @@
         <Link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
         <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></Script>
         <Script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></Script>
-        <Meta name="viewport" content="width=device-width,initial-scale=1"/>
     </Head>
-    </Html>
         <div id="app">
         <h2 style="text-align: right; color: gray;">_(:3」∠)_</h2>
         <p class="label-center position-absolute top-50 start-50 translate-middle">
@@ -137,16 +134,7 @@ export default defineComponent({
   },
 });
 </script>
-<style>
-body{
-     font-family: Meiryo,
-     "Helvetica Neue",
-      Arial,
-      "Hiragino Kaku Gothic ProN",
-      "Hiragino Sans",
-      sans-serif;
-      background-color: inherit;
-}
+<style scoped>
 footer{
   position: absolute; 
   bottom: 0; left: 50%;
