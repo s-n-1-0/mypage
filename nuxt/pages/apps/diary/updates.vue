@@ -18,25 +18,42 @@
         <div>
             <div class="section">
                 <h3>最近の更新</h3>
-                <p class="text-center"><a class="text-body" href="https://z-umon.net/space/id/UXR74e2tkUfT932gsSSE/#/"><i class="fa-solid fa-pencil pe-1"></i>ちくわ日記 2.0 準備中!!</a></p>
+                    <div class="d-flex justify-content-center">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Version 2.x</h5>
+                          <h6 class="card-subtitle mb-2 text-muted"><i class="fas fa-hard-hat"></i> 準備中</h6>
+                          <p class="card-text">現在大規模改修を行っています。iPad、端末間同期などの機能を追加予定です!</p>
+                          <div class="text-end">
+                            <a href="https://note.com/sn_10/m/md21633e1f57b" class="btn btn-outline-success">進捗ノート</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br>
                 <ul class="list-group">
-                <apps-diary-list-item ver="1.15.5 (2/28)" 
-                link = "https://scrapbox.io/diary10/1.15.X_%E3%82%A2%E3%83%83%E3%83%97%E3%83%87%E3%83%BC%E3%83%88%E8%A9%B3%E7%B4%B0#621874c5d0c8da0000fec3ee"
-                v-model:selectedVer="selectedVer">
-                <li>
-                アプリの安定性向上アップデート(バグ修正等)
-                </li>
-                </apps-diary-list-item>
-                <apps-diary-list-item ver="1.15.4 (1/4)" 
-                link = ""
-                v-model:selectedVer="selectedVer">
-                <li>バックアップ機能の修正(報告対応)</li>
-                </apps-diary-list-item>
-                <apps-diary-list-item ver="1.15.3 (12/29)" 
-                link = ""
-                v-model:selectedVer="selectedVer">
-                <li>日記編集画面からバナー広告を撤去</li>
-                </apps-diary-list-item>
+                  <apps-diary-list-item ver="1.15.7 (6/20)" 
+                  link = ""
+                  v-model:selectedVer="selectedVer">
+                    <li>外部パッケージの更新</li>
+                  </apps-diary-list-item>
+                  <apps-diary-list-item ver="1.15.6 (5/8)" 
+                  link = ""
+                  v-model:selectedVer="selectedVer">
+                  <li>特定の操作によってアプリが強制終了するバグの修正</li>
+                  </apps-diary-list-item>
+                  <apps-diary-list-item ver="1.15.5 (2/28)" 
+                  link = "https://scrapbox.io/diary10/1.15.X_%E3%82%A2%E3%83%83%E3%83%97%E3%83%87%E3%83%BC%E3%83%88%E8%A9%B3%E7%B4%B0#621874c5d0c8da0000fec3ee"
+                  v-model:selectedVer="selectedVer">
+                  <li>
+                  アプリの安定性向上アップデート(バグ修正等)
+                  </li>
+                  </apps-diary-list-item>
+                  <apps-diary-list-item ver="1.15.4 (1/4)" 
+                  link = ""
+                  v-model:selectedVer="selectedVer">
+                  <li>バックアップ機能の修正(報告対応)</li>
+                  </apps-diary-list-item>
                 </ul>
                 <br>
             </div>
@@ -67,7 +84,7 @@ import { defineComponent,ref } from 'vue'
 import iconPath from "@/assets/apps/diary/favicon32.png";
 export default defineComponent({
     setup() {
-        const selectedVerRef = ref("1.15.5 (2/28)");
+        const selectedVerRef = ref("-1.15.5 (2/28)");
         const iconRef = ref();
         iconRef.value = iconPath;
         return {
