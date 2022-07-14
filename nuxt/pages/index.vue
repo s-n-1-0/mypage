@@ -3,7 +3,7 @@
     <Head>
         <Meta charset="utf-8"/>
         <Title>I Love Tomatoese</Title>
-        <Link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <Link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <Link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
         <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></Script>
         <Script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></Script>
@@ -28,24 +28,27 @@
             <span class="mb-3">sn-10.net</span>
         </footer>
         </div>
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="sideApps" aria-labelledby="sideAppsLabel" style="  background-color: #4d6a87ff;">
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="sideApps" data-bs-backdrop="false" aria-labelledby="sideAppsLabel" style="  background-color: #4d6a87ff; max-width: 150px;">
             <div class="offcanvas-header text-white">
             <h5 class="offcanvas-title" id="sideAppsLabel">Apps</h5>
             <button type="button" class="btn-close btn-close-white text-reset close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
                 <div class="slide-block text-center">
-                <h2 style="color: #4d6a87ff;">日記アプリ(iOS)</h2>
-                    <a href="https://apps.apple.com/jp/app/id1506707650">
-                <img src="https://user-images.githubusercontent.com/72431055/119313937-160a3b00-bcaf-11eb-9af6-5ff1938c00ff.png" height="150px" width="150px"></a>
-                <a href="https://apps.apple.com/jp/app/id1506707650?itsct=apps_box_badge&amp;itscg=30200" style=" padding-top: 50px; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1586390400&h=4a11186c37cc573e0bb1b16a49890a8c" alt="Download on the App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
-                <p style="margin-left: auto;" class="pt-2"><a href="./apps/diary">紹介ページ</a></p>
+                  <apps-app-cell 
+                  title="ちくわ日記"
+                  link-url="https://apps.apple.com/jp/app/id1506707650"
+                  image-url="https://user-images.githubusercontent.com/72431055/119313937-160a3b00-bcaf-11eb-9af6-5ff1938c00ff.png"
+                  platform="ios"
+                  ></apps-app-cell>
                 </div>
                 <div class="slide-block" style="text-align: center; cursor: pointer;" v-on:click="clickedZumonButton()">
-                <h2 style="color: #4d6a87ff;">z-umon</h2>
-                マークダウン形式で書ける投稿サイト<br>
-                <small>(サーバーレスWebアプリ)</small>
-                <img style="width: 100%;" src="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F515818%2Fafacf6a3-a7a2-4b69-8b56-7cd96deb4e87.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&w=1400&fit=max&s=b892f131eabb4f471fd6a28ede9f0ebc"/>
+                  <apps-app-cell 
+                  title="z-umon"
+                  link-url=""
+                  image-url="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F515818%2Fafacf6a3-a7a2-4b69-8b56-7cd96deb4e87.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&w=1400&fit=max&s=b892f131eabb4f471fd6a28ede9f0ebc"
+                  platform="web"
+                  ></apps-app-cell>
                 </div>
                 <div class="slide-block" style="text-align: center;">
                     開発者個人用のアプリは<a href="https://blog.sn-10.net/p/blog-page.html">こちら</a>から確認できます。
