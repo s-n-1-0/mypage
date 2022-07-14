@@ -42,10 +42,10 @@
                   platform="ios"
                   ></apps-app-cell>
                 </div>
-                <div class="slide-block" style="text-align: center; cursor: pointer;" v-on:click="clickedZumonButton()">
+                <div class="slide-block" style="text-align: center; cursor: pointer;">
                   <apps-app-cell 
                   title="z-umon"
-                  link-url=""
+                  link-url="https://z-umon.net"
                   image-url="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F515818%2Fafacf6a3-a7a2-4b69-8b56-7cd96deb4e87.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&w=1400&fit=max&s=b892f131eabb4f471fd6a28ede9f0ebc"
                   platform="web"
                   ></apps-app-cell>
@@ -109,9 +109,6 @@ export default defineComponent({
       isStartItems:isStartItemsRef,
       toggleStartItems(){
         isStartItemsRef.value = !isStartItemsRef.value;
-      },
-      clickedZumonButton(){
-        window.location.href = "https://z-umon.net"
       },
       clickedOthersButton(){
         window.location.href = 'https://blog.sn-10.net/p/blog-page.html';
