@@ -50,6 +50,7 @@
                   platform="web"
                   ></apps-app-cell>
                 </div>
+                <hr>
                 <div class="slide-block" style="text-align: center;">
                     開発者個人用のアプリは<a href="https://blog.sn-10.net/p/blog-page.html">こちら</a>から確認できます。
                 </div>
@@ -259,8 +260,8 @@ footer{
   overflow-wrap: break-word;
   padding: 1em;
   background: #ffffff;
-  margin-top: 50px;
-  border-radius: 15px;
+  margin-top: 5px;
+  border-radius: 10px;
 }
 #app{
   opacity: 0;
