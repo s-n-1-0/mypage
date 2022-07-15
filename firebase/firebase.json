@@ -1,0 +1,15 @@
+{
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "redirects": [ {
+      "source": "/apps/diary/update",
+      "destination": "/apps/diary/updates",
+      "type": 301
+    } ]
+  }
+}
