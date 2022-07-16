@@ -1,6 +1,6 @@
 <template>
-                <a :href="linkUrl" class="text-decoration-none">
-                    <img :src="imageUrl" style="max-width:75px;">
+                <a :href="linkUrl" class="text-decoration-none d-block">
+                    <img :src="imageUrl" :style="`max-width:${maxCellWidthPx}px;`"><br>
                     <small class="text-secondary">{{title}}<br><i :class="makeAppIconClass()"></i> {{getPlatformName()}}</small>
                 </a>
 </template>
@@ -11,6 +11,10 @@ export default defineComponent({
         title:String,
         linkUrl:String,
         imageUrl:String,
+        maxCellWidthPx:{
+            default:75,
+            type:Number
+        },
         platform:String,//"ios","web"
     },
     setup(props){
