@@ -18,8 +18,8 @@
         <div id="twemoji">
           <transition name="top-fade"><p id="top-button" v-show="!isStartItems" class="start-button position-absolute top-50 start-50 translate-middle" v-on:click="toggleStartItems()"><a class="position-absolute top-50 start-50 translate-middle">🍅</a></p></transition>
           <div>
-              <p id="start-appsbutton" class="top-page-start-item" data-bs-toggle="offcanvas" href="#portfolioOffCanvas" :class="getStartItemClass()"><a class="position-absolute top-50 start-50 translate-middle" >📱</a></p>
-              <p id="start-codesbutton" class="top-page-start-item" data-bs-toggle="offcanvas" v-on:click="clickedOffCanvasButton()" href="#portfolioOffCanvas" :class="getStartItemClass()"><a class="position-absolute top-50 start-50 translate-middle">📃</a></p>  
+              <p id="start-appsbutton" class="top-page-start-item" data-bs-toggle="offcanvas" href="#portfolioOffCanvas" :class="getStartItemClass()" v-on:click="clickedOffCanvasButton('appsBlock')"><a class="position-absolute top-50 start-50 translate-middle" >📱</a></p>
+              <p id="start-codesbutton" class="top-page-start-item" data-bs-toggle="offcanvas" v-on:click="clickedOffCanvasButton('codeBlock')" href="#portfolioOffCanvas" :class="getStartItemClass()"><a class="position-absolute top-50 start-50 translate-middle">📃</a></p>  
               <p class="top-page-start-item" :class="getStartItemClass()"><a style="font-size: 5vmin;" v-on:click="clickedOthersButton()"><b>Others</b></a></p>
               <p id="start-byebutton" class="top-page-start-item" :class="getStartItemClass()" v-on:click="toggleStartItems()"><a ><b>×</b></a></p>
           </div>
@@ -118,9 +118,9 @@ export default defineComponent({
       clickedOthersButton(){
         window.location.href = 'https://blog.sn-10.net/p/blog-page.html';
       },
-      clickedOffCanvasButton(){
+      clickedOffCanvasButton(id:string){
         var target = document.getElementById('portfolioOffCanvasBody');
-        var block = document.getElementById("codeBlock");
+        var block = document.getElementById(id);
         console.log(block.scrollTop);
 	      target.scrollTop = block.offsetTop - 75;
       },
