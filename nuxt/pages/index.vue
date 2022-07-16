@@ -18,8 +18,8 @@
         <div id="twemoji">
           <transition name="top-fade"><p id="top-button" v-show="!isStartItems" class="start-button position-absolute top-50 start-50 translate-middle" v-on:click="toggleStartItems()"><a class="position-absolute top-50 start-50 translate-middle">🍅</a></p></transition>
           <div>
-              <p id="start-appsbutton" class="top-page-start-item" data-bs-toggle="offcanvas" href="#sideApps" :class="getStartItemClass()"><a class="position-absolute top-50 start-50 translate-middle" >📱</a></p>
-              <p id="start-codesbutton" class="top-page-start-item" data-bs-toggle="offcanvas" href="#sideCode" :class="getStartItemClass()"><a class="position-absolute top-50 start-50 translate-middle">📃</a></p>  
+              <p id="start-appsbutton" class="top-page-start-item" data-bs-toggle="offcanvas" href="#portfolioOffCanvas" :class="getStartItemClass()"><a class="position-absolute top-50 start-50 translate-middle" >📱</a></p>
+              <p id="start-codesbutton" class="top-page-start-item" data-bs-toggle="offcanvas" v-on:click="clickedOffCanvasButton()" href="#portfolioOffCanvas" :class="getStartItemClass()"><a class="position-absolute top-50 start-50 translate-middle">📃</a></p>  
               <p class="top-page-start-item" :class="getStartItemClass()"><a style="font-size: 5vmin;" v-on:click="clickedOthersButton()"><b>Others</b></a></p>
               <p id="start-byebutton" class="top-page-start-item" :class="getStartItemClass()" v-on:click="toggleStartItems()"><a ><b>×</b></a></p>
           </div>
@@ -28,41 +28,44 @@
             <span class="mb-3">sn-10.net</span>
         </footer>
         </div>
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="sideApps" data-bs-backdrop="false" aria-labelledby="sideAppsLabel" style="  background-color: #4d6a87ff; max-width: 150px;">
+        <div class="offcanvas offcanvas-bottom" tabindex="-1" id="portfolioOffCanvas" data-bs-backdrop="false" aria-labelledby="portfolioOffCanvasLabel" style="  background-color: #4d6a87ff; height: 100vh;">
             <div class="offcanvas-header text-white">
-            <h5 class="offcanvas-title" id="sideAppsLabel">Apps</h5>
-            <button type="button" class="btn-close btn-close-white text-reset close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <a class="nav-link offcanvas-nav-item" href="#appsBlock">Apps</a>
+                  <a class="nav-link offcanvas-nav-item" href="#codeBlock">Code</a>
+                </div>
+              </nav>
+              <button type="button" class="btn-close btn-close-white text-reset close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-            <div class="offcanvas-body">
-                <div class="slide-block text-center">
+            <div id="portfolioOffCanvasBody"
+              data-bs-spy="scroll"
+              data-bs-target="#nav-tab"
+              data-bs-offset="100"
+              class="offcanvas-body">
+              <div id="appsBlock" class="slide-block text-center d-flex flex-column justify-content-between">
+                <div class="d-flex justify-content-evenly align-items-center h-100 flex-wrap">
                   <apps-app-cell 
                   title="ちくわ日記"
                   link-url="https://apps.apple.com/jp/app/id1506707650"
                   image-url="https://user-images.githubusercontent.com/72431055/119313937-160a3b00-bcaf-11eb-9af6-5ff1938c00ff.png"
                   platform="ios"
+                  :max-cell-width-px="150"
                   ></apps-app-cell>
-                </div>
-                <div class="slide-block" style="text-align: center; cursor: pointer;">
                   <apps-app-cell 
                   title="z-umon"
                   link-url="https://z-umon.net"
                   image-url="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F515818%2Fafacf6a3-a7a2-4b69-8b56-7cd96deb4e87.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&w=1400&fit=max&s=b892f131eabb4f471fd6a28ede9f0ebc"
                   platform="web"
+                  :max-cell-width-px="300"
                   ></apps-app-cell>
                 </div>
-                <hr>
-                <div class="slide-block" style="text-align: center;">
+                <div>
+                  <hr>
                     開発者個人用のアプリは<a href="https://blog.sn-10.net/p/blog-page.html">こちら</a>から確認できます。
                 </div>
-            </div>
-        </div>
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="sideCode" aria-labelledby="sideCodeLabel" style="  background-color: #4d6a87ff;">
-            <div class="offcanvas-header text-white">
-            <h5 class="offcanvas-title" id="sideCodeLabel">Code</h5>
-            <button type="button" class="btn-close btn-close-white text-reset close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <div class="slide-block">
+              </div>
+                <div id="codeBlock" class="slide-block">
                   <p class="text-end mb-0" style="font-size:1.5rem;">
                       <a class="text-body" href="https://github.com/s-n-1-0"><i class="fab fa-github pe-2"></i></a>
                       <a class="text-body" href="https://www.npmjs.com/~sn-10">
@@ -81,8 +84,10 @@
                       <h5 class="mb-1"><i class="far fa-calendar-alt pe-2"></i>MMHeatmap</h5>
                       <small>SwiftUI</small>
                   </div>
-                  <small>ヒートマップカレンダー</small>
-                  <img class="w-100" src="https://user-images.githubusercontent.com/72431055/115141826-5572b580-a079-11eb-822b-4e05cf9273ca.png" />
+                  <small>ヒートマップカレンダー</small><br>
+                  <p class="text-end">
+                    <img class="w-100" style="max-width: 300px;" src="https://user-images.githubusercontent.com/72431055/115141826-5572b580-a079-11eb-822b-4e05cf9273ca.png" />
+                  </p>
                   </a>
                 </div>
             </div>
@@ -112,6 +117,12 @@ export default defineComponent({
       },
       clickedOthersButton(){
         window.location.href = 'https://blog.sn-10.net/p/blog-page.html';
+      },
+      clickedOffCanvasButton(){
+        var target = document.getElementById('portfolioOffCanvasBody');
+        var block = document.getElementById("codeBlock");
+        console.log(block.scrollTop);
+	      target.scrollTop = block.offsetTop - 75;
       },
       getStartItemClass(){
         return {
@@ -253,12 +264,13 @@ footer{
   }
 }
 .slide-block {
-   position: relative;
+  position: relative;
   overflow-wrap: break-word;
   padding: 1em;
   background: #ffffff;
   margin-top: 5px;
   border-radius: 10px;
+  height: 100vh;
 }
 #app{
   opacity: 0;
@@ -291,5 +303,8 @@ footer{
 .top-fade-enter-from,
 .top-fade-leave-to {
   opacity: 0;
+}
+.offcanvas-nav-item{
+  color: white;
 }
 </style>
