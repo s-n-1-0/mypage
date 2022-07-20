@@ -30,11 +30,13 @@
         </div>
         <div class="offcanvas offcanvas-bottom" tabindex="-1" id="portfolioOffCanvas" data-bs-backdrop="false" aria-labelledby="portfolioOffCanvasLabel" style="  background-color: #4d6a87ff; height: 100vh;">
             <div class="offcanvas-header text-white">
-              <nav>
+              <nav class="d-flex justify-content-center align-items-end">
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                  <a class="nav-link offcanvas-nav-item" href="#appsBlock">Apps</a>
+                  <a class="nav-link offcanvas-nav-item" href="#appsBlock">App</a>
+                  <a class="nav-link offcanvas-nav-item" href="#artBlock">Art</a>
                   <a class="nav-link offcanvas-nav-item" href="#codeBlock">Code</a>
                 </div>
+                <small class="ps-2">works</small>
               </nav>
               <button type="button" class="btn-close btn-close-white text-reset close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
@@ -65,31 +67,36 @@
                     開発者個人用のアプリは<a href="https://blog.sn-10.net/p/blog-page.html">こちら</a>から確認できます。
                 </div>
               </div>
-                <div id="codeBlock" class="slide-block">
-                  <p class="text-end mb-0" style="font-size:1.5rem;">
-                      <a class="text-body" href="https://github.com/s-n-1-0"><i class="fab fa-github pe-2"></i></a>
-                      <a class="text-body" href="https://www.npmjs.com/~sn-10">
-                      <i class="fab fa-npm pe-2"></i>
-                      </a>
-                  </p>
-                  <a href="https://github.com/s-n-1-0/wrap-gyazo" class="list-group-item list-group-item-action ">
-                  <div class="d-flex w-100 justify-content-between">
-                      <h5 class="mb-1"><i class="fas fa-image pe-2"></i>wrap-gyazo</h5>
-                      <small>TypeScript</small>
-                  </div>
-                  <small>Gyazo アップローダ―</small>
-                  </a>
-                  <a href="https://github.com/s-n-1-0/MMHeatmap" class="list-group-item list-group-item-action ">
-                  <div class="d-flex w-100 justify-content-between">
-                      <h5 class="mb-1"><i class="far fa-calendar-alt pe-2"></i>MMHeatmap</h5>
-                      <small>SwiftUI</small>
-                  </div>
-                  <small>ヒートマップカレンダー</small><br>
-                  <p class="text-end">
-                    <img class="w-100" style="max-width: 300px;" src="https://user-images.githubusercontent.com/72431055/115141826-5572b580-a079-11eb-822b-4e05cf9273ca.png" />
-                  </p>
-                  </a>
+              <div id="artBlock" class="slide-block">
+                <div class="d-flex justify-content-evenly align-items-center h-100">
+                  <h3 class="text-secondary"><i class="fa-solid fa-screwdriver-wrench p-1"></i>準備中 あと少し!</h3>
                 </div>
+              </div>
+              <div id="codeBlock" class="slide-block">
+                <p class="text-end mb-0" style="font-size:1.5rem;">
+                    <a class="text-body" href="https://github.com/s-n-1-0"><i class="fab fa-github pe-2"></i></a>
+                    <a class="text-body" href="https://www.npmjs.com/~sn-10">
+                    <i class="fab fa-npm pe-2"></i>
+                    </a>
+                </p>
+                <a href="https://github.com/s-n-1-0/wrap-gyazo" class="list-group-item list-group-item-action ">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1"><i class="fas fa-image pe-2"></i>wrap-gyazo</h5>
+                    <small>TypeScript</small>
+                </div>
+                <small>Gyazo アップローダ―</small>
+                </a>
+                <a href="https://github.com/s-n-1-0/MMHeatmap" class="list-group-item list-group-item-action ">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1"><i class="far fa-calendar-alt pe-2"></i>MMHeatmap</h5>
+                    <small>SwiftUI</small>
+                </div>
+                <small>ヒートマップカレンダー</small><br>
+                <p class="text-end">
+                  <img class="w-100" style="max-width: 300px;" src="https://user-images.githubusercontent.com/72431055/115141826-5572b580-a079-11eb-822b-4e05cf9273ca.png" />
+                </p>
+                </a>
+              </div>
             </div>
         </div>
 </div>
