@@ -30,13 +30,12 @@
         </div>
         <div class="offcanvas offcanvas-bottom" tabindex="-1" id="portfolioOffCanvas" data-bs-backdrop="false" aria-labelledby="portfolioOffCanvasLabel" style="  background-color: #4d6a87ff; height: 100vh;">
             <div class="offcanvas-header text-white">
-              <nav class="d-flex justify-content-center align-items-end">
+              <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                  <a class="nav-link offcanvas-nav-item" href="#appsBlock">App</a>
-                  <a class="nav-link offcanvas-nav-item" href="#artBlock">Art</a>
+                  <a class="nav-link offcanvas-nav-item nav-link-app" href="#appsBlock">App</a>
+                  <a class="nav-link offcanvas-nav-item nav-link-art" href="#artBlock">Art</a>
                   <a class="nav-link offcanvas-nav-item" href="#codeBlock">Code</a>
                 </div>
-                <small class="ps-2">works</small>
               </nav>
               <button type="button" class="btn-close btn-close-white text-reset close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
@@ -313,5 +312,11 @@ footer{
 }
 .offcanvas-nav-item{
   color: white;
+}
+.nav-link-app.active:after{
+  content: "s";
+}
+.nav-link-art.active:after{
+content: "work";
 }
 </style>
