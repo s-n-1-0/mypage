@@ -46,20 +46,20 @@
               class="offcanvas-body">
               <div id="appsBlock" class="slide-block text-center d-flex flex-column justify-content-between">
                 <div class="d-flex justify-content-evenly align-items-center h-100 flex-wrap">
-                  <apps-app-cell 
+                  <apps-cell 
                   title="ちくわ日記"
                   link-url="https://apps.apple.com/jp/app/id1506707650"
                   image-url="https://user-images.githubusercontent.com/72431055/119313937-160a3b00-bcaf-11eb-9af6-5ff1938c00ff.png"
                   platform="ios"
                   :max-cell-width-px="150"
-                  ></apps-app-cell>
-                  <apps-app-cell 
+                  ></apps-cell>
+                  <apps-cell 
                   title="z-umon"
                   link-url="https://z-umon.net"
                   image-url="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F515818%2Fafacf6a3-a7a2-4b69-8b56-7cd96deb4e87.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&w=1400&fit=max&s=b892f131eabb4f471fd6a28ede9f0ebc"
                   platform="web"
                   :max-cell-width-px="300"
-                  ></apps-app-cell>
+                  ></apps-cell>
                 </div>
                 <div>
                   <hr>
