@@ -7,6 +7,11 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
+    "@types/bootstrap": "^5.2.0",
     "nuxt": "3.0.0-rc.6"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.0",
+    "bs-modal-vue": "^1.0.2"
   }
 }
