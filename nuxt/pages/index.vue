@@ -45,7 +45,7 @@
               data-bs-offset="100"
               class="offcanvas-body">
               <div id="appsBlock" class="slide-block text-center d-flex flex-column justify-content-between">
-                <div class="d-flex justify-content-evenly align-items-center h-100 flex-wrap">
+                <div class="flex-grow-1 d-flex justify-content-evenly align-items-center h-100 flex-wrap">
                   <apps-cell 
                   title="ちくわ日記"
                   link-url="https://apps.apple.com/jp/app/id1506707650?platform=iphone"
@@ -74,9 +74,9 @@
                     その他開発者個人用のアプリは<a href="https://blog.sn-10.net/p/blog-page.html">こちら</a>から確認できます。
                 </div>
               </div>
-              <div id="artBlock" class="slide-block">
+              <div id="artBlock" class="slide-block d-flex flex-column">
                 <h3 class="my-color">点群アート</h3>
-                <div class="d-flex justify-content-evenly align-items-center h-100">
+                <div class="flex-grow-1 d-flex justify-content-evenly align-items-center h-100">
                   <iframe width="560" height="315" src="https://www.youtube.com/embed/1f8xHCA0Lbg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
               </div>
@@ -312,7 +312,7 @@ footer{
   background: #ffffff;
   margin-top: 5px;
   border-radius: 10px;
-  height: 100vh;
+  min-height: 100vh;
 }
 #app{
   opacity: 0;
