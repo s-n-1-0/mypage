@@ -81,6 +81,16 @@
                 </div>
               </div>
               <div id="codeBlock" class="slide-block">
+                <h3 class="my-color">投稿</h3>
+                <div class="text-center">
+                  <a class="me-2" href="https://qiita.com/ttttpzm">
+                    <img :src="qiitaIconPath" style=" width:50px; height:50px; object-fit: contain;"/>
+                  </a>
+                  <a href="https://zenn.dev/sn10">
+                    <img :src="zennIconPath" style=" width:50px; height:50px; object-fit: contain;"/>
+                  </a>
+                </div>
+                <hr>
                 <h3 class="my-color">配布パッケージ</h3>
                 <p class="text-end mb-0" style="font-size:1.5rem;">
                     <a class="text-body" href="https://github.com/s-n-1-0"><i class="fab fa-github pe-2"></i></a>
@@ -123,6 +133,8 @@
 <script lang="ts">
 import { defineComponent,onMounted,ref,watch } from "vue";
 import salmonAppIconPath from "@/assets/apps/subscription_manager/icon_r_x512.png";
+import qiitaIconPath from "@/assets/links/qiita-icon.png";
+import zennIconPath from "@/assets/links/zenn-icon.svg";
 export default defineComponent({
     head:{
 
@@ -140,6 +152,8 @@ export default defineComponent({
     return {
       isStartItems:isStartItemsRef,
       salmonAppIconPath,
+      qiitaIconPath,
+      zennIconPath,
       toggleStartItems(){
         isStartItemsRef.value = !isStartItemsRef.value;
       },
