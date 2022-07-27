@@ -48,10 +48,18 @@
                 <div class="d-flex justify-content-evenly align-items-center h-100 flex-wrap">
                   <apps-cell 
                   title="ちくわ日記"
-                  link-url="https://apps.apple.com/jp/app/id1506707650"
+                  link-url="https://apps.apple.com/jp/app/id1506707650?platform=iphone"
                   image-url="https://user-images.githubusercontent.com/72431055/119313937-160a3b00-bcaf-11eb-9af6-5ff1938c00ff.png"
                   platform="ios"
                   :max-cell-width-px="150"
+                  ></apps-cell>
+                  <apps-cell 
+                  title="サーモンマネージャー(サブスク管理)"
+                  link-url="https://apps.apple.com/jp/app/id1615709874"
+                  :image-url='salmonAppIconPath'
+                  platform="ios"
+                  :max-cell-width-px="150"
+                  :is-paid="true"
                   ></apps-cell>
                   <apps-cell 
                   title="z-umon"
@@ -63,38 +71,50 @@
                 </div>
                 <div>
                   <hr>
-                    開発者個人用のアプリは<a href="https://blog.sn-10.net/p/blog-page.html">こちら</a>から確認できます。
+                    その他開発者個人用のアプリは<a href="https://blog.sn-10.net/p/blog-page.html">こちら</a>から確認できます。
                 </div>
               </div>
               <div id="artBlock" class="slide-block">
+                <h3 class="my-color">点群アート</h3>
                 <div class="d-flex justify-content-evenly align-items-center h-100">
-                  <h3 class="text-secondary"><i class="fa-solid fa-screwdriver-wrench p-1"></i>準備中 あと少し!</h3>
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/1f8xHCA0Lbg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
               </div>
               <div id="codeBlock" class="slide-block">
+                <h3 class="my-color">配布パッケージ</h3>
                 <p class="text-end mb-0" style="font-size:1.5rem;">
                     <a class="text-body" href="https://github.com/s-n-1-0"><i class="fab fa-github pe-2"></i></a>
                     <a class="text-body" href="https://www.npmjs.com/~sn-10">
                     <i class="fab fa-npm pe-2"></i>
                     </a>
                 </p>
-                <a href="https://github.com/s-n-1-0/wrap-gyazo" class="list-group-item list-group-item-action ">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1"><i class="fas fa-image pe-2"></i>wrap-gyazo</h5>
-                    <small>TypeScript</small>
-                </div>
-                <small>Gyazo アップローダ―</small>
-                </a>
-                <a href="https://github.com/s-n-1-0/MMHeatmap" class="list-group-item list-group-item-action ">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1"><i class="far fa-calendar-alt pe-2"></i>MMHeatmap</h5>
-                    <small>SwiftUI</small>
-                </div>
-                <small>ヒートマップカレンダー</small><br>
-                <p class="text-end">
-                  <img class="w-100" style="max-width: 300px;" src="https://user-images.githubusercontent.com/72431055/115141826-5572b580-a079-11eb-822b-4e05cf9273ca.png" />
-                </p>
-                </a>
+                <tools-lib-item title="bs-modal.vue"
+                 link-url="https://github.com/s-n-1-0/bs-modal.vue"
+                 icon-class="fas fa-align-justify"
+                 language="Vue.js">
+                  <small>Bootstrap5のモーダルをVue3で表示するパッケージ(コンポーネント)</small>
+                </tools-lib-item>
+                <tools-lib-item title="labcsv.py"
+                 link-url="https://github.com/s-n-1-0/labcsv.py"
+                 icon-class="fas fa-table"
+                 language="Python">
+                  <small>lab.jsのcsvファイルインポートパッケージ</small>
+                 </tools-lib-item>
+                <tools-lib-item title="MMHeatmap"
+                 link-url="https://github.com/s-n-1-0/MMHeatmap"
+                 icon-class="far fa-calendar-alt"
+                 language="SwiftUI">
+                  <small>ヒートマップカレンダー</small><br>
+                  <p class="text-center">
+                    <img class="w-100" style="max-width: 300px;" src="https://user-images.githubusercontent.com/72431055/115141826-5572b580-a079-11eb-822b-4e05cf9273ca.png" />
+                  </p>
+                 </tools-lib-item>
+                <tools-lib-item title="wrap-gyazo"
+                 link-url="https://github.com/s-n-1-0/wrap-gyazo"
+                 icon-class="fas fa-image"
+                 language="TypeScript">
+                  <small>Gyazo アップローダ―</small>
+                 </tools-lib-item>
               </div>
             </div>
         </div>
@@ -102,6 +122,7 @@
 </template>
 <script lang="ts">
 import { defineComponent,onMounted,ref,watch } from "vue";
+import salmonAppIconPath from "@/assets/apps/subscription_manager/icon_r_x512.png";
 export default defineComponent({
     head:{
 
@@ -118,6 +139,7 @@ export default defineComponent({
     })
     return {
       isStartItems:isStartItemsRef,
+      salmonAppIconPath,
       toggleStartItems(){
         isStartItemsRef.value = !isStartItemsRef.value;
       },
