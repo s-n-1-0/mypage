@@ -22,5 +22,6 @@ export default defineNuxtConfig({
         ]
       }
     },
-    css:["@/assets/common.css"]
+    css:["@/assets/common.css"],
+    modules:[ 'nuxt-svg-loader']
 })
