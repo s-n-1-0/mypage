@@ -1,7 +1,10 @@
 <template>
                 <a :href="linkUrl" class="text-decoration-none d-block">
-                    <img :src="imageUrl" :style="`max-width:${maxCellWidthPx}px;`"><br>
-                    <small class="text-secondary">{{title}}<br><i :class="makeAppIconClass()"></i> {{getPlatformName()}}</small>
+                    <div class="position-relative">
+                        <img :src="imageUrl" :style="`max-width:${maxCellWidthPx}px;`"><br>
+                        <small class="text-secondary">{{title}}<br><i :class="makeAppIconClass()"></i> {{getPlatformName()}}</small>
+                        <span v-if="isPaid" class="badge position-absolute top-0 start-100 translate-middle bg-info">Paid</span>
+                    </div>
                 </a>
 </template>
 <script lang="ts">
@@ -16,6 +19,10 @@ export default defineComponent({
             type:Number
         },
         platform:String,//"ios","web"
+        isPaid:{
+            default:false,
+            type:Boolean
+        }
     },
     setup(props){
         const {platform} = toRefs(props);
