@@ -22,11 +22,11 @@
                     <div class="d-flex justify-content-center">
                       <div class="card">
                         <div class="card-body">
-                          <h5 class="card-title">Version 2.x</h5>
-                          <h6 class="card-subtitle mb-2 text-muted"><i class="fas fa-hard-hat"></i> 準備中</h6>
-                          <p class="card-text">現在大規模改修を行っています。iPad、端末間同期などの機能を追加予定です!</p>
+                          <h5 class="card-title">ちくわ日記2リリース🎉🎉🎉</h5>
+                          <h6 class="card-subtitle mb-2 text-muted text-end">9/1より</h6>
+                          <p class="card-text">大規模改修を行いました。iPad対応、端末間同期などの機能を追加しました!<br>これからも改修は続けて参ります!　よろしくお願いします!!!</p>
                           <div class="text-end">
-                            <a href="https://note.com/sn_10/m/md21633e1f57b" class="btn btn-outline-success">進捗ノート</a>
+                            <a href="https://note.com/sn_10/m/md21633e1f57b" class="btn btn-outline-success">詳細note</a>
                           </div>
                         </div>
                       </div>
