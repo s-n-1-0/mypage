@@ -33,6 +33,13 @@
                     </div>
                     <br>
                 <ul class="list-group">
+                  <apps-diary-list-item ver="2.0.1/2/3 (9/2-9/4)" 
+                  link = "https://scrapbox.io/diary10/2.0.X_%E3%82%A2%E3%83%83%E3%83%97%E3%83%87%E3%83%BC%E3%83%88%E8%A9%B3%E7%B4%B0"
+                  v-model:selectedVer="selectedVer">
+                  <li>2.0.1 : 問い合わせメールアドレスの追加</li>
+                  <li>2.0.2 : 報告頂いていたコレクションに関する複数のバグの修正</li>
+                  <li>2.0.3 : UI微修正(アイコン等の修正)</li>
+                  </apps-diary-list-item>
                   <apps-diary-list-item ver="1.15.7 (6/20)" 
                   link = ""
                   v-model:selectedVer="selectedVer">
@@ -85,7 +92,7 @@ import { defineComponent,ref } from 'vue'
 import iconPath from "@/assets/apps/diary/favicon32.png";
 export default defineComponent({
     setup() {
-        const selectedVerRef = ref("-1.15.5 (2/28)");
+        const selectedVerRef = ref("2.0.1/2/3 (9/2-9/4)");
         const iconRef = ref();
         iconRef.value = iconPath;
         return {
