@@ -19,20 +19,37 @@
         <div>
             <div class="section">
                 <h3>最近の更新</h3>
-                    <div class="d-flex justify-content-center">
-                      <div class="card">
-                        <div class="card-body">
-                          <h5 class="card-title">ちくわ日記2リリース🎉🎉🎉</h5>
-                          <h6 class="card-subtitle mb-2 text-muted text-end">9/1より</h6>
-                          <p class="card-text">大規模改修を行いました。iPad対応、端末間同期などの機能を追加しました!<br>これからも改修は続けて参ります!　よろしくお願いします!!!</p>
-                          <div class="text-end">
-                            <a href="https://note.com/sn_10/m/md21633e1f57b" class="btn btn-outline-success">詳細note</a>
-                          </div>
+                    <div class="card mb-2">
+                      <div class="card-body">
+                        <h5 class="card-title">v2.1.0</h5>
+                        <h6 class="card-subtitle mb-2 text-muted text-end">9/17より</h6>
+                        <p class="card-text">要望からSNS共有機能を追加しました。アップデートにはバグ修正や小さな機能追加も含まれます。</p>
+                        <div class="text-end">
+                          <a href="https://note.com/sn_10/n/n603c51bd974e" class="btn btn-outline-success">詳細note</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">ちくわ日記2リリース🎉🎉🎉</h5>
+                        <h6 class="card-subtitle mb-2 text-muted text-end">9/1より</h6>
+                        <p class="card-text">大規模改修を行いました。iPad対応、端末間同期などの機能を追加しました!<br>これからも改修は続けて参ります!　よろしくお願いします!!!</p>
+                        <div class="text-end">
+                          <a href="https://note.com/sn_10/m/md21633e1f57b" class="btn btn-outline-success">詳細note</a>
                         </div>
                       </div>
                     </div>
                     <br>
-                <ul class="list-group">
+            </div>
+            <div class="section">
+            <a class="review-button" href="https://itunes.apple.com/jp/app/id1506707650?mt=8&action=write-review">「★レビュー」に回答いただけると開発のモチベが上がります!</a><br>
+            <div style="color: grey;">
+            ※★のみでも大丈夫です!<br>
+            ※星リクエストはアプリ利用中に年3回程表示されます。
+            </div>
+            </div>
+            <div class="section">
+              <ul class="list-group">
                   <apps-diary-list-item ver="2.0.1/2/3 (9/2-9/4)" 
                   link = "https://scrapbox.io/diary10/2.0.X_%E3%82%A2%E3%83%83%E3%83%97%E3%83%87%E3%83%BC%E3%83%88%E8%A9%B3%E7%B4%B0"
                   v-model:selectedVer="selectedVer">
@@ -63,14 +80,6 @@
                   <li>バックアップ機能の修正(報告対応)</li>
                   </apps-diary-list-item>
                 </ul>
-                <br>
-            </div>
-            <div class="section">
-            <a class="review-button" href="https://itunes.apple.com/jp/app/id1506707650?mt=8&action=write-review">「★レビュー」に回答いただけると開発のモチベが上がります!</a><br>
-            <div style="color: grey;">
-            ※★のみでも大丈夫です!<br>
-            ※星リクエストはアプリ利用中に年3回程表示されます。
-            </div>
             </div>
             <div class="section">
             <h3> 大きな過去の更新</h3>
@@ -92,7 +101,7 @@ import { defineComponent,ref } from 'vue'
 import iconPath from "@/assets/apps/diary/favicon32.png";
 export default defineComponent({
     setup() {
-        const selectedVerRef = ref("2.0.1/2/3 (9/2-9/4)");
+        const selectedVerRef = ref("");
         const iconRef = ref();
         iconRef.value = iconPath;
         return {
