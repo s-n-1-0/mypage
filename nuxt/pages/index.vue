@@ -1,93 +1,163 @@
 <template>
-<div>
+  <div>
     <Head>
-        <Meta charset="utf-8"/>
-        <Title>I Love Tomatoese</Title>
-        <Link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <Link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
-        <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></Script>
-        <Script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></Script>
+      <Meta charset="utf-8" />
+      <Title>I Love Tomatoese</Title>
+      <Link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      />
+      <Link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+        crossorigin="anonymous"
+      />
+      <Script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"
+      ></Script>
+      <Script
+        src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"
+        crossorigin="anonymous"
+      ></Script>
     </Head>
-        <div id="app">
-        <h2 style="text-align: right; color: gray;">_(:3」∠)_</h2>
-        <p class="label-center position-absolute top-50 start-50 translate-middle">
-            <span>MADE</span>
-            <span> 👈Apps</span>
-            <span>Code👉</span>
-        </p>
-        <div id="twemoji">
-          <transition name="top-fade"><p id="top-button" v-show="!isStartItems" class="start-button position-absolute top-50 start-50 translate-middle" v-on:click="toggleStartItems()"><a class="position-absolute top-50 start-50 translate-middle">🍅</a></p></transition>
-          <div>
-              <p id="start-appsbutton" class="top-page-start-item" data-bs-toggle="offcanvas" href="#portfolioOffCanvas" :class="getStartItemClass()" v-on:click="clickedOffCanvasButton('appsBlock')"><a class="position-absolute top-50 start-50 translate-middle" >📱</a></p>
-              <p id="start-codesbutton" class="top-page-start-item" data-bs-toggle="offcanvas" v-on:click="clickedOffCanvasButton('codeBlock')" href="#portfolioOffCanvas" :class="getStartItemClass()"><a class="position-absolute top-50 start-50 translate-middle">📃</a></p>  
-              <p class="top-page-start-item" :class="getStartItemClass()"><a style="font-size: 5vmin;" v-on:click="clickedOthersButton()"><b>Others</b></a></p>
-              <p id="start-byebutton" class="top-page-start-item" :class="getStartItemClass()" v-on:click="toggleStartItems()"><a ><b>×</b></a></p>
-          </div>
+    <div id="app">
+      <h2 style="text-align: right; color: gray">_(:3」∠)_</h2>
+      <p
+        class="label-center position-absolute top-50 start-50 translate-middle"
+      >
+        <span>MADE</span>
+        <span> 👈Apps</span>
+        <span>Code👉</span>
+      </p>
+      <div id="twemoji">
+        <transition name="top-fade"
+          ><p
+            id="top-button"
+            v-show="!isStartItems"
+            class="start-button position-absolute top-50 start-50 translate-middle"
+            v-on:click="toggleStartItems()"
+          >
+            <a class="position-absolute top-50 start-50 translate-middle">🍅</a>
+          </p></transition
+        >
+        <div>
+          <p
+            id="start-appsbutton"
+            class="top-page-start-item"
+            data-bs-toggle="offcanvas"
+            href="#portfolioOffCanvas"
+            :class="getStartItemClass()"
+            v-on:click="clickedOffCanvasButton('appsBlock')"
+          >
+            <a class="position-absolute top-50 start-50 translate-middle">📱</a>
+          </p>
+          <p
+            id="start-codesbutton"
+            class="top-page-start-item"
+            data-bs-toggle="offcanvas"
+            v-on:click="clickedOffCanvasButton('codeBlock')"
+            href="#portfolioOffCanvas"
+            :class="getStartItemClass()"
+          >
+            <a class="position-absolute top-50 start-50 translate-middle">📃</a>
+          </p>
+          <p class="top-page-start-item" :class="getStartItemClass()">
+            <a style="font-size: 5vmin" v-on:click="clickedOthersButton()"
+              ><b>Others</b></a
+            >
+          </p>
+          <p
+            id="start-byebutton"
+            class="top-page-start-item"
+            :class="getStartItemClass()"
+            v-on:click="toggleStartItems()"
+          >
+            <a><b>×</b></a>
+          </p>
         </div>
-        <footer>
-            <span class="mb-3">sn-10.net</span>
-        </footer>
-        </div>
-        <div class="offcanvas offcanvas-bottom" tabindex="-1" id="portfolioOffCanvas" data-bs-backdrop="false" aria-labelledby="portfolioOffCanvasLabel" style="  background-color: #4d6a87ff; height: 100vh;">
-            <div class="offcanvas-header text-white">
-              <portfolio-tabs/>
-              <button type="button" class="btn-close btn-close-white text-reset close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <portfolio-body :offset="100" class="offcanvas-body"/>
-        </div>
-</div>
+      </div>
+      <footer>
+        <span class="mb-3">sn-10.net</span>
+      </footer>
+    </div>
+    <div
+      class="offcanvas offcanvas-bottom"
+      tabindex="-1"
+      id="portfolioOffCanvas"
+      data-bs-backdrop="false"
+      aria-labelledby="portfolioOffCanvasLabel"
+      style="background-color: #4d6a87ff; height: 100vh"
+    >
+      <div class="offcanvas-header text-white">
+        <portfolio-tabs />
+        <button
+          type="button"
+          class="btn-close btn-close-white text-reset close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <portfolio-body :offset="100" class="offcanvas-body" />
+    </div>
+  </div>
 </template>
 <script lang="ts">
-import { defineComponent,onMounted,ref,watch } from "vue";
+import { defineComponent, onMounted, ref, watch } from "vue";
 
 export default defineComponent({
-    head:{
-
-    },
+  head: {},
   setup() {
     const isStartItemsRef = ref(false);
-    onMounted(()=>{
-        //@ts-ignore
-        twemoji.parse(document.getElementById("twemoji"));
-        document.getElementById("app").animate([{opacity: '0'}, {opacity: '1'}], {
-          duration:500,
-          fill: 'forwards'
-        })
-    })
+    onMounted(() => {
+      //@ts-ignore
+      twemoji.parse(document.getElementById("twemoji"));
+      document
+        .getElementById("app")
+        .animate([{ opacity: "0" }, { opacity: "1" }], {
+          duration: 500,
+          fill: "forwards",
+        });
+    });
     return {
-      isStartItems:isStartItemsRef,
-      toggleStartItems(){
+      isStartItems: isStartItemsRef,
+      toggleStartItems() {
         isStartItemsRef.value = !isStartItemsRef.value;
       },
-      clickedOthersButton(){
-        window.location.href = 'https://blog.sn-10.net/p/blog-page.html';
+      clickedOthersButton() {
+        window.location.href = "https://blog.sn-10.net/p/blog-page.html";
       },
-      clickedOffCanvasButton(id:string){
-        var target = document.getElementById('portfolioOffCanvasBody');
+      clickedOffCanvasButton(id: string) {
+        var target = document.getElementById("portfolioOffCanvasBody");
         var block = document.getElementById(id);
         console.log(block.scrollTop);
-	      target.scrollTop = block.offsetTop - 75;
+        target.scrollTop = block.offsetTop - 75;
       },
-      getStartItemClass(){
+      getStartItemClass() {
         return {
-          'top-page-start-items-open':isStartItemsRef.value
-        }
-      }
-    }
+          "top-page-start-items-open": isStartItemsRef.value,
+        };
+      },
+    };
   },
 });
 </script>
 <style scoped>
-footer{
-  position: absolute; 
-  bottom: 0; left: 50%;
-  text-align: center; 
-  transform: translate(-50%, 0%); 
-  color:gray;
-  
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, 0%);
+  color: gray;
 }
 .start-button {
-    z-index: 1;
+  z-index: 1;
   width: 50vmin;
   height: 50vmin;
   max-height: 250px;
@@ -100,7 +170,7 @@ footer{
 }
 .start-button::after,
 .start-button::before {
-  content: '';
+  content: "";
   position: absolute;
   left: -25%;
   top: -25%;
@@ -109,34 +179,33 @@ footer{
   height: 150%;
   border-radius: 50%;
   opacity: 0;
-  animation:1.5s StartButton-Circle linear infinite;
+  animation: 1.5s StartButton-Circle linear infinite;
 }
 .start-button::before {
-  animation-delay:.75s; 
+  animation-delay: 0.75s;
 }
-@keyframes StartButton-Circle{
-  0%{
+@keyframes StartButton-Circle {
+  0% {
     transform: scale(0.7);
   }
-  25%{
-   opacity: 1;
+  25% {
+    opacity: 1;
   }
-  100%{
+  100% {
     transform: scale(1.15);
     opacity: 0;
   }
-  }
+}
 
-.start-button > a > img.emoji{
+.start-button > a > img.emoji {
   height: 20vmin;
   max-height: 100px;
 }
-.top-page-start-item > a{
+.top-page-start-item > a {
   font-size: 7vmin;
 }
 
-
-.top-page-start-item{
+.top-page-start-item {
   width: 20vmin;
   height: 20vmin;
   position: absolute;
@@ -152,81 +221,84 @@ footer{
   transition: transform 500ms;
 }
 .top-page-start-items-open:nth-child(1) {
-  transform: translate(-50%, -50%) rotate(90deg) translateY(30vmin) rotate(-90deg);
-  transition-timing-function:linear;
+  transform: translate(-50%, -50%) rotate(90deg) translateY(30vmin)
+    rotate(-90deg);
+  transition-timing-function: linear;
   transition-delay: 0s;
   transition: 0.5s;
 }
 .top-page-start-items-open:nth-child(2) {
-  transform: translate(-50%, -50%) rotate(-90deg) translateY(30vmin) rotate(90deg);
-  transition-timing-function:linear;
+  transform: translate(-50%, -50%) rotate(-90deg) translateY(30vmin)
+    rotate(90deg);
+  transition-timing-function: linear;
   transition-delay: 0.1s;
   transition: 0.5s;
 }
 .top-page-start-items-open:nth-child(3) {
-  transform: translate(-50%, -50%)  translateY(30vmin) ;
-  transition-timing-function:linear;
+  transform: translate(-50%, -50%) translateY(30vmin);
+  transition-timing-function: linear;
   transition-delay: 0.1s;
   transition: 0.5s;
 }
 .top-page-start-items-open:nth-child(4) {
   transform: translate(-50%, -50%) translateY(-30vmin);
-  transition-timing-function:linear;
+  transition-timing-function: linear;
   transition-delay: 0.1s;
   transition: 0.5s;
 }
-.label-center{
+.label-center {
   font-size: 7vmin;
   height: 10vmin;
   overflow-y: hidden;
   text-align: center;
 }
-.label-center span{
+.label-center span {
   position: relative;
   display: inline-block;
   width: 100%;
   height: 100%;
 }
-.label-center span{
+.label-center span {
   animation: ScrollUp 5s linear 1;
 }
 
-@keyframes ScrollUp{
- 25%{
-   top:0;
-   color:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,1));
- }
- 50%{
+@keyframes ScrollUp {
+  25% {
+    top: 0;
+    color: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+  }
+  50% {
     top: -100%;
   }
 
-  75%,95%{
+  75%,
+  95% {
     top: -200%;
   }
-  100%{
-    top:0%;
+  100% {
+    top: 0%;
   }
 }
-#app{
+#app {
   opacity: 0;
   background: inherit;
 }
-.top-page-start-item > a:not(.emoji-frame){
-    position: absolute;
-    top: 50%;
-    right: 0;
-    bottom: 0;
-    left: 0;
+.top-page-start-item > a:not(.emoji-frame) {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  left: 0;
   line-height: 0%;
   vertical-align: middle;
   user-select: none;
 }
-.top-page-start-item > a > img.emoji{
+.top-page-start-item > a > img.emoji {
   height: 7vmin;
   position: absolute;
-  top:50%;
-  left:50%;
-  transform: translate(-50%, -50%); 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .top-fade-enter-active,
 .top-fade-leave-active {
