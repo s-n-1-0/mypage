@@ -1,6 +1,6 @@
 <template>
     <div id="portfolioOffCanvasBody"
-        data-bs-spy="scroll"
+        :data-bs-spy="useSpy ? 'scroll' : ''"
         data-bs-target="#nav-tab"
         :data-bs-offset="String(offset)"
         >
@@ -99,6 +99,10 @@ export default defineComponent({
         offset:{ //これはあくまでtabsの表示のみに影響する(クリック位置には影響しない)
             type:Number,
             default:10
+        },
+        useSpy:{
+            type:Boolean,
+            default:true
         }
     },
     setup(){
