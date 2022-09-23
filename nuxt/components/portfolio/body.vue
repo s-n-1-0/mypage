@@ -207,21 +207,19 @@
             </div>
           </div>
           <button
-            class="carousel-control-prev bg-dark"
+            class="carousel-control carousel-control-prev"
             type="button"
             data-bs-target="#carouselExampleIndicators"
             data-bs-slide="prev"
-            style="width: 50px"
           >
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
           <button
-            class="carousel-control-next bg-dark"
+            class="carousel-control carousel-control-next"
             type="button"
             data-bs-target="#carouselExampleIndicators"
             data-bs-slide="next"
-            style="width: 50px"
           >
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
@@ -312,5 +310,10 @@ export default defineComponent({
 }
 .h-line:after {
   right: 0;
+}
+.carousel-control {
+  background-color: #4d6a87ff;
+  opacity: 1;
+  width: 30px;
 }
 </style>
