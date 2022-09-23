@@ -103,16 +103,19 @@
           aria-label="Close"
         ></button>
       </div>
-      <portfolio-body :offset="100" class="offcanvas-body" />
+      <div class="offcanvas-body" ref="scrollContentRef">
+        <portfolio-body :offset="100" :scroll-content-ref="scrollContentRef" />
+      </div>
     </div>
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, onMounted, ref, watch } from "vue";
+import { defineComponent, onMounted, ref } from "vue";
 
 export default defineComponent({
   head: {},
   setup() {
+    const scrollContentRef = ref(null);
     const isStartItemsRef = ref(false);
     onMounted(() => {
       //@ts-ignore
@@ -125,6 +128,7 @@ export default defineComponent({
         });
     });
     return {
+      scrollContentRef,
       isStartItems: isStartItemsRef,
       toggleStartItems() {
         isStartItemsRef.value = !isStartItemsRef.value;
@@ -133,9 +137,8 @@ export default defineComponent({
         window.location.href = "https://blog.sn-10.net/p/blog-page.html";
       },
       clickedOffCanvasButton(id: string) {
-        var target = document.getElementById("portfolioOffCanvasBody");
+        var target = scrollContentRef.value;
         var block = document.getElementById(id);
-        console.log(block.scrollTop);
         target.scrollTop = block.offsetTop - 75;
       },
       getStartItemClass() {

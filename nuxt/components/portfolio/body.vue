@@ -1,10 +1,5 @@
 <template>
-  <div
-    id="portfolioOffCanvasBody"
-    :data-bs-spy="useSpy ? 'scroll' : ''"
-    data-bs-target="#nav-tab"
-    :data-bs-offset="String(offset)"
-  >
+  <div class="h-100">
     <div
       id="appsBlock"
       class="slide-block text-center d-flex flex-column justify-content-between"
@@ -240,8 +235,8 @@
 import salmonAppIconPath from "@/assets/apps/subscription_manager/icon_r_x512.png";
 import qiitaIconPath from "@/assets/links/qiita-icon.png";
 import zennIconPath from "@/assets/links/zenn-icon.svg";
-import { defineComponent } from "vue";
-
+import { defineComponent, nextTick } from "vue";
+declare let bootstrap;
 export default defineComponent({
   props: {
     offset: {
@@ -249,14 +244,29 @@ export default defineComponent({
       type: Number,
       default: 10,
     },
-    useSpy: {
-      type: Boolean,
-      default: true,
-    },
+    scrollContentRef: Object,
   },
-  setup() {
+  setup(props) {
+    let { offset, scrollContentRef } = toRefs(props);
     let chikuwaAppModal = ref(null);
-    onMounted(() => {});
+    onMounted(() => {
+      nextTick(() => {
+        if (scrollContentRef.value) {
+          let target = "#nav-tab";
+          var scrollSpy = new bootstrap.ScrollSpy(scrollContentRef.value, {
+            target,
+            offset: offset.value,
+          });
+          setTimeout(() => {
+            scrollSpy?.dispose();
+            scrollSpy = new bootstrap.ScrollSpy(scrollContentRef.value, {
+              target,
+              offset: offset.value,
+            });
+          }, 500);
+        }
+      });
+    });
     return {
       salmonAppIconPath,
       qiitaIconPath,
