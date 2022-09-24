@@ -128,105 +128,40 @@
     :modal-dialog-settings="['modal-xl', 'modal-dialog-scrollable']"
   >
     <template v-slot:header><h3>ちくわ日記</h3></template>
-    <div class="row text-break app-modal-body">
-      <div class="col-lg-4 d-flex flex-column justify-content-around">
-        <div>
-          このアプリは大学2年生の頃にコロナ禍で暇だったので作りました。<br />
-          日記はもちろん書籍記録などいろいろ機能がついてます。
-          <br />
-          詳細はnoteを参照ください。
-          <div class="text-end p-2">
-            <a
-              href="https://note.com/sn_10/m/md21633e1f57b"
-              class="btn btn-outline-success"
-              >詳細note</a
-            >
-          </div>
+    <portfolio-body-modal-template
+      :images="[
+        'https://i.gyazo.com/e57fbae410f85a3407427d0c6f149b35.png',
+        'https://i.gyazo.com/0fbcf5599c161b942a378589008f96d3.png',
+        'https://i.gyazo.com/f7bd6b65e4287eb921a5f6cf49b6b11e.png',
+      ]"
+    >
+      <template v-slot:lt>
+        このアプリは大学2年生の頃にコロナ禍で暇だったので作りました。<br />
+        日記はもちろん書籍記録などいろいろ機能がついてます。
+        <br />
+        詳細はnoteを参照ください。
+        <div class="text-end p-2">
+          <a
+            href="https://note.com/sn_10/m/md21633e1f57b"
+            class="btn btn-outline-success"
+            >詳細note</a
+          >
         </div>
+      </template>
+      <template v-slot:lt-app>
         <apps-cell
           title="ちくわ日記"
           link-url="https://apps.apple.com/jp/app/id1506707650?platform=iphone"
           image-url="https://user-images.githubusercontent.com/72431055/119313937-160a3b00-bcaf-11eb-9af6-5ff1938c00ff.png"
           platform="ios"
           :max-cell-width-px="150"
-          class="border border-3 rounded-3 mx-auto text-center"
-          style="width: fit-content"
         ></apps-cell>
-        <div class="w-100 text-secondary text-center">
-          <h4 class="h-line mx-auto" style="width: fit-content">使用技術</h4>
-          <span>v1 : Realm Swift(UIKit)</span><br />
-          <span>v2 : CoreData Swift(SwiftUI)</span>
-        </div>
-      </div>
-      <div class="col-lg-8 d-flex align-items-center">
-        <div
-          id="carouselExampleIndicators"
-          class="carousel slide pt-2 pb-2"
-          data-bs-ride="carousel"
-        >
-          <div class="carousel-indicators">
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="0"
-              class="active"
-              aria-current="true"
-              aria-label="Slide 1"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="1"
-              aria-label="Slide 2"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="2"
-              aria-label="Slide 3"
-            ></button>
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img
-                src="https://i.gyazo.com/e57fbae410f85a3407427d0c6f149b35.png"
-                class="d-block w-100"
-              />
-            </div>
-            <div class="carousel-item">
-              <img
-                src="https://i.gyazo.com/0fbcf5599c161b942a378589008f96d3.png"
-                class="d-block w-100"
-              />
-            </div>
-            <div class="carousel-item">
-              <img
-                src="https://i.gyazo.com/f7bd6b65e4287eb921a5f6cf49b6b11e.png"
-                class="d-block w-100"
-              />
-            </div>
-          </div>
-          <button
-            class="carousel-control carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </div>
-    </div>
+      </template>
+      <template v-slot:lt-techs>
+        <span>v1 : Realm Swift(UIKit)</span><br />
+        <span>v2 : CoreData Swift(SwiftUI)</span>
+      </template>
+    </portfolio-body-modal-template>
   </bs-modal>
 </template>
 <script lang="ts">
@@ -289,31 +224,5 @@ export default defineComponent({
 }
 .app-modal-body {
   min-height: 75vh;
-}
-.h-line {
-  position: relative;
-  padding: 0 55px;
-}
-.h-line:before,
-.h-line:after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  display: inline-block;
-  width: 45px;
-  height: 1px;
-  background-color: rgb(184, 183, 183);
-}
-
-.h-line:before {
-  left: 0;
-}
-.h-line:after {
-  right: 0;
-}
-.carousel-control {
-  background-color: #4d6a87ff;
-  opacity: 1;
-  width: 30px;
 }
 </style>
