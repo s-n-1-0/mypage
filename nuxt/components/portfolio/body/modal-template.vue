@@ -5,10 +5,14 @@
         <slot name="lt"></slot>
       </div>
       <div
+        v-if="$slots['lt-app']"
         class="border border-3 rounded-3 mx-auto text-center"
         style="width: fit-content"
       >
         <slot name="lt-app"></slot>
+      </div>
+      <div v-else>
+        <slot name="lt-app-else"></slot>
       </div>
       <div class="w-100 text-secondary text-center">
         <h4 class="h-line mx-auto" style="width: fit-content">使用技術</h4>
@@ -67,7 +71,7 @@ export default defineComponent({
     images: Array<string>,
   },
   setup() {
-    let carouselId = ref(uuidv4());
+    let carouselId = ref("carousel-" + uuidv4().replaceAll("-", ""));
     return {
       carouselId,
     };

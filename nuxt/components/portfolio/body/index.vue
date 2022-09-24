@@ -26,10 +26,11 @@
         ></apps-cell>
         <apps-cell
           title="z-umon"
-          link-url="https://z-umon.net"
+          link-url="#"
           image-url="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F515818%2Fafacf6a3-a7a2-4b69-8b56-7cd96deb4e87.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&w=1400&fit=max&s=b892f131eabb4f471fd6a28ede9f0ebc"
           platform="web"
           :max-cell-width-px="300"
+          v-on:click="clickedModalButton(zumonAppModal)"
         ></apps-cell>
       </div>
       <div>
@@ -209,6 +210,39 @@
       </template>
     </portfolio-body-modal-template>
   </bs-modal>
+  <bs-modal
+    ref="zumonAppModal"
+    :modal-dialog-settings="['modal-xl', 'modal-dialog-scrollable']"
+    class="bs-modal"
+  >
+    <template v-slot:header><h3>z-umon</h3></template>
+    <portfolio-body-modal-template
+      :images="[
+        'https://i.gyazo.com/1ae5feb2ac4838aae000bd87abfd365f.jpg',
+        'https://i.gyazo.com/843ae5b2d8af615b1df499e51d4d773d.jpg',
+      ]"
+    >
+      <template v-slot:lt>
+        マークダウン投稿サイトです。<br />
+        サーバーレスWebアプリを作ってみたかったので開発しました。
+      </template>
+      <template v-slot:lt-app-else>
+        <div class="text-center">
+          <a
+            type="button"
+            class="btn btn-outline-dark"
+            href="https://z-umon.net"
+          >
+            サイトリンク
+          </a>
+        </div>
+      </template>
+      <template v-slot:lt-techs>
+        <span>TypeScript</span><br />
+        <span>Express,Firebase</span>
+      </template>
+    </portfolio-body-modal-template>
+  </bs-modal>
 </template>
 <script lang="ts">
 import salmonAppIconPath from "@/assets/apps/subscription_manager/icon_r_x512.png";
@@ -229,6 +263,7 @@ export default defineComponent({
     let { offset, scrollContentRef } = toRefs(props);
     let chikuwaAppModal = ref(null);
     let salmonAppModal = ref(null);
+    let zumonAppModal = ref(null);
     onMounted(() => {
       nextTick(() => {
         if (scrollContentRef.value) {
@@ -253,6 +288,7 @@ export default defineComponent({
       zennIconPath,
       chikuwaAppModal,
       salmonAppModal,
+      zumonAppModal,
       clickedModalButton(modalRef: any) {
         modalRef.showModal();
       },
