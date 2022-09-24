@@ -37,7 +37,12 @@
           ></button>
         </div>
         <div class="carousel-inner">
-          <div v-for="img in images" class="carousel-item active">
+          <div
+            v-for="(img, i) in images"
+            :key="i"
+            class="carousel-item"
+            v-bind:class="{ active: i == 0 }"
+          >
             <img :src="img" class="d-block w-100" />
           </div>
         </div>
