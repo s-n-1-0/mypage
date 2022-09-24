@@ -29,6 +29,7 @@
     <div id="app">
       <h2 style="text-align: right; color: gray">_(:3」∠)_</h2>
       <p
+        v-if="isStartItems"
         class="label-center position-absolute top-50 start-50 translate-middle"
       >
         <span>MADE</span>
