@@ -17,11 +17,12 @@
         ></apps-cell>
         <apps-cell
           title="サーモンマネージャー(サブスク管理)"
-          link-url="https://apps.apple.com/jp/app/id1615709874"
+          link-url="#"
           :image-url="salmonAppIconPath"
           platform="ios"
           :max-cell-width-px="150"
           :is-paid="true"
+          v-on:click="clickedModalButton(salmonAppModal)"
         ></apps-cell>
         <apps-cell
           title="z-umon"
@@ -164,6 +165,50 @@
       </template>
     </portfolio-body-modal-template>
   </bs-modal>
+  <bs-modal
+    ref="salmonAppModal"
+    :modal-dialog-settings="['modal-xl', 'modal-dialog-scrollable']"
+    class="bs-modal"
+  >
+    <template v-slot:header
+      ><h3>
+        サーモンマネージャー
+        <span class="badge bg-info">Paid</span>
+      </h3></template
+    >
+    <portfolio-body-modal-template
+      :images="[
+        'https://i.gyazo.com/598a25edb1821860002d592bace8dbcd.png',
+        'https://i.gyazo.com/32f5bf537a5a0576eb4ff798aa5306b5.png',
+        'https://i.gyazo.com/9c08e2d713a7ace733d19b628aa96412.png',
+      ]"
+    >
+      <template v-slot:lt>
+        サブスクリプションの自動更新を忘れて意図しない課金を防ぐために制作しました。
+        <br />
+        詳細はnoteを参照ください。
+        <div class="text-end p-2">
+          <a
+            href="https://note.com/sn_10/n/n77990534106b"
+            class="btn btn-outline-success"
+            >詳細note</a
+          >
+        </div>
+      </template>
+      <template v-slot:lt-app>
+        <apps-cell
+          title="サーモンマネージャー(サブスク管理)"
+          link-url="#"
+          :image-url="salmonAppIconPath"
+          platform="ios"
+          :max-cell-width-px="150"
+        ></apps-cell>
+      </template>
+      <template v-slot:lt-techs>
+        <span>CoreData Swift(SwiftUI)</span>
+      </template>
+    </portfolio-body-modal-template>
+  </bs-modal>
 </template>
 <script lang="ts">
 import salmonAppIconPath from "@/assets/apps/subscription_manager/icon_r_x512.png";
@@ -183,6 +228,7 @@ export default defineComponent({
   setup(props) {
     let { offset, scrollContentRef } = toRefs(props);
     let chikuwaAppModal = ref(null);
+    let salmonAppModal = ref(null);
     onMounted(() => {
       nextTick(() => {
         if (scrollContentRef.value) {
@@ -206,6 +252,7 @@ export default defineComponent({
       qiitaIconPath,
       zennIconPath,
       chikuwaAppModal,
+      salmonAppModal,
       clickedModalButton(modalRef: any) {
         modalRef.showModal();
       },
