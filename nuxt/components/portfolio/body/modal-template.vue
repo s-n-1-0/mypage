@@ -17,7 +17,7 @@
     </div>
     <div class="col-lg-8 d-flex align-items-center">
       <div
-        id="carouselExampleIndicators"
+        :id="carouselId"
         class="carousel slide pt-2 pb-2"
         data-bs-ride="carousel"
       >
@@ -25,7 +25,7 @@
           <button
             v-for="i in images.length"
             type="button"
-            data-bs-target="#carouselExampleIndicators"
+            :data-bs-target="'#' + carouselId"
             :data-bs-slide-to="i - 1"
             class="active"
             aria-current="true"
@@ -40,7 +40,7 @@
         <button
           class="carousel-control carousel-control-prev"
           type="button"
-          data-bs-target="#carouselExampleIndicators"
+          :data-bs-target="'#' + carouselId"
           data-bs-slide="prev"
         >
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -49,7 +49,7 @@
         <button
           class="carousel-control carousel-control-next"
           type="button"
-          data-bs-target="#carouselExampleIndicators"
+          :data-bs-target="'#' + carouselId"
           data-bs-slide="next"
         >
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
@@ -60,12 +60,18 @@
   </div>
 </template>
 <script lang="ts">
+import { v4 as uuidv4 } from "uuid";
 import { defineComponent } from "vue";
 export default defineComponent({
   props: {
     images: Array<string>,
   },
-  setup() {},
+  setup() {
+    let carouselId = ref(uuidv4());
+    return {
+      carouselId,
+    };
+  },
 });
 </script>
 <style scoped>
