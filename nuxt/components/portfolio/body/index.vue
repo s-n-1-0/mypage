@@ -126,6 +126,7 @@
   <bs-modal
     ref="chikuwaAppModal"
     :modal-dialog-settings="['modal-xl', 'modal-dialog-scrollable']"
+    class="bs-modal"
   >
     <template v-slot:header><h3>ちくわ日記</h3></template>
     <portfolio-body-modal-template
@@ -213,6 +214,9 @@ export default defineComponent({
 });
 </script>
 <style scoped>
+.bs-modal {
+  background: rgba(41, 41, 41, 0.781);
+}
 .slide-block {
   position: relative;
   overflow-wrap: break-word;
