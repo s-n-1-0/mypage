@@ -150,8 +150,8 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, ref } from "vue";
 import iconPath from "@/assets/apps/diary/favicon32.png";
+import { defineComponent, ref } from "vue";
 export default defineComponent({
   setup() {
     const selectedVerRef = ref("");
@@ -186,7 +186,7 @@ h3 {
 }
 .section {
   background-color: white;
-  margin: 5% 5%;
+  margin: 25px 5%;
   padding: 10px 5%;
   border-radius: 10px;
 }
