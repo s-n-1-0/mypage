@@ -231,7 +231,7 @@
           <a
             type="button"
             class="btn btn-outline-dark"
-            href="https://z-umon.net"
+            href="https://z-umon.sn-10.net"
           >
             サイトリンク
           </a>

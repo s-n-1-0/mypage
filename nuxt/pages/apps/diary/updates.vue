@@ -138,7 +138,7 @@
         <div style="margin-left: auto; margin-right: auto">
           <a
             class="button"
-            href="https://z-umon.net/space/id/2AUDRZZOxvZyUExSnS9P"
+            href="https://z-umon.sn-10.net/space/id/2AUDRZZOxvZyUExSnS9P"
             >1.15.0</a
           ><br />
           <a class="button" href="https://note.com/sn_10/n/n88c34e3711f6"
