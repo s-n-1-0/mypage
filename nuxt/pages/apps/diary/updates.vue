@@ -40,13 +40,7 @@
     <div>
       <div class="section">
         <h3>最近の更新</h3>
-        <span
-          >※9/26 v2.1.2 : UI修正を行いました(<a
-            class="text-success"
-            href="https://note.com/sn_10/n/n9c24576acbc8"
-            >note</a
-          >)</span
-        >
+        <span>※10/6 v2.1.4 : タグ設定のバグを修正しました。</span>
         <div class="card mb-2">
           <div class="card-body">
             <h5 class="card-title">v2.1.0</h5>
