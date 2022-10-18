@@ -287,6 +287,17 @@ footer {
   opacity: 0;
   background: inherit;
 }
+.top-fade-enter-active,
+.top-fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.top-fade-enter-from,
+.top-fade-leave-to {
+  opacity: 0;
+}
+</style>
+<style>
 .top-page-start-item > a:not(.emoji-frame) {
   position: absolute;
   top: 50%;
@@ -298,19 +309,10 @@ footer {
   user-select: none;
 }
 .top-page-start-item > a > img.emoji {
-  height: 7vmin;
+  height: 90%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-.top-fade-enter-active,
-.top-fade-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.top-fade-enter-from,
-.top-fade-leave-to {
-  opacity: 0;
 }
 </style>
