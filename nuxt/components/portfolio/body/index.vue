@@ -32,6 +32,13 @@
           :max-cell-width-px="300"
           v-on:click="clickedModalButton(zumonAppModal)"
         ></apps-cell>
+        <apps-cell
+          title="書籍共有サイト"
+          link-url="https://books.sn-10.net/ja/share?isbn=9784088831909&from=openbd&comment=%E9%9D%A2%E7%99%BD%E3%81%84%E3%81%A7%E3%81%99%E3%82%88%E3%80%82"
+          image-url="https://i.gyazo.com/3a5ed159f6d511b6fdd1aa061c4e37b3.png"
+          platform="web"
+          :max-cell-width-px="300"
+        ></apps-cell>
       </div>
       <div>
         <hr />
