@@ -9,7 +9,7 @@
   "devDependencies": {
     "@types/bootstrap": "^5.2.0",
     "@types/uuid": "^8.3.4",
-    "nuxt": "3.0.0-rc.8",
+    "nuxt": "3.0.0-rc.12",
     "nuxt-svg-loader": "^1.2.0"
   },
   "dependencies": {
