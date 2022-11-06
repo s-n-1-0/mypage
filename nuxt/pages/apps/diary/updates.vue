@@ -40,33 +40,16 @@
     <div>
       <div class="section">
         <h3>最近の更新</h3>
-        <span>※10/6 v2.1.4 : タグ設定のバグを修正しました。</span>
         <div class="card mb-2">
           <div class="card-body">
-            <h5 class="card-title">v2.1.0</h5>
-            <h6 class="card-subtitle mb-2 text-muted text-end">9/17より</h6>
+            <h5 class="card-title">v2.2.0</h5>
+            <h6 class="card-subtitle mb-2 text-muted text-end">11月上旬</h6>
             <p class="card-text">
-              要望からSNS共有機能を追加しました。アップデートにはバグ修正や小さな機能追加も含まれます。
+              ショートカットウィジェットや記録帳間アクティビティを追加しました。
             </p>
             <div class="text-end">
               <a
-                href="https://note.com/sn_10/n/n603c51bd974e"
-                class="btn btn-outline-success"
-                >詳細note</a
-              >
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">ちくわ日記2リリース🎉🎉🎉</h5>
-            <h6 class="card-subtitle mb-2 text-muted text-end">9/1より</h6>
-            <p class="card-text">
-              大規模改修を行いました。iPad対応、端末間同期などの機能を追加しました!<br />これからも改修は続けて参ります!　よろしくお願いします!!!
-            </p>
-            <div class="text-end">
-              <a
-                href="https://note.com/sn_10/m/md21633e1f57b"
+                href="https://note.com/sn_10/n/nd67f494894de"
                 class="btn btn-outline-success"
                 >詳細note</a
               >
@@ -104,32 +87,19 @@
           >
             <li>外部パッケージの更新</li>
           </apps-diary-list-item>
-          <apps-diary-list-item
-            ver="1.15.6 (5/8)"
-            link=""
-            v-model:selectedVer="selectedVer"
-          >
-            <li>特定の操作によってアプリが強制終了するバグの修正</li>
-          </apps-diary-list-item>
-          <apps-diary-list-item
-            ver="1.15.5 (2/28)"
-            link="https://scrapbox.io/diary10/1.15.X_%E3%82%A2%E3%83%83%E3%83%97%E3%83%87%E3%83%BC%E3%83%88%E8%A9%B3%E7%B4%B0#621874c5d0c8da0000fec3ee"
-            v-model:selectedVer="selectedVer"
-          >
-            <li>アプリの安定性向上アップデート(バグ修正等)</li>
-          </apps-diary-list-item>
-          <apps-diary-list-item
-            ver="1.15.4 (1/4)"
-            link=""
-            v-model:selectedVer="selectedVer"
-          >
-            <li>バックアップ機能の修正(報告対応)</li>
-          </apps-diary-list-item>
         </ul>
       </div>
       <div class="section">
         <h3>大きな過去の更新</h3>
         <div style="margin-left: auto; margin-right: auto">
+          <a class="button" href="https://note.com/sn_10/n/n603c51bd974e"
+            >2.1.0</a
+          ><br />
+          <a
+            class="button review-button"
+            href="https://note.com/sn_10/n/n5f31ddffd602"
+            >2.0.0</a
+          ><br />
           <a
             class="button"
             href="https://z-umon.sn-10.net/space/id/2AUDRZZOxvZyUExSnS9P"
