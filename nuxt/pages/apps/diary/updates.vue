@@ -1,7 +1,7 @@
 <template>
   <Head>
     <Title>ちくわ日記 - アップデート情報</Title>
-    <Link rel="shortcut icon" :href="iconRef" />
+    <Link id="favicon" rel="icon" type="image/png" :href="iconRef" />
     <Link rel="canonical" href="https://hello.sn-10.net/apps/diary/updates" />
     <Link
       rel="stylesheet"
