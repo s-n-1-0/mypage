@@ -40,22 +40,18 @@
     <div>
       <div class="section">
         <h3>最近の更新</h3>
-        <div class="card mb-2">
-          <div class="card-body">
-            <h5 class="card-title">v2.2.0</h5>
-            <h6 class="card-subtitle mb-2 text-muted text-end">11月上旬</h6>
-            <p class="card-text">
-              ショートカットウィジェットや記録帳間アクティビティを追加しました。
-            </p>
-            <div class="text-end">
-              <a
-                href="https://note.com/sn_10/n/nd67f494894de"
-                class="btn btn-outline-success"
-                >詳細note</a
-              >
-            </div>
-          </div>
-        </div>
+        <apps-diary-list-item
+          ver="2.2.2(12月11日)"
+          link="https://scrapbox.io/diary10/2.2.X_%E3%82%A2%E3%83%83%E3%83%97%E3%83%87%E3%83%BC%E3%83%88%E5%86%85%E5%AE%B9#6395ec4dd0c8da0000ce5109"
+          v-model:selectedVer="selectedVer"
+        >
+          <li>要望・バグ報告フォームをアプリ内に設置しました。</li>
+          <ul style="margin: 0 0 0 1em; padding: 0">
+            <li>簡単に要望などの報告ができるようになりました。</li>
+          </ul>
+          <li>コレクション削除時アプリがクラッシュするバグの修正しました。</li>
+          <li>その他 UI・翻訳・バグなどを修正しました。</li>
+        </apps-diary-list-item>
         <br />
       </div>
       <div class="section">
@@ -70,28 +66,11 @@
         </div>
       </div>
       <div class="section">
-        <ul class="list-group">
-          <apps-diary-list-item
-            ver="2.0.1/2/3 (9/2-9/4)"
-            link="https://scrapbox.io/diary10/2.0.X_%E3%82%A2%E3%83%83%E3%83%97%E3%83%87%E3%83%BC%E3%83%88%E8%A9%B3%E7%B4%B0"
-            v-model:selectedVer="selectedVer"
-          >
-            <li>2.0.1 : 問い合わせメールアドレスの追加</li>
-            <li>2.0.2 : 報告頂いていたコレクションに関する複数のバグの修正</li>
-            <li>2.0.3 : UI微修正(アイコン等の修正)</li>
-          </apps-diary-list-item>
-          <apps-diary-list-item
-            ver="1.15.7 (6/20)"
-            link=""
-            v-model:selectedVer="selectedVer"
-          >
-            <li>外部パッケージの更新</li>
-          </apps-diary-list-item>
-        </ul>
-      </div>
-      <div class="section">
         <h3>大きな過去の更新</h3>
         <div style="margin-left: auto; margin-right: auto">
+          <a class="button" href="https://note.com/sn_10/n/nd67f494894de"
+            >2.2.0</a
+          ><br />
           <a class="button" href="https://note.com/sn_10/n/n603c51bd974e"
             >2.1.0</a
           ><br />
@@ -125,7 +104,7 @@ import iconPath from "@/assets/apps/diary/favicon32.png";
 import { defineComponent, ref } from "vue";
 export default defineComponent({
   setup() {
-    const selectedVerRef = ref("");
+    const selectedVerRef = ref("2.2.2(12月11日)");
     const iconRef = ref();
     iconRef.value = iconPath;
     return {
