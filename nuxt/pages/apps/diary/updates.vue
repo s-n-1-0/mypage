@@ -38,7 +38,16 @@
       <div class="section">
         <h3>最近の更新</h3>
         <apps-diary-list-item
-          ver="2.2.2(12月11日)"
+          ver="v2.2.3 (12月末)"
+          link=""
+          v-model:selectedVer="selectedVer"
+        >
+          <li>
+            iOS16で発生していたウィジェットが正しく表示されないバグを解決しました。
+          </li>
+        </apps-diary-list-item>
+        <apps-diary-list-item
+          ver="v2.2.2 (12月11日)"
           link="https://scrapbox.io/diary10/2.2.X_%E3%82%A2%E3%83%83%E3%83%97%E3%83%87%E3%83%BC%E3%83%88%E5%86%85%E5%AE%B9#6395ec4dd0c8da0000ce5109"
           v-model:selectedVer="selectedVer"
         >
@@ -101,7 +110,7 @@ import iconPath from "@/assets/apps/diary/favicon32.png";
 import { defineComponent, ref } from "vue";
 export default defineComponent({
   setup() {
-    const selectedVerRef = ref("2.2.2(12月11日)");
+    const selectedVerRef = ref("v2.2.3 (12月末)");
     const iconRef = ref();
     iconRef.value = iconPath;
     return {
