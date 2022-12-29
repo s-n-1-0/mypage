@@ -17,6 +17,7 @@
   "dependencies": {
     "bootstrap": "^5.2.0",
     "bs-modal-vue": "^1.0.2",
+    "tw-elements": "^1.0.0-alpha13",
     "uuid": "^9.0.0"
   }
 }
