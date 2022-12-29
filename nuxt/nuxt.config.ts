@@ -4,6 +4,7 @@ import { defineNuxtConfig } from "nuxt";
 export default defineNuxtConfig({
   ssr: true,
   target: "static",
+  buildModules: ["@nuxtjs/tailwindcss"],
   generate: {
     dir: "app",
   },
@@ -35,6 +36,6 @@ export default defineNuxtConfig({
       ],
     },
   },
-  css: ["@/assets/common.css"],
+  css: ["@/assets/common.css", "@/assets/css/tailwind.css"],
   modules: ["nuxt-svg-loader"],
 });
