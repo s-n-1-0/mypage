@@ -1,15 +1,18 @@
 <template>
-  <a :href="linkUrl" class="text-decoration-none d-block">
-    <div class="position-relative">
-      <img :src="imageUrl" :style="`max-width:${maxCellWidthPx}px;`" /><br />
-      <small class="text-secondary"
-        >{{ title }}<br /><i :class="makeAppIconClass()"></i>
-        {{ getPlatformName() }}</small
-      >
-      <span
-        v-if="isPaid"
-        class="badge position-absolute top-0 start-100 translate-middle bg-info"
-        >Paid</span
+  <a :href="linkUrl" class="no-underline block">
+    <div>
+      <div class="relative mx-auto w-fit">
+        <img :src="imageUrl" :style="`max-width:${maxCellWidthPx}px;`" />
+        <span
+          v-if="isPaid"
+          class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 absolute top-0 left-full translate-middle"
+          >Paid</span
+        >
+      </div>
+      <br />
+      <span class="font-bold">{{ title }}</span
+      ><br /><small class="text-gray-600"
+        ><i :class="makeAppIconClass()"></i> {{ getPlatformName() }}</small
       >
     </div>
   </a>

@@ -30,7 +30,7 @@
       <h2 style="text-align: right; color: gray">_(:3」∠)_</h2>
       <p
         v-if="isStartItems"
-        class="label-center position-absolute top-50 start-50 translate-middle"
+        class="label-center absolute top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2"
       >
         <span>MADE</span>
         <span> 👈Apps</span>
@@ -41,10 +41,13 @@
           ><p
             id="top-button"
             v-show="!isStartItems"
-            class="start-button position-absolute top-50 start-50 translate-middle"
+            class="start-button absolute top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2"
             v-on:click="toggleStartItems()"
           >
-            <a class="position-absolute top-50 start-50 translate-middle">🍅</a>
+            <a
+              class="absolute top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2"
+              >🍅</a
+            >
           </p></transition
         >
         <div>
@@ -52,11 +55,13 @@
             id="start-appsbutton"
             class="top-page-start-item"
             data-bs-toggle="offcanvas"
+            data-bs-target="#portfolioOffCanvas"
+            aria-controls="portfolioOffCanvas"
             href="#portfolioOffCanvas"
             :class="getStartItemClass()"
             v-on:click="clickedOffCanvasButton('appsBlock')"
           >
-            <a class="position-absolute top-50 start-50 translate-middle">📱</a>
+            <a class="absolute top-2/4 left-2/4 -translate-y-1/2">📱</a>
           </p>
           <p
             id="start-codesbutton"
@@ -66,7 +71,7 @@
             href="#portfolioOffCanvas"
             :class="getStartItemClass()"
           >
-            <a class="position-absolute top-50 start-50 translate-middle">📃</a>
+            <a class="absolute top-2/4 left-2/4 -translate-y-1/2">📃</a>
           </p>
           <p class="top-page-start-item" :class="getStartItemClass()">
             <a style="font-size: 5vmin" v-on:click="clickedOthersButton()"
@@ -87,24 +92,29 @@
         <span class="mb-3">sn-10.net</span>
       </footer>
     </div>
+
     <div
-      class="offcanvas offcanvas-bottom"
+      class="offcanvas offcanvas-bottom fixed bottom-0 flex flex-col max-w-full bg-clip-padding shadow-sm outline-none transition duration-300 ease-in-out text-gray-700 left-0 right-0 border-none h-1/3 max-h-full"
       tabindex="-1"
       id="portfolioOffCanvas"
-      data-bs-backdrop="false"
       aria-labelledby="portfolioOffCanvasLabel"
       style="background-color: #4d6a87ff; height: 100vh"
     >
-      <div class="offcanvas-header text-white">
+      <div class="offcanvas-header flex items-center justify-between p-4">
         <portfolio-tabs />
         <button
           type="button"
-          class="btn-close btn-close-white text-reset close"
+          class="btn box-content text-2xl p-2 -my-5 -mr-2 text-white border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-white hover:opacity-75 hover:no-underline"
           data-bs-dismiss="offcanvas"
           aria-label="Close"
-        ></button>
+        >
+          <i class="fa fa-remove" aria-hidden="true"></i>
+        </button>
       </div>
-      <div class="offcanvas-body" ref="scrollContentRef">
+      <div
+        class="offcanvas-body flex-grow p-4 overflow-y-auto small"
+        ref="scrollContentRef"
+      >
         <portfolio-body :offset="100" :scroll-content-ref="scrollContentRef" />
       </div>
     </div>

@@ -1,24 +1,36 @@
 <template>
-  <nav>
-    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-      <a class="nav-link offcanvas-nav-item nav-link-app" href="#appsBlock"
-        >App</a
+  <div class="flex items-center justify-center">
+    <div
+      class="inline-flex shadow-md hover:shadow-lg focus:shadow-lg"
+      role="group"
+    >
+      <a
+        type="button"
+        class="rounded-l inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase focus:outline-none focus:ring-0 active:bg-blue-800 transition duration-150 ease-in-out"
+        href="#appsBlock"
+        >📱 Apps</a
       >
-      <a class="nav-link offcanvas-nav-item nav-link-art" href="#artBlock"
-        >Art</a
+      <a
+        type="button"
+        class="inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase focus:outline-none focus:ring-0 active:bg-blue-800 transition duration-150 ease-in-out"
+        href="#artBlock"
+        >🎨 Art</a
       >
-      <a class="nav-link offcanvas-nav-item" href="#codeBlock">Code</a>
+      <a
+        type="button"
+        class="rounded-r inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase focus:outline-none focus:ring-0 active:bg-blue-800 transition duration-150 ease-in-out"
+        href="#codeBlock"
+        >📃 Code</a
+      >
     </div>
-  </nav>
+  </div>
 </template>
 <style scoped>
-.offcanvas-nav-item {
-  color: white;
+a {
+  background-color: rgb(42, 59, 75);
 }
-.nav-link-app.active:after {
-  content: "s";
-}
-.nav-link-art.active:after {
-  content: "work";
+a:focus,
+a:hover {
+  background-color: #4d6a87ff;
 }
 </style>
