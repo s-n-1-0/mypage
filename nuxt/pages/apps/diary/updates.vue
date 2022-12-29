@@ -21,7 +21,7 @@
     <br />
     <div style="height: 60px; width: 100%; display: table; text-align: center">
       <div style="display: table-cell; vertical-align: middle">
-        <h2>
+        <h2 class="text-2xl">
           <i class="fa-solid fa-wrench" style="transform: scale(-1, 1)"></i>
           アップデート情報 <i class="fa-solid fa-wrench"></i>
         </h2>
