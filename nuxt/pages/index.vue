@@ -16,73 +16,74 @@
         crossorigin="anonymous"
       ></Script>
     </Head>
-    <div id="app">
-      <h2 style="text-align: right; color: gray">_(:3」∠)_</h2>
-      <p
-        v-if="isStartItems"
-        class="label-center absolute top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2"
-      >
-        <span>MADE</span>
-        <span> 👈Apps</span>
-        <span>Code👉</span>
-      </p>
-      <div id="twemoji">
-        <transition name="top-fade"
-          ><p
-            id="top-button"
-            v-show="!isStartItems"
-            class="start-button absolute top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2"
-            v-on:click="toggleStartItems()"
-          >
-            <a
-              class="absolute top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2"
-              >🍅</a
-            >
-          </p></transition
+    <div id="twemoji" class="block">
+      <Timeline />
+      <div id="app" class="relative" style="height: 100vh">
+        <p
+          v-if="isStartItems"
+          class="label-center absolute top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2"
         >
+          <span>MADE</span>
+          <span> 👈Apps</span>
+          <span>Code👉</span>
+        </p>
         <div>
-          <p
-            id="start-appsbutton"
-            class="top-page-start-item"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#portfolioOffCanvas"
-            aria-controls="portfolioOffCanvas"
-            href="#portfolioOffCanvas"
-            :class="getStartItemClass()"
-            v-on:click="clickedOffCanvasButton('appsBlock')"
-          >
-            <a class="absolute top-2/4 left-2/4 -translate-y-1/2">📱</a>
-          </p>
-          <p
-            id="start-codesbutton"
-            class="top-page-start-item"
-            data-bs-toggle="offcanvas"
-            v-on:click="clickedOffCanvasButton('codeBlock')"
-            href="#portfolioOffCanvas"
-            :class="getStartItemClass()"
-          >
-            <a class="absolute top-2/4 left-2/4 -translate-y-1/2">📃</a>
-          </p>
-          <p class="top-page-start-item" :class="getStartItemClass()">
-            <a style="font-size: 5vmin" v-on:click="clickedOthersButton()"
-              ><b>Others</b></a
+          <transition name="top-fade"
+            ><p
+              id="top-button"
+              v-show="!isStartItems"
+              class="start-button absolute top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2"
+              v-on:click="toggleStartItems()"
             >
-          </p>
-          <p
-            id="start-byebutton"
-            class="top-page-start-item"
-            :class="getStartItemClass()"
-            v-on:click="toggleStartItems()"
+              <a
+                class="absolute top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2"
+                >🍅</a
+              >
+            </p></transition
           >
-            <a><b>×</b></a>
-          </p>
+          <div>
+            <p
+              id="start-appsbutton"
+              class="top-page-start-item"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#portfolioOffCanvas"
+              aria-controls="portfolioOffCanvas"
+              href="#portfolioOffCanvas"
+              :class="getStartItemClass()"
+              v-on:click="clickedOffCanvasButton('appsBlock')"
+            >
+              <a class="absolute top-2/4 left-2/4 -translate-y-1/2">📱</a>
+            </p>
+            <p
+              id="start-codesbutton"
+              class="top-page-start-item"
+              data-bs-toggle="offcanvas"
+              v-on:click="clickedOffCanvasButton('codeBlock')"
+              href="#portfolioOffCanvas"
+              :class="getStartItemClass()"
+            >
+              <a class="absolute top-2/4 left-2/4 -translate-y-1/2">📃</a>
+            </p>
+            <p class="top-page-start-item" :class="getStartItemClass()">
+              <a style="font-size: 4vmin" v-on:click="clickedOthersButton()"
+                ><b>Timeline</b></a
+              >
+            </p>
+            <p
+              id="start-byebutton"
+              class="top-page-start-item"
+              :class="getStartItemClass()"
+              v-on:click="toggleStartItems()"
+            >
+              <a><b>×</b></a>
+            </p>
+          </div>
         </div>
+        <footer>
+          <span class="mb-3">sn-10.net</span>
+        </footer>
       </div>
-      <footer>
-        <span class="mb-3">sn-10.net</span>
-      </footer>
     </div>
-
     <div
       class="offcanvas offcanvas-bottom fixed bottom-0 flex flex-col max-w-full bg-clip-padding shadow-sm outline-none transition duration-300 ease-in-out text-gray-700 left-0 right-0 border-none h-1/3 max-h-full"
       tabindex="-1"
@@ -160,6 +161,7 @@ footer {
   transform: translate(-50%, 0%);
   color: gray;
 }
+
 .start-button {
   z-index: 1;
   width: 50vmin;
