@@ -1,32 +1,35 @@
 <template>
-  <div id="timeline" class="mx-10">
-    <h1 class="text-2xl pt-1 font-bold">Activity</h1>
-    <hr />
-    <ol class="relative border-l border-gray-200">
-      <a
-        v-for="(item, i) in timelineItems"
-        :key="i"
-        class="ml-4"
-        :class="{ 'mb-10': i !== timelineItems.length - 1 }"
-        :href="item.url"
-      >
-        <div
-          class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white"
-        ></div>
-        <time class="mb-1 text-sm font-normal leading-none text-gray-400">{{
-          getTimeText(item.pubDateMs)
-        }}</time>
-        <h3 class="text-lg font-semibold text-gray-900">
-          <img :src="noteIconPath" class="object-cover w-10 inline" />{{
-            item.title
-          }}
-        </h3>
-        <p class="text-base font-normal text-gray-500 text-end">
-          (note, {{ getDiffTimeText(item.pubDateMs) }})
-        </p>
-      </a>
-    </ol>
-    <hr class="mt-2" />
+  <div class="w-full">
+    <div id="timeline" class="px-5 mx-auto" style="max-width: 1000px">
+      <h1 class="text-2xl pt-1 font-medium">Activity</h1>
+      <hr />
+      <ol class="relative border-l border-gray-200">
+        <a
+          v-for="(item, i) in timelineItems"
+          :key="i"
+          class="ml-4"
+          :class="{ 'mb-10': i !== timelineItems.length - 1 }"
+          :href="item.url"
+        >
+          <div
+            class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white"
+          ></div>
+          <time class="mb-1 text-sm font-normal leading-none text-gray-400">{{
+            getTimeText(item.pubDateMs)
+          }}</time>
+          <div class="flex">
+            <img :src="noteIconPath" class="object-contain w-10 h-100 inline" />
+            <h3 class="text-md font-semibold">
+              {{ item.title }}
+            </h3>
+          </div>
+          <p class="text-sm font-light text-gray-500 text-end">
+            (note, {{ getDiffTimeText(item.pubDateMs) }})
+          </p>
+        </a>
+      </ol>
+      <hr class="mt-2" />
+    </div>
   </div>
 </template>
 <script lang="ts">
