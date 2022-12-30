@@ -133,6 +133,10 @@ export default defineComponent({
       scrollContentRef,
       isStartItems: isStartItemsRef,
       toggleStartItems() {
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth",
+        });
         isStartItemsRef.value = !isStartItemsRef.value;
       },
       clickedOthersButton() {
