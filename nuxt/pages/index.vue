@@ -17,7 +17,13 @@
       ></Script>
     </Head>
     <div id="twemoji" class="block">
-      <Timeline />
+      <div>
+        <Timeline />
+        <p class="flex justify-center items-center text-gray-500 opacity-60">
+          ↓<span class="ml-1" style="width: 1rem; height: 1rem">🍅</span
+          ><span class="mx-1">: PROFILE</span>
+        </p>
+      </div>
       <div id="app" class="relative" style="height: 100vh">
         <p
           v-if="isStartItems"
@@ -26,6 +32,7 @@
           <span>MADE</span>
           <span> 👈Apps</span>
           <span>Code👉</span>
+          <span>👆Archives</span>
         </p>
         <div>
           <transition name="top-fade"
@@ -162,6 +169,30 @@ export default defineComponent({
   },
 });
 </script>
+<style>
+.emoji {
+  height: inherit;
+  width: inherit;
+}
+.top-page-start-item > a:not(.emoji-frame) {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  line-height: 0%;
+  vertical-align: middle;
+  user-select: none;
+}
+.top-page-start-item > a > img.emoji {
+  height: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+</style>
+
 <style scoped>
 footer {
   position: absolute;
@@ -284,7 +315,7 @@ footer {
   height: 100%;
 }
 .label-center span {
-  animation: ScrollUp 5s linear 1;
+  animation: ScrollUp 6s linear 1;
 }
 
 @keyframes ScrollUp {
@@ -293,12 +324,12 @@ footer {
     color: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
   }
   50% {
-    top: -100%;
+    top: -150%;
   }
 
   75%,
   95% {
-    top: -200%;
+    top: -320%;
   }
   100% {
     top: 0%;
@@ -316,24 +347,5 @@ footer {
 .top-fade-enter-from,
 .top-fade-leave-to {
   opacity: 0;
-}
-</style>
-<style>
-.top-page-start-item > a:not(.emoji-frame) {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  line-height: 0%;
-  vertical-align: middle;
-  user-select: none;
-}
-.top-page-start-item > a > img.emoji {
-  height: 90%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 </style>
