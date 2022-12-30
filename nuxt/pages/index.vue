@@ -65,8 +65,10 @@
               <a class="absolute top-2/4 left-2/4 -translate-y-1/2">📃</a>
             </p>
             <p class="top-page-start-item" :class="getStartItemClass()">
-              <a style="font-size: 4vmin" v-on:click="clickedOthersButton()"
-                ><b>Timeline</b></a
+              <a
+                class="absolute top-2/4 left-2/4 -translate-y-1/2"
+                v-on:click="clickedOthersButton()"
+                >🚎</a
               >
             </p>
             <p
@@ -140,7 +142,8 @@ export default defineComponent({
         isStartItemsRef.value = !isStartItemsRef.value;
       },
       clickedOthersButton() {
-        window.location.href = "https://blog.sn-10.net/p/blog-page.html";
+        window.location.href =
+          "https://z-umon.sn-10.net/space/id/9sJPYaA0eWbGDaYv1JUa/#/";
       },
       clickedOffCanvasButton(id: string) {
         var target = scrollContentRef.value;
