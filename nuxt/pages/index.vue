@@ -251,13 +251,13 @@ footer {
   transition: 0.5s;
 }
 .top-page-start-items-open:nth-child(3) {
-  transform: translate(-50%, -50%) translateY(30vmin);
+  transform: translate(-50%, -50%) translateY(-30vmin);
   transition-timing-function: linear;
   transition-delay: 0.1s;
   transition: 0.5s;
 }
 .top-page-start-items-open:nth-child(4) {
-  transform: translate(-50%, -50%) translateY(-30vmin);
+  transform: translate(-50%, -50%) translateY(30vmin);
   transition-timing-function: linear;
   transition-delay: 0.1s;
   transition: 0.5s;
