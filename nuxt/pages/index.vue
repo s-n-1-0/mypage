@@ -262,6 +262,15 @@ footer {
   transition-delay: 0.1s;
   transition: 0.5s;
 }
+#start-byebutton {
+  width: 16vmin;
+  height: 16vmin;
+  border: 0.75vmin solid;
+  color: rgb(99, 99, 99);
+}
+#start-byebutton > a {
+  font-size: 6vmin;
+}
 .label-center {
   font-size: 7vmin;
   height: 10vmin;
