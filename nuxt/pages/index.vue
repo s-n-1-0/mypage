@@ -32,7 +32,7 @@
             ><p
               id="top-button"
               v-show="!isStartItems"
-              class="start-button absolute top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2"
+              class="start-button absolute top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2 cursor-pointer"
               v-on:click="toggleStartItems()"
             >
               <a
@@ -44,7 +44,7 @@
           <div>
             <p
               id="start-appsbutton"
-              class="top-page-start-item"
+              class="top-page-start-item cursor-pointer"
               data-bs-toggle="offcanvas"
               data-bs-target="#portfolioOffCanvas"
               aria-controls="portfolioOffCanvas"
@@ -56,7 +56,7 @@
             </p>
             <p
               id="start-codesbutton"
-              class="top-page-start-item"
+              class="top-page-start-item cursor-pointer"
               data-bs-toggle="offcanvas"
               v-on:click="clickedOffCanvasButton('codeBlock')"
               href="#portfolioOffCanvas"
@@ -64,7 +64,10 @@
             >
               <a class="absolute top-2/4 left-2/4 -translate-y-1/2">📃</a>
             </p>
-            <p class="top-page-start-item" :class="getStartItemClass()">
+            <p
+              class="top-page-start-item cursor-pointer"
+              :class="getStartItemClass()"
+            >
               <a
                 class="absolute top-2/4 left-2/4 -translate-y-1/2"
                 v-on:click="clickedOthersButton()"
@@ -73,7 +76,7 @@
             </p>
             <p
               id="start-byebutton"
-              class="top-page-start-item"
+              class="top-page-start-item cursor-pointer"
               :class="getStartItemClass()"
               v-on:click="toggleStartItems()"
             >
