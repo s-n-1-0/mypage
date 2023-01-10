@@ -12,7 +12,7 @@
       />
 
       <Script
-        src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"
+        src="https://unpkg.com/twemoji@14.0.2/dist/twemoji.min.js"
         crossorigin="anonymous"
       ></Script>
     </Head>
@@ -133,7 +133,11 @@ export default defineComponent({
     const isStartItemsRef = ref(false);
     onMounted(() => {
       //@ts-ignore
-      twemoji.parse(document.getElementById("twemoji"));
+      console.log(typeof twemoji);
+      //@ts-ignore
+      twemoji.parse(document.getElementById("twemoji"), {
+        base: "https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/",
+      });
       document
         .getElementById("app")
         .animate([{ opacity: "0" }, { opacity: "1" }], {
