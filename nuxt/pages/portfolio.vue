@@ -30,7 +30,7 @@
         />
       </div>
       <div ref="bodyRef" class="p-body overflow-auto" v-show="isShow">
-        <portfolio-body :scroll-content-ref="bodyRef" :offset="100" />
+        <portfolio-body />
       </div>
     </div>
   </div>

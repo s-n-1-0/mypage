@@ -243,40 +243,13 @@
 import salmonAppIconPath from "@/assets/apps/subscription_manager/icon_r_x512.png";
 import qiitaIconPath from "@/assets/links/qiita-icon.png";
 import zennIconPath from "@/assets/links/zenn-icon.svg";
-import { defineComponent, nextTick } from "vue";
+import { defineComponent } from "vue";
 declare let bootstrap;
 export default defineComponent({
-  props: {
-    offset: {
-      //これはあくまでtabsの表示のみに影響する(クリック位置には影響しない)
-      type: Number,
-      default: 10,
-    },
-    scrollContentRef: Object,
-  },
   setup(props) {
-    let { offset, scrollContentRef } = toRefs(props);
     let chikuwaAppModal = ref(null);
     let salmonAppModal = ref(null);
     let zumonAppModal = ref(null);
-    onMounted(() => {
-      nextTick(() => {
-        if (scrollContentRef.value) {
-          let target = "#nav-tab";
-          var scrollSpy = new bootstrap.ScrollSpy(scrollContentRef.value, {
-            target,
-            offset: offset.value,
-          });
-          setTimeout(() => {
-            scrollSpy?.dispose();
-            scrollSpy = new bootstrap.ScrollSpy(scrollContentRef.value, {
-              target,
-              offset: offset.value,
-            });
-          }, 500);
-        }
-      });
-    });
     return {
       salmonAppIconPath,
       qiitaIconPath,

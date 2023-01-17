@@ -118,7 +118,7 @@
         class="offcanvas-body flex-grow p-4 overflow-y-auto small"
         ref="scrollContentRef"
       >
-        <portfolio-body :offset="100" :scroll-content-ref="scrollContentRef" />
+        <portfolio-body />
       </div>
     </div>
   </div>
@@ -132,8 +132,6 @@ export default defineComponent({
     const scrollContentRef = ref(null);
     const isStartItemsRef = ref(false);
     onMounted(() => {
-      //@ts-ignore
-      console.log(typeof twemoji);
       //@ts-ignore
       twemoji.parse(document.getElementById("twemoji"), {
         base: "https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/",
