@@ -41,9 +41,7 @@
         </div>
         <div>
           <hr class="m-2" />
-          その他開発者個人用のアプリは
-          <a href="https://blog.sn-10.net/p/blog-page.html">こちら</a>
-          から確認できます。
+          その他のアプリは、アーカイブや各配信プラットフォームの開発者ページを参照ください。
         </div>
       </div>
       <div id="artBlock" class="slide-block shadow-md flex flex-col">
@@ -129,6 +127,7 @@
             <small>Gyazo アップローダ―</small>
           </tools-lib-item>
         </div>
+        <p class="text-end">その他のライブラリは、GitHubを参照ください。</p>
       </div>
     </div>
   </div>
