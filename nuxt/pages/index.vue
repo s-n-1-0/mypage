@@ -104,7 +104,7 @@
       style="background-color: #4d6a87ff; height: 100vh"
     >
       <div class="offcanvas-header flex items-center justify-between p-4">
-        <portfolio-tabs />
+        <div class="w-full"><portfolio-tabs /></div>
         <button
           type="button"
           class="btn box-content text-2xl p-2 -my-5 -mr-2 text-white border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-white hover:opacity-75 hover:no-underline"
