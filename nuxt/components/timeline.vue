@@ -6,6 +6,7 @@
       <ol class="relative border-l border-gray-200">
         <a
           v-for="(item, i) in timelineItems"
+          v-show="isShowAllTimeline || i < 3"
           :key="i"
           class="ml-4"
           :class="{ 'mb-10': i !== timelineItems.length - 1 }"
@@ -28,6 +29,19 @@
           </p>
         </a>
       </ol>
+      <p class="text-center">
+        <button
+          v-if="!isShowAllTimeline && timelineItems.length > 3"
+          v-on:click="
+            {
+              isShowAllTimeline = !isShowAllTimeline;
+            }
+          "
+          class="underline text-gray text-gray-500"
+        >
+          &gt; Others &lt;
+        </button>
+      </p>
       <hr class="mt-2" />
     </div>
   </div>
@@ -44,6 +58,7 @@ interface TimelineItem {
 export default defineComponent({
   setup() {
     const timelineItemsRef: Ref<TimelineItem[]> = ref([]);
+    const isShowAllTimelineRef = ref(false);
     onMounted(() => {
       axios
         .get(
@@ -57,6 +72,7 @@ export default defineComponent({
     return {
       noteIconPath,
       timelineItems: timelineItemsRef,
+      isShowAllTimeline: isShowAllTimelineRef,
       getTimeText(u: number) {
         let d = new Date(u);
         return d.toLocaleDateString();
