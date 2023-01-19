@@ -155,7 +155,7 @@ export default defineComponent({
       },
       clickedOthersButton() {
         window.location.href =
-          "https://z-umon.sn-10.net/space/id/9sJPYaA0eWbGDaYv1JUa/#/";
+          "https://fast-magpie-e3a.notion.site/Vaulted-Items-b0aa0c00433d415590db1f765fa6943e";
       },
       clickedOffCanvasButton(id: string) {
         var target = scrollContentRef.value;
