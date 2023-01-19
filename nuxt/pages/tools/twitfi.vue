@@ -16,8 +16,15 @@
         <span class="underline">フォロワーのTL</span
         >で表示されない「えさやり」をすることができます。
       </p>
+      <textarea
+        v-model="textRef"
+        rows="2"
+        class="mx-auto mt-2 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+        placeholder="つぶやき内容(無記入なら「えさツイート」)"
+        style="max-width: 500px"
+      ></textarea>
       <button
-        class="tw-button m-10 text-xl px-3"
+        class="tw-button mt-5 mb-10 text-xl px-3"
         v-on:click="
           {
             onClicked();
@@ -46,17 +53,23 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 export default defineComponent({
   setup() {
+    const textRef = ref("");
     return {
+      textRef,
       onClicked() {
         let twitterUrl =
           "https://twitter.com/share?text=" +
-          encodeURIComponent("@decooooi えさツイート") +
+          encodeURIComponent(
+            "@decooooi " +
+              (textRef.value == "" ? "えさツイート" : textRef.value)
+          ) +
           "&hashtags=TwitFi&url=" +
           encodeURI(" ");
         window.open(twitterUrl);
+        textRef.value = "";
       },
     };
   },
