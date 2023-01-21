@@ -28,7 +28,7 @@
         />
         <hr class="my-4" />
         <p class="emoji-preview">
-          <span> {{ getEmoji(false) }}</span>
+          <span> {{ getEmoji() }}</span>
           <span class="e inline-block" ref="emojiPreviewRef">
             {{ getEmoji(true) }}
           </span>
@@ -38,6 +38,47 @@
           <p>/</p>
           <p>Twemoji</p>
         </div>
+        <hr class="my-4" />
+        <ul
+          class="mx-auto text-start text-white font-medium text-gray-900 border border-gray-200 rounded-lg"
+        >
+          <li
+            class="w-full text-white px-4 py-2 border-b border-gray-200 rounded-t-lg"
+          >
+            <div class="flex justify-between">
+              <p>16進数 :</p>
+              <p>
+                <span id="emoji-hex">{{
+                  "\&\#x" + getEmojiHex().slice(2) + ";"
+                }}</span>
+                <button
+                  v-on:click="clickCopyButton('emoji-hex')"
+                  class="bg-gray-200 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center ml-3"
+                >
+                  <i class="fas fa-copy"></i>
+                </button>
+              </p>
+            </div>
+          </li>
+          <li class="w-full text-white px-4 py-2 border-b border-gray-200">
+            <div class="flex justify-between">
+              <p>Twemoji Image URL(JSDelivr CDN)</p>
+              <div>
+                <span id="emoji-cdn-path" class="hidden">{{
+                  "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/" +
+                  getEmojiHex().slice(2) +
+                  ".svg"
+                }}</span>
+                <button
+                  v-on:click="clickCopyButton('emoji-cdn-path')"
+                  class="bg-gray-200 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center ml-3"
+                >
+                  <i class="fas fa-copy"></i>
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -53,17 +94,23 @@ export default defineComponent({
       const c = document.getElementsByClassName("p-emoji");
       for (let i = 0; i < c.length; i++) parseTwemoji(c[i]);
     });
-
+    function getEmoji(isParse: boolean = false) {
+      if (isParse) {
+        nextTick(() => {
+          parseTwemoji(emojiPreviewRef.value);
+        });
+      }
+      let ep = emojiRef.value.codePointAt(0);
+      if (!ep) return "🐦";
+      return String.fromCodePoint(ep);
+    }
     return {
       emojiPreviewRef,
       emojiRef,
-      getEmoji: (isTwemoji: boolean) => {
-        if (isTwemoji) {
-          nextTick(() => {
-            parseTwemoji(emojiPreviewRef.value);
-          });
-        }
-        return [...emojiRef.value]?.[0] ?? "🐦";
+      getEmoji,
+      getEmojiHex: () => "0x" + getEmoji().codePointAt(0).toString(16),
+      clickCopyButton(id: string) {
+        navigator.clipboard.writeText(document.getElementById(id).textContent);
       },
     };
   },
