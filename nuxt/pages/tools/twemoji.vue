@@ -28,9 +28,9 @@
         />
         <hr class="my-4" />
         <p class="emoji-preview">
-          <span> {{ getEmoji() }}</span>
+          <span> {{ getEmoji().join("") }}</span>
           <span class="e inline-block" ref="emojiPreviewRef">
-            {{ getEmoji(true) }}
+            {{ getEmoji(true).join("") }}
           </span>
         </p>
         <div class="flex justify-center space-x-4">
@@ -38,6 +38,24 @@
           <p>/</p>
           <p>Twemoji</p>
         </div>
+        <p class="flex items-center justify-center my-2">
+          <label class="w-fit inline-block mr-2">
+            <input
+              v-model="isTwoEmojiRef"
+              type="checkbox"
+              class="peer sr-only"
+            />
+            <span
+              class="block w-[2em] cursor-pointer bg-gray-500 rounded-full p-[1px] after:block after:h-[1em] after:w-[1em] after:rounded-full after:bg-white after:transition peer-checked:bg-blue-500 peer-checked:after:translate-x-[calc(100%-2px)]"
+            >
+            </span>
+          </label>
+          <span
+            v-on:click="isTwoEmojiRef = !isTwoEmojiRef"
+            class="text-sm cursor-pointer underline"
+            >文字の表示がおかしい場合(2文字絵文字)</span
+          >
+        </p>
         <hr class="my-4" />
         <ul
           class="mx-auto text-start text-white font-medium text-gray-900 border border-gray-200 rounded-lg"
@@ -49,7 +67,9 @@
               <p>16進数 :</p>
               <p>
                 <span id="emoji-hex">{{
-                  "\&\#x" + getEmojiHex().slice(2) + ";"
+                  getEmojiHex()
+                    .map((e) => "\&\#x" + e.slice(2) + ";")
+                    .join("")
                 }}</span>
                 <button
                   v-on:click="clickCopyButton('emoji-hex')"
@@ -60,13 +80,15 @@
               </p>
             </div>
           </li>
-          <li class="w-full text-white px-4 py-2 border-b border-gray-200">
+          <li class="w-full text-white px-4 py-2 rounded-b-lg">
             <div class="flex justify-between">
               <p>Twemoji Image URL(JSDelivr CDN)</p>
               <div>
                 <span id="emoji-cdn-path" class="hidden">{{
                   "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/" +
-                  getEmojiHex().slice(2) +
+                  getEmojiHex()
+                    .map((e) => e.slice(2))
+                    .join("-") +
                   ".svg"
                 }}</span>
                 <button
@@ -90,6 +112,7 @@ export default defineComponent({
   setup() {
     const emojiRef = ref("");
     const emojiPreviewRef = ref(null);
+    const isTwoEmojiRef = ref(false);
     onMounted(() => {
       const c = document.getElementsByClassName("p-emoji");
       for (let i = 0; i < c.length; i++) parseTwemoji(c[i]);
@@ -101,14 +124,19 @@ export default defineComponent({
         });
       }
       let ep = emojiRef.value.codePointAt(0);
-      if (!ep) return "🐦";
-      return String.fromCodePoint(ep);
+      if (!ep) return ["🐦"];
+      let ep2 = emojiRef.value.codePointAt(2);
+      return !isTwoEmojiRef.value
+        ? [String.fromCodePoint(ep)]
+        : [String.fromCodePoint(ep), String.fromCodePoint(ep2)];
     }
     return {
       emojiPreviewRef,
       emojiRef,
+      isTwoEmojiRef,
       getEmoji,
-      getEmojiHex: () => "0x" + getEmoji().codePointAt(0).toString(16),
+      getEmojiHex: () =>
+        getEmoji().map((e) => "0x" + e.codePointAt(0).toString(16)),
       clickCopyButton(id: string) {
         navigator.clipboard.writeText(document.getElementById(id).textContent);
       },
