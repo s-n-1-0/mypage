@@ -125,6 +125,7 @@
 </template>
 <script lang="ts">
 import { defineComponent, onMounted, ref } from "vue";
+import { parseTwemoji } from "~~/utils/twemoji";
 
 export default defineComponent({
   head: {},
@@ -132,10 +133,7 @@ export default defineComponent({
     const scrollContentRef = ref(null);
     const isStartItemsRef = ref(false);
     onMounted(() => {
-      //@ts-ignore
-      twemoji.parse(document.getElementById("twemoji"), {
-        base: "https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/",
-      });
+      parseTwemoji(document.getElementById("twemoji"));
       document
         .getElementById("app")
         .animate([{ opacity: "0" }, { opacity: "1" }], {
