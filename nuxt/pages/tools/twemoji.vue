@@ -126,9 +126,9 @@ export default defineComponent({
       let ep = emojiRef.value.codePointAt(0);
       if (!ep) return ["🐦"];
       let ep2 = emojiRef.value.codePointAt(2);
-      return !isTwoEmojiRef.value
-        ? [String.fromCodePoint(ep)]
-        : [String.fromCodePoint(ep), String.fromCodePoint(ep2)];
+      return isTwoEmojiRef.value && ep2
+        ? [String.fromCodePoint(ep), String.fromCodePoint(ep2)]
+        : [String.fromCodePoint(ep)];
     }
     return {
       emojiPreviewRef,
