@@ -9,6 +9,12 @@
         crossorigin="anonymous"
         referrerpolicy="no-referrer"
       />
+      <Link
+        id="favicon"
+        rel="icon"
+        type="image/svg+xml"
+        href="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f426.svg"
+      />
     </Head>
     <div class="content text-center text-white p-10">
       <h1 class="text-3xl pb-2">Send a Hidden TwitFi Feed</h1>
