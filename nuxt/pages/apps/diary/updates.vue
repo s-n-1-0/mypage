@@ -36,29 +36,28 @@
     <hr />
     <div>
       <div class="section">
-        <h3>最近の更新</h3>
-        <apps-diary-list-item
-          ver="v2.2.3 (12月末)"
-          link=""
-          v-model:selectedVer="selectedVer"
-        >
-          <li>
-            iOS16で発生していたウィジェットが正しく表示されないバグを解決しました。
-          </li>
-        </apps-diary-list-item>
-        <apps-diary-list-item
-          ver="v2.2.2 (12月11日)"
-          link="https://scrapbox.io/diary10/2.2.X_%E3%82%A2%E3%83%83%E3%83%97%E3%83%87%E3%83%BC%E3%83%88%E5%86%85%E5%AE%B9#6395ec4dd0c8da0000ce5109"
-          v-model:selectedVer="selectedVer"
-        >
-          <li>要望・バグ報告フォームをアプリ内に設置しました。</li>
-          <ul style="margin: 0 0 0 1em; padding: 0">
-            <li>簡単に要望などの報告ができるようになりました。</li>
-          </ul>
-          <li>コレクション削除時アプリがクラッシュするバグの修正しました。</li>
-          <li>その他 UI・翻訳・バグなどを修正しました。</li>
-        </apps-diary-list-item>
-        <br />
+        <div v-for="note in noteList.slice(0, 2)" class="w-full p-2">
+          <a
+            href="#"
+            class="mx-auto flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100"
+          >
+            <img
+              class="object-contain w-full rounded-t-lg h-auto md:h-full md:max-h-28 md:w-auto md:rounded-none md:rounded-l-lg"
+              :src="note.thumbnailUrl"
+              alt=""
+            />
+            <div class="flex flex-col justify-between p-4 leading-normal">
+              <h5
+                class="mb-2 text-xl font-bold tracking-tight text-gray-900 line-clamp-2"
+              >
+                {{ note.title }}
+              </h5>
+              <!-- <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                content
+              </p> -->
+            </div>
+          </a>
+        </div>
       </div>
       <div class="section">
         <a
@@ -66,9 +65,30 @@
           href="https://itunes.apple.com/jp/app/id1506707650?mt=8&action=write-review"
           >「★レビュー」に回答いただけると開発のモチベが上がります!</a
         ><br />
-        <div style="color: grey">
-          ※★のみでも大丈夫です!<br />
-          ※星リクエストはアプリ利用中に年3回程表示されます。
+        <div style="color: grey">※★のみでも大丈夫です!<br /></div>
+      </div>
+      <div class="section">
+        <div v-for="note in noteList.slice(2)" class="w-full p-2">
+          <a
+            href="#"
+            class="mx-auto flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100"
+          >
+            <img
+              class="object-contain w-full rounded-t-lg h-auto md:h-full md:max-h-28 md:w-auto md:rounded-none md:rounded-l-lg"
+              :src="note.thumbnailUrl"
+              alt=""
+            />
+            <div class="flex flex-col justify-between p-4 leading-normal">
+              <h5
+                class="mb-2 text-xl font-bold tracking-tight text-gray-900 line-clamp-2"
+              >
+                {{ note.title }}
+              </h5>
+              <!-- <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                content
+              </p> -->
+            </div>
+          </a>
         </div>
       </div>
       <div class="section">
@@ -107,14 +127,31 @@
 </template>
 <script lang="ts">
 import iconPath from "@/assets/apps/diary/favicon32.png";
+import axios from "axios";
 import { defineComponent, ref } from "vue";
+interface TimelineItem {
+  title: string;
+  url: string;
+  pubDateMs: number;
+  thumbnailUrl: string;
+}
 export default defineComponent({
   setup() {
-    const selectedVerRef = ref("v2.2.3 (12月末)");
     const iconRef = ref();
+    const noteListRef = ref<TimelineItem[]>([]);
     iconRef.value = iconPath;
+    onMounted(() => {
+      axios
+        .get(
+          "https://storage.googleapis.com/apps-d802a.appspot.com/apps/hello/chikuwa_diary.json"
+        )
+        .then((res) => {
+          let data: TimelineItem[] = res.data;
+          noteListRef.value = data.slice(0, 10);
+        });
+    });
     return {
-      selectedVer: selectedVerRef,
+      noteList: noteListRef,
       iconRef, //nuxt3 rc1でLikタグでアイコンを指定できないため仮処置
     };
   },
