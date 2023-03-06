@@ -38,7 +38,7 @@
       <div class="section">
         <div v-for="note in noteList.slice(0, 2)" class="w-full p-2">
           <a
-            href="#"
+            :href="note.url"
             class="mx-auto flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100"
           >
             <img
@@ -70,7 +70,7 @@
       <div class="section">
         <div v-for="note in noteList.slice(2)" class="w-full p-2">
           <a
-            href="#"
+            :href="note.url"
             class="mx-auto flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100"
           >
             <img
