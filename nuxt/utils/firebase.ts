@@ -6,6 +6,7 @@ export interface TimelineItem {
   url: string;
   pubDateMs: number;
   thumbnailUrl: string;
+  itemType: "note" | "connpass";
 }
 export async function getTimelineJson(filePath: string) {
   let res = await axios.get(storageUrl + filePath);

@@ -19,13 +19,16 @@
             getTimeText(item.pubDateMs)
           }}</time>
           <div class="flex">
-            <IconNote />
+            <div class="px-2">
+              <IconNote v-if="item.itemType == 'note'" />
+              <IconConnpass v-else />
+            </div>
             <h3 class="text-md font-semibold">
-              {{ item.title }}
+              {{ getDisplayTitle(item) }}
             </h3>
           </div>
           <p class="text-sm font-light text-gray-500 text-end">
-            (note, {{ getDiffTimeText(item.pubDateMs) }})
+            ({{ item.itemType }}, {{ getDiffTimeText(item.pubDateMs) }})
           </p>
         </a>
       </ol>
@@ -74,6 +77,14 @@ export default defineComponent({
         let now = Date.now();
         let diffMs = now - u;
         return Math.floor(diffMs / 1000 / 60 / 60 / 24).toString() + " day ago";
+      },
+      getDisplayTitle(item: TimelineItem) {
+        switch (item.itemType) {
+          case "connpass":
+            return `「${item.title}」に参加しました。`;
+          default:
+            return item.title;
+        }
       },
     };
   },
