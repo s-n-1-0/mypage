@@ -127,28 +127,18 @@
 </template>
 <script lang="ts">
 import iconPath from "@/assets/apps/diary/favicon32.png";
-import axios from "axios";
 import { defineComponent, ref } from "vue";
-interface TimelineItem {
-  title: string;
-  url: string;
-  pubDateMs: number;
-  thumbnailUrl: string;
-}
+import { TimelineItem, getTimelineJson } from "~~/utils/firebase";
+
 export default defineComponent({
   setup() {
     const iconRef = ref();
     const noteListRef = ref<TimelineItem[]>([]);
     iconRef.value = iconPath;
     onMounted(() => {
-      axios
-        .get(
-          "https://storage.googleapis.com/apps-d802a.appspot.com/apps/hello/chikuwa_diary.json"
-        )
-        .then((res) => {
-          let data: TimelineItem[] = res.data;
-          noteListRef.value = data.slice(0, 10);
-        });
+      getTimelineJson("apps/hello/chikuwa_diary.json").then((items) => {
+        noteListRef.value = items.slice(0, 10);
+      });
     });
     return {
       noteList: noteListRef,

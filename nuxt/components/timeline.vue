@@ -48,26 +48,21 @@
 </template>
 <script lang="ts">
 import noteIconPath from "@/assets/links/note-icon.png";
-import axios from "axios";
 import { defineComponent, onMounted, Ref } from "vue";
-interface TimelineItem {
-  title: string;
-  url: string;
-  pubDateMs: number;
-}
+import { getTimelineJson, TimelineItem } from "~~/utils/firebase";
+
 export default defineComponent({
   setup() {
     const timelineItemsRef: Ref<TimelineItem[]> = ref([]);
     const isShowAllTimelineRef = ref(false);
     onMounted(() => {
-      axios
-        .get(
-          "https://storage.googleapis.com/apps-d802a.appspot.com/apps/hello/timeline.json"
-        )
-        .then((res) => {
-          let data: TimelineItem[] = res.data;
-          timelineItemsRef.value = data;
-        });
+      /*
+      NOTE: apps/hello/timeline.json
+      getTestTimelinejson()
+      */
+      getTimelineJson("apps/hello/timeline.json").then((items) => {
+        timelineItemsRef.value = items;
+      });
     });
     return {
       noteIconPath,
