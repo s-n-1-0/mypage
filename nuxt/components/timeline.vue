@@ -19,7 +19,7 @@
             getTimeText(item.pubDateMs)
           }}</time>
           <div class="flex">
-            <img :src="noteIconPath" class="object-contain w-10 h-100 inline" />
+            <IconNote />
             <h3 class="text-md font-semibold">
               {{ item.title }}
             </h3>
@@ -47,7 +47,6 @@
   </div>
 </template>
 <script lang="ts">
-import noteIconPath from "@/assets/links/note-icon.png";
 import { defineComponent, onMounted, Ref } from "vue";
 import { getTimelineJson, TimelineItem } from "~~/utils/firebase";
 
@@ -65,7 +64,6 @@ export default defineComponent({
       });
     });
     return {
-      noteIconPath,
       timelineItems: timelineItemsRef,
       isShowAllTimeline: isShowAllTimelineRef,
       getTimeText(u: number) {
