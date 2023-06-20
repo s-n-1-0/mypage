@@ -6,10 +6,12 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "redirects": [ {
-      "source": "/apps/diary/update",
-      "destination": "/apps/diary/updates",
-      "type": 301
-    } ]
+    "redirects": [
+      {
+        "source": "/apps/diary/update",
+        "destination": "/apps/diary/updates",
+        "type": 301
+      }
+    ]
   }
 }
