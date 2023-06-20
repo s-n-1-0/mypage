@@ -36,6 +36,6 @@ export default defineNuxtConfig({
       ],
     },
   },
-  css: ["@/assets/common.css", "@/assets/css/tailwind.css"],
+  css: ["@/assets/css/common.css", "@/assets/css/tailwind.css"],
   modules: ["nuxt-svg-loader"],
 });

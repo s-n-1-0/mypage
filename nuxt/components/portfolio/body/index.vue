@@ -239,9 +239,9 @@
   </tw-modal>
 </template>
 <script lang="ts">
-import salmonAppIconPath from "@/assets/apps/subscription_manager/icon_r_x512.png";
-import qiitaIconPath from "@/assets/links/qiita-icon.png";
-import zennIconPath from "@/assets/links/zenn-icon.svg";
+import salmonAppIconPath from "@/assets/sub/apps/subscription_manager/icon_r_x512.png";
+import qiitaIconPath from "@/assets/sub/links/qiita-icon.png";
+import zennIconPath from "@/assets/sub/links/zenn-icon.svg";
 import { defineComponent } from "vue";
 declare let bootstrap;
 export default defineComponent({

@@ -126,7 +126,7 @@
   </div>
 </template>
 <script lang="ts">
-import iconPath from "@/assets/apps/diary/favicon32.png";
+import iconPath from "@/assets/sub/apps/diary/favicon32.png";
 import { defineComponent, ref } from "vue";
 import { TimelineItem, getTimelineJson } from "~~/utils/firebase";
 
