@@ -11,9 +11,13 @@ jobs:
       matrix:
         node-version: [18.x]
     steps:
-      - uses: actions/checkout@v3
-      - run: npm ci && npm run build && npm run generate
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: generate nuxt
+        uses: actions/checkout@v3
+        run: npm ci && npm run build && npm run generate
+        working-directory: nuxt
+      - name: firebase deploy
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        working-directory: firebase
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_MYPAGE_8F987 }}"
