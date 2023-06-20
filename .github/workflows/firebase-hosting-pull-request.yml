@@ -18,8 +18,8 @@ jobs:
         working-directory: nuxt
       - name: firebase deploy
         uses: FirebaseExtended/action-hosting-deploy@v0
-        working-directory: firebase
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_MYPAGE_8F987 }}"
           projectId: mypage-8f987
+          working-directory: firebase
