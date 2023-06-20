@@ -9,9 +9,8 @@ on:
     types: [closed]
 jobs:
   build_and_preview:
-    if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"
+    if: "${{ github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.merged == true}}"
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true
     strategy:
       matrix:
         node-version: [18.x]
