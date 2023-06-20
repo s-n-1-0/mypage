@@ -1,4 +1,5 @@
 import { defineNuxtConfig } from "nuxt";
+import * as path from "path";
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
@@ -7,6 +8,11 @@ export default defineNuxtConfig({
   buildModules: ["@nuxtjs/tailwindcss"],
   generate: {
     dir: "app",
+  },
+  nitro: {
+    output: {
+      publicDir: path.join(__dirname, "../firebase/public"),
+    },
   },
   app: {
     head: {
