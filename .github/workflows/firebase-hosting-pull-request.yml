@@ -11,8 +11,9 @@ jobs:
       matrix:
         node-version: [18.x]
     steps:
-      - name: generate nuxt
+      - name: checkout
         uses: actions/checkout@v3
+      - name: generate nuxt
         run: npm ci && npm run build && npm run generate
         working-directory: nuxt
       - name: firebase deploy
