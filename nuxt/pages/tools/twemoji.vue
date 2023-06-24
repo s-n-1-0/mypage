@@ -9,10 +9,6 @@
         crossorigin="anonymous"
         referrerpolicy="no-referrer"
       />
-      <Script
-        src="https://unpkg.com/twemoji@14.0.2/dist/twemoji.min.js"
-        crossorigin="anonymous"
-      ></Script>
     </Head>
     <div class="content text-center text-white p-10">
       <div class="mx-auto" style="max-width: 500px">

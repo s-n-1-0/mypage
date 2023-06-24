@@ -1,14 +1,9 @@
-import { defineNuxtConfig } from "nuxt";
 import * as path from "path";
-
+import svgLoader from "vite-svg-loader";
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   ssr: true,
-  target: "static",
-  buildModules: ["@nuxtjs/tailwindcss"],
-  generate: {
-    dir: "app",
-  },
+
   nitro: {
     output: {
       publicDir: path.join(__dirname, "../firebase/public"),
@@ -40,8 +35,27 @@ export default defineNuxtConfig({
           href: "https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap",
         },
       ],
+      script: [
+        {
+          src: "https://unpkg.com/twemoji@14.0.2/dist/twemoji.min.js",
+          crossorigin: "anonymous",
+        },
+        {
+          src: "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js",
+          integrity:
+            "sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM",
+          crossorigin: "anonymous",
+        },
+      ],
     },
   },
   css: ["@/assets/css/common.css", "@/assets/css/tailwind.css"],
-  modules: ["nuxt-svg-loader"],
+  modules: ["@nuxtjs/tailwindcss"],
+  vite: {
+    plugins: [
+      svgLoader({
+        defaultImport: "url",
+      }),
+    ],
+  },
 });

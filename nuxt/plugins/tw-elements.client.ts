@@ -1,2 +1,4 @@
 import * as twElements from "tw-elements";
-export default twElements;
+export default defineNuxtPlugin((nuxtApp) => {
+  nuxtApp.vueApp.use(twElements);
+});

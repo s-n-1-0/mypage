@@ -10,11 +10,6 @@
         crossorigin="anonymous"
         referrerpolicy="no-referrer"
       />
-
-      <Script
-        src="https://unpkg.com/twemoji@14.0.2/dist/twemoji.min.js"
-        crossorigin="anonymous"
-      ></Script>
     </Head>
     <div id="twemoji" class="block">
       <div>
@@ -126,17 +121,36 @@
 <script lang="ts">
 import { defineComponent, onMounted, ref } from "vue";
 import { parseTwemoji } from "~~/utils/twemoji";
-
 export default defineComponent({
-  head: {},
+  head() {},
   setup() {
-    const scrollContentRef = ref(null);
+    const scrollContentRef = ref<HTMLElement>();
     const isStartItemsRef = ref(false);
-    onMounted(() => {
+    //TODO: 将来的にはBootstrapは使わない
+    useHead({
+      link: [
+        {
+          href: "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css",
+          rel: "stylesheet",
+          integrity:
+            "sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC",
+          crossorigin: "anonymous",
+        },
+      ],
+      script: [
+        {
+          src: "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js",
+          integrity:
+            "sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM",
+          crossorigin: "anonymous",
+        },
+      ],
+    });
+    onMounted(async () => {
       parseTwemoji(document.getElementById("twemoji"));
       document
-        .getElementById("app")
-        .animate([{ opacity: "0" }, { opacity: "1" }], {
+        ?.getElementById("app")
+        ?.animate([{ opacity: "0" }, { opacity: "1" }], {
           duration: 500,
           fill: "forwards",
         });
@@ -158,7 +172,8 @@ export default defineComponent({
       clickedOffCanvasButton(id: string) {
         var target = scrollContentRef.value;
         var block = document.getElementById(id);
-        target.scrollTop = block.offsetTop - 75;
+        if (target != null && block != null)
+          target.scrollTop = block.offsetTop - 75;
       },
       getStartItemClass() {
         return {

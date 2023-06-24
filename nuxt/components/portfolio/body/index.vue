@@ -243,7 +243,6 @@ import salmonAppIconPath from "@/assets/sub/apps/subscription_manager/icon_r_x51
 import qiitaIconPath from "@/assets/sub/links/qiita-icon.png";
 import zennIconPath from "@/assets/sub/links/zenn-icon.svg";
 import { defineComponent } from "vue";
-declare let bootstrap;
 export default defineComponent({
   setup(props) {
     let chikuwaAppModal = ref(null);
