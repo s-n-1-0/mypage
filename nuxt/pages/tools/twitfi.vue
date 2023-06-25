@@ -74,7 +74,7 @@ export default defineComponent({
             "@decooooi " +
               (textRef.value == "" ? "えさツイート" : textRef.value)
           ) +
-          "&hashtags=zkTwitFi&url=" +
+          "&hashtags=TwitFi&url=" +
           encodeURI(" ");
         window.open(twitterUrl);
         textRef.value = "";
