@@ -47,9 +47,11 @@
             <p
               id="start-appsbutton"
               class="top-page-start-item cursor-pointer"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#portfolioOffCanvas"
+              data-te-offcanvas-toggle
+              data-te-target="#portfolioOffCanvas"
               aria-controls="portfolioOffCanvas"
+              data-te-ripple-init
+              data-te-ripple-color="light"
               href="#portfolioOffCanvas"
               :class="getStartItemClass()"
               v-on:click="clickedOffCanvasButton('appsBlock')"
@@ -59,7 +61,11 @@
             <p
               id="start-codesbutton"
               class="top-page-start-item cursor-pointer"
-              data-bs-toggle="offcanvas"
+              data-te-offcanvas-toggle
+              data-te-target="#portfolioOffCanvas"
+              aria-controls="portfolioOffCanvas"
+              data-te-ripple-init
+              data-te-ripple-color="light"
               v-on:click="clickedOffCanvasButton('codeBlock')"
               href="#portfolioOffCanvas"
               :class="getStartItemClass()"
@@ -92,18 +98,18 @@
       </div>
     </div>
     <div
-      class="offcanvas offcanvas-bottom fixed bottom-0 flex flex-col max-w-full bg-clip-padding shadow-sm outline-none transition duration-300 ease-in-out text-gray-700 left-0 right-0 border-none h-1/3 max-h-full"
+      class="fixed bottom-0 left-0 right-0 z-[1045] flex h-1/3 max-h-full max-w-full translate-y-full flex-col border-none bg-clip-padding shadow-sm outline-none transition duration-300 ease-in-out [&[data-te-offcanvas-show]]:transform-none"
       tabindex="-1"
       id="portfolioOffCanvas"
-      aria-labelledby="portfolioOffCanvasLabel"
+      data-te-offcanvas-init
       style="background-color: #4d6a87ff; height: 100vh"
     >
-      <div class="offcanvas-header flex items-center justify-between p-4">
+      <div class="flex items-center justify-between p-4">
         <div class="w-full"><portfolio-tabs /></div>
         <button
           type="button"
           class="btn box-content text-2xl p-2 -my-5 -mr-2 text-white border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-white hover:opacity-75 hover:no-underline"
-          data-bs-dismiss="offcanvas"
+          data-te-offcanvas-dismiss
           aria-label="Close"
         >
           <i class="fa fa-remove" aria-hidden="true"></i>
@@ -121,32 +127,18 @@
 <script lang="ts">
 import { defineComponent, onMounted, ref } from "vue";
 import { parseTwemoji } from "~~/utils/twemoji";
+
 export default defineComponent({
   head() {},
   setup() {
     const scrollContentRef = ref<HTMLElement>();
     const isStartItemsRef = ref(false);
-    //TODO: 将来的にはBootstrapは使わない
-    useHead({
-      link: [
-        {
-          href: "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css",
-          rel: "stylesheet",
-          integrity:
-            "sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC",
-          crossorigin: "anonymous",
-        },
-      ],
-      script: [
-        {
-          src: "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js",
-          integrity:
-            "sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM",
-          crossorigin: "anonymous",
-        },
-      ],
-    });
+
     onMounted(async () => {
+      if (document) {
+        const { Offcanvas, Ripple, initTE } = await import("tw-elements");
+        initTE({ Offcanvas, Ripple });
+      }
       parseTwemoji(document.getElementById("twemoji"));
       document
         ?.getElementById("app")
