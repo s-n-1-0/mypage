@@ -4,8 +4,9 @@ const storageUrl = "https://storage.googleapis.com/apps-d802a.appspot.com/";
 export interface TimelineItem {
   title: string;
   url: string;
-  pubDateMs: number;
   thumbnailUrl: string;
+  descriptionHtml: string;
+  pubDateMs: number;
   itemType: "note" | "connpass";
 }
 export async function getTimelineJson(filePath: string) {
