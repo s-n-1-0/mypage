@@ -58,7 +58,16 @@
               </p> -->
             </div>
           </a>
-          <div v-else v-html="note.descriptionHtml"></div>
+          <div v-else>
+            <div
+              class="mx-auto block md:max-w-xl p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100"
+            >
+              <p
+                class="font-normal text-gray-700 dark:text-gray-400"
+                v-html="fixDescriptionHtml(note.descriptionHtml)"
+              ></p>
+            </div>
+          </div>
         </div>
       </div>
       <div class="section">
