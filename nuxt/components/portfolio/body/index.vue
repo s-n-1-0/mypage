@@ -5,6 +5,7 @@
         id="appsBlock"
         class="slide-block shadow-md text-center flex flex-col justify-between"
       >
+        <h3 class="my-color text-left text-2xl mb-2">制作アプリ</h3>
         <div class="grow flex justify-evenly items-center h-100 flex-wrap">
           <apps-cell
             title="ちくわ日記"
@@ -42,20 +43,6 @@
         <div>
           <hr class="m-2" />
           その他のアプリは、アーカイブや各配信プラットフォームの開発者ページを参照ください。
-        </div>
-      </div>
-      <div id="artBlock" class="slide-block shadow-md flex flex-col">
-        <h3 class="my-color text-2xl">点群アート</h3>
-        <div class="grow flex justify-evenly items-center h-full">
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/1f8xHCA0Lbg"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
         </div>
       </div>
       <div id="codeBlock" class="slide-block shadow-md">
@@ -128,6 +115,30 @@
           </tools-lib-item>
         </div>
         <p class="text-end">その他のライブラリは、GitHubを参照ください。</p>
+      </div>
+      <div id="artBlock" class="slide-block shadow-md flex flex-col">
+        <h3 class="my-color text-2xl mb-2">作品</h3>
+        <div class="grow flex justify-evenly items-center h-full space-x-2">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/1f8xHCA0Lbg"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/hGRX1qE2QXY"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
       </div>
     </div>
   </div>
