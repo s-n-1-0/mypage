@@ -1,5 +1,6 @@
 export default defineNuxtRouteMiddleware((to, from) => {
-  /*if (to.path === '/apps/diary/update/' || to.path === '/apps/diary/update') {
-      return navigateTo('/apps/diary/updates')
-    }*/
+  if (to.path.startsWith("/tools/twitfi")) {
+    //twitfiページは削除したのでtosページに遷移させる
+    return navigateTo("/tools/tos", { redirectCode: 301 });
+  }
 });

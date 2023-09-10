@@ -1,7 +1,7 @@
 <template>
   <div>
     <Head>
-      <Title>Send a Hidden TwitFi Feed</Title>
+      <Title>壁打ちツイート</Title>
       <Link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -17,19 +17,20 @@
       />
     </Head>
     <div class="content text-center text-white p-10">
-      <h1 class="text-3xl pb-2">Send a Hidden TwitFi Feed</h1>
+      <h1 class="text-3xl pb-2">壁打ち用ツイート ページ</h1>
       <p>
         <span class="underline">フォロワーのTL</span
-        >で表示されない「えさやり」をすることができます。
+        >で表示されないツイートをすることができます。
       </p>
       <textarea
         v-model="textRef"
         rows="2"
         class="mx-auto mt-2 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-        placeholder="つぶやき内容(無記入なら「えさツイート」)"
+        placeholder="つぶやき内容を入力..."
         style="max-width: 500px"
       ></textarea>
       <button
+        v-if="textRef != ''"
         class="tw-button mt-5 mb-10 text-xl px-3"
         v-on:click="
           {
@@ -38,7 +39,7 @@
         "
       >
         <i class="fa-brands fa-twitter"></i>
-        えさやり
+        ツイート
       </button>
       <div class="air"></div>
       <div
@@ -48,14 +49,16 @@
           注意・免責
         </h5>
         <p class="text-sm font-normal text-gray-700 dark:text-gray-400">
-          1.
-          TwitFiやTwitterの仕様変更によってこのページが機能しない場合があります。<br />
-          2. えさツイートは自分のTLには表示されます。<br />
-          3.
+          1. Twitterの仕様変更によってこのページが機能しない場合があります。<br />
+          2.
           リプ(返信)形式で使用しないでください。TLに表示される場合があります。<br />
-          4.
+          3.
           本サイトを利用することで発生したトラブルや損失、損害に対してページ提供者は一切の責任を負いません。<br />
         </p>
+      </div>
+      <hr class="mt-5" />
+      <div class="text-secondary text-sm">
+        このツールは、既に崩壊したNFTで使っていたツールを改装しました。
       </div>
     </div>
   </div>
@@ -70,11 +73,8 @@ export default defineComponent({
       onClicked() {
         let twitterUrl =
           "https://twitter.com/share?text=" +
-          encodeURIComponent(
-            "@decooooi " +
-              (textRef.value == "" ? "えさツイート" : textRef.value)
-          ) +
-          "&hashtags=TwitFi&url=" +
+          encodeURIComponent("@decooooi " + textRef.value) +
+          "&url=" +
           encodeURI(" ");
         window.open(twitterUrl);
         textRef.value = "";
