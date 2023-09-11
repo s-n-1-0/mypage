@@ -4,5 +4,7 @@
   "context": "If you use this app and notice something that you would like to see fixed, please feel free to send it to us using the form at ↓ of this page!<br/>English and Japanese are supported.",
   "reply": "※Reply from developer(japanese)",
   "placeholder": "Enter request here...",
-  "sendButton": "Send"
+  "sendButton": "Send",
+  "sending": "Sending...",
+  "sent": "Sent"
 }

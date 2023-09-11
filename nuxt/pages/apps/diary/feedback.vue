@@ -25,21 +25,34 @@
             >{{ localizedText.reply }}</a
           >
         </div>
-        <textarea
-          rows="4"
-          class="my-2 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-          :placeholder="localizedText.placeholder"
-          v-model="message"
-        ></textarea>
-        <p class="text-center">
-          <button
-            v-if="message != ''"
-            v-on:click="sendFeedback"
-            class="app-color hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-          >
-            {{ localizedText.sendButton }}
-          </button>
-        </p>
+        <div v-if="!(sendingMode == 'now')">
+          <textarea
+            rows="4"
+            class="my-2 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+            :placeholder="localizedText.placeholder"
+            v-model="message"
+          ></textarea>
+          <p class="text-center">
+            <button
+              v-if="message != ''"
+              v-on:click="sendFeedback"
+              class="app-color hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+            >
+              {{ localizedText.sendButton }}
+            </button>
+          </p>
+        </div>
+        <div v-else class="text-center">
+          <div className="flex justify-center mb-1" aria-label="読み込み中">
+            <div className="spin"></div>
+          </div>
+          <span class="text-sm"> {{ localizedText.sending }}</span>
+        </div>
+        <div v-if="sendingMode == 'already'" class="text-center mt-2">
+          <hr />
+          {{ localizedText.sent }}
+          <FontAwesomeIcon :icon="['fas', 'thumbs-up']" />
+        </div>
       </div>
     </div>
   </div>
@@ -49,26 +62,36 @@ import enText from "@/assets/json/localize/apps/diary/en.json";
 import jaText from "@/assets/json/localize/apps/diary/ja.json";
 interface LocalizedText {
   express: string;
+  sending: string;
+  sent: string;
   title: string;
   context: string;
   reply: string;
   placeholder: string;
   sendButton: string;
 }
+const sendingMode = toRef<"yet" | "now" | "already">("yet");
 const route = useRoute();
 const message = toRef("");
 const isJa = !route.query["lang"] || route.query["lang"] == "ja";
 const localizedText: LocalizedText = isJa ? jaText : enText;
-function sendFeedback() {
-  sendAppFeedback({
+async function sendFeedback() {
+  sendingMode.value = "now";
+  await sendAppFeedback({
     ...route.query,
     app_id: "ChikuwaDiary",
     message: message.value,
   });
+  message.value = "";
+  sendingMode.value = "already";
 }
 </script>
-<style>
+<style lang="postcss" scoped>
 .app-color {
   background-color: #4d6a87ff;
+}
+.spin {
+  border-color: #4d6a87ff;
+  @apply animate-spin h-10 w-10 border-4 rounded-full border-t-transparent;
 }
 </style>
