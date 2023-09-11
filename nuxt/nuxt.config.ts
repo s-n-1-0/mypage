@@ -43,7 +43,11 @@ export default defineNuxtConfig({
       ],
     },
   },
-  css: ["@/assets/css/common.css", "@/assets/css/tailwind.css"],
+  css: [
+    "@/assets/css/common.css",
+    "@/assets/css/tailwind.css",
+    "@fortawesome/fontawesome-svg-core/styles.css",
+  ],
   modules: ["@nuxtjs/tailwindcss"],
   vite: {
     plugins: [
