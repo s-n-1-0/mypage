@@ -4,7 +4,9 @@
     class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-0 focus:bg-gray-200 focus:text-gray-600 transition duration-500 cursor-pointer"
   >
     <div class="flex w-full justify-between">
-      <h5 class="mb-1"><i class="pr-2" :class="iconClass"></i>{{ title }}</h5>
+      <h5 class="mb-1">
+        <FontAwesomeIcon :icon="iconClass" class="pr-2" />{{ title }}
+      </h5>
       <small>{{ language }}</small>
     </div>
     <slot></slot>
@@ -17,7 +19,7 @@ export default defineComponent({
   props: {
     title: String,
     linkUrl: String,
-    iconClass: String,
+    iconClass: Array<String>,
     language: String,
   },
   setup() {},

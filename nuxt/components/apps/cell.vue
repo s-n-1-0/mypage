@@ -12,7 +12,8 @@
       <br />
       <span class="font-bold">{{ title }}</span
       ><br /><small class="text-gray-600"
-        ><i :class="makeAppIconClass()"></i> {{ getPlatformName() }}</small
+        ><FontAwesomeIcon :icon="makeAppIconClass()" />
+        {{ getPlatformName() }}</small
       >
     </div>
   </a>
@@ -41,19 +42,15 @@ export default defineComponent({
         var fontClassList: string[] = [];
         switch (platform.value) {
           case "ios":
-            fontClassList = ["fa-brands", "fa-apple"];
+            fontClassList = ["fab", "apple"];
             break;
           case "web":
-            fontClassList = ["fa-solid", "fa-window-maximize"];
+            fontClassList = ["fas", "window-maximize"];
             break;
           default:
             break;
         }
-        var fontClass: any = {};
-        fontClassList.forEach((item) => {
-          fontClass[item] = true;
-        });
-        return fontClass;
+        return fontClassList;
       },
       getPlatformName() {
         switch (platform.value) {

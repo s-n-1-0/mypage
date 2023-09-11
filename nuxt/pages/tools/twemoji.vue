@@ -2,13 +2,6 @@
   <div>
     <Head>
       <Title>Emoji / Twemoji Preview</Title>
-      <Link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-      />
     </Head>
     <div class="content text-center text-white p-10">
       <div class="mx-auto" style="max-width: 500px">
@@ -71,7 +64,7 @@
                   v-on:click="clickCopyButton('emoji-hex')"
                   class="bg-gray-200 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center ml-3"
                 >
-                  <i class="fas fa-copy"></i>
+                  <FontAwesomeIcon :icon="['fas', 'copy']" />
                 </button>
               </p>
             </div>
@@ -91,7 +84,7 @@
                   v-on:click="clickCopyButton('emoji-cdn-path')"
                   class="bg-gray-200 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center ml-3"
                 >
-                  <i class="fas fa-copy"></i>
+                  <FontAwesomeIcon :icon="['fas', 'copy']" />
                 </button>
               </div>
             </div>

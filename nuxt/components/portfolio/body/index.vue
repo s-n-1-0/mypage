@@ -65,17 +65,17 @@
         <h3 class="my-color text-2xl">配布パッケージ</h3>
         <p class="text-end mb-0" style="font-size: 1.5rem">
           <a class="text-body" href="https://github.com/s-n-1-0"
-            ><i class="fab fa-github pr-2"></i
-          ></a>
+            ><FontAwesomeIcon :icon="['fab', 'github']" class="pr-2"
+          /></a>
           <a class="text-body" href="https://www.npmjs.com/~sn-10">
-            <i class="fab fa-npm pr-2"></i>
+            <FontAwesomeIcon :icon="['fab', 'npm']" class="pr-2" />
           </a>
         </p>
         <div class="bg-white rounded-lg border border-gray-200 text-gray-900">
           <tools-lib-item
             title="tw-modal.vue"
             link-url="https://github.com/s-n-1-0/tw-modal.vue"
-            icon-class="fas fa-align-justify"
+            :icon-class="['fas', 'align-justify']"
             language="Vue.js"
           >
             <small
@@ -85,7 +85,7 @@
           <tools-lib-item
             title="labcsv.py"
             link-url="https://github.com/s-n-1-0/labcsv.py"
-            icon-class="fas fa-table"
+            :icon-class="['fas', 'fa-table']"
             language="Python"
           >
             <small>lab.jsのcsvファイルインポートパッケージ</small>
@@ -93,7 +93,7 @@
           <tools-lib-item
             title="MMHeatmap"
             link-url="https://github.com/s-n-1-0/MMHeatmap"
-            icon-class="far fa-calendar-alt"
+            :icon-class="['far', 'fa-calendar-alt']"
             language="SwiftUI"
           >
             <small>ヒートマップカレンダー</small><br />
@@ -108,7 +108,7 @@
           <tools-lib-item
             title="wrap-gyazo"
             link-url="https://github.com/s-n-1-0/wrap-gyazo"
-            icon-class="fas fa-image"
+            :icon-class="['fas', 'fa-image']"
             language="TypeScript"
           >
             <small>Gyazo アップローダ―</small>

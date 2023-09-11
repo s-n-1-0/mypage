@@ -3,13 +3,6 @@
     <Head>
       <Title>壁打ちツイート</Title>
       <Link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-      />
-      <Link
         id="favicon"
         rel="icon"
         type="image/svg+xml"
@@ -38,7 +31,7 @@
           }
         "
       >
-        <i class="fa-brands fa-twitter"></i>
+        <FontAwesomeIcon :icon="['fab', 'twitter']" />
         ツイート
       </button>
       <div class="air"></div>
