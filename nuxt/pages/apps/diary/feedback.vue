@@ -5,9 +5,8 @@
     </Head>
     <div style="max-width: 1200px" class="mx-auto p-3">
       <p class="text-sky-500 text-sm">
-        <FontAwesomeIcon :icon="['fas', 'paper-plane']" />{{
-          localizedText.express
-        }}
+        <span><FontAwesomeIcon :icon="['fas', 'paper-plane']" /></span>
+        {{ localizedText.express }}
       </p>
       <p class="text-xl">{{ localizedText.title }}</p>
       <hr />
@@ -74,7 +73,20 @@ const sendingMode = toRef<"yet" | "now" | "already">("yet");
 const route = useRoute();
 const message = toRef("");
 const isJa = !route.query["lang"] || route.query["lang"] == "ja";
-const localizedText: LocalizedText = isJa ? jaText : enText;
+const localizedText = toRef<LocalizedText>({
+  express: "",
+  sending: "",
+  sent: "",
+  title: "",
+  context: "",
+  reply: "",
+  placeholder: "",
+  sendButton: "",
+});
+onMounted(() => {
+  localizedText.value = isJa ? jaText : enText;
+});
+
 async function sendFeedback() {
   sendingMode.value = "now";
   await sendAppFeedback({
