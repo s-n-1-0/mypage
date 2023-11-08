@@ -1,5 +1,6 @@
 import * as path from "path";
 import svgLoader from "vite-svg-loader";
+import genSitemap from "./scripts/gen-sitemap";
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   ssr: true,
@@ -7,6 +8,9 @@ export default defineNuxtConfig({
   nitro: {
     output: {
       publicDir: path.join(__dirname, "../firebase/public"),
+    },
+    hooks: {
+      compiled: genSitemap,
     },
   },
   app: {
