@@ -193,7 +193,11 @@ export default defineComponent({
 }
 </style>
 
-<style scoped>
+<style scoped lang="scss">
+@mixin box-shadow($color, $size: 5px) {
+  box-shadow: 0px $size 0px $color;
+}
+
 footer {
   position: absolute;
   bottom: 0;
@@ -212,8 +216,14 @@ footer {
   text-align: center;
   border: 2.5vmin solid;
   border-color: rgb(245, 77, 47);
+
   border-radius: 50%;
   background: white;
+  @include box-shadow(rgb(215, 37, 17), 10px);
+  transition: 0.2s ease;
+  &:hover {
+    box-shadow: none;
+  }
 }
 .start-button::after,
 .start-button::before {
@@ -266,6 +276,10 @@ footer {
   border-color: #4d6a87ff;
   background: white;
   transition: transform 500ms;
+  @include box-shadow(rgb(43, 76, 105));
+  &:hover {
+    box-shadow: none;
+  }
 }
 .top-page-start-items-open:nth-child(1) {
   transform: translate(-50%, -50%) rotate(90deg) translateY(30vmin)
@@ -293,11 +307,16 @@ footer {
   transition-delay: 0.1s;
   transition: 0.5s;
 }
+
 #start-byebutton {
   width: 16vmin;
   height: 16vmin;
   border: 0.75vmin solid;
   color: rgb(99, 99, 99);
+  @include box-shadow(rgb(66, 66, 66));
+  &:hover {
+    box-shadow: none;
+  }
 }
 #start-byebutton > a {
   font-size: 6vmin;
