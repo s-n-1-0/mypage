@@ -5,7 +5,8 @@
   >
     <div class="flex w-full justify-between">
       <h5 class="mb-1">
-        <FontAwesomeIcon :icon="iconClass" class="pr-2" />{{ title }}
+        <span><FontAwesomeIcon :icon="iconClass" class="pr-2" /></span>
+        {{ title }}
       </h5>
       <small>{{ language }}</small>
     </div>

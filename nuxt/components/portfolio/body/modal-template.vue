@@ -1,5 +1,5 @@
 <template>
-  <div class="break-words flex flex-wrap app-modal-body">
+  <div class="break-words flex flex-wrap app-modal-body space-y-2">
     <div class="w-full lg:w-1/2 flex flex-col justify-around">
       <div>
         <slot name="lt"></slot>
@@ -14,7 +14,7 @@
       <div v-else>
         <slot name="lt-app-else"></slot>
       </div>
-      <div class="w-full text-secondary text-center">
+      <div class="w-full text-secondary text-center mt-2">
         <h4 class="h-line mx-auto" style="width: fit-content">使用技術</h4>
         <slot name="lt-techs"></slot>
       </div>
