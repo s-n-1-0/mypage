@@ -118,26 +118,31 @@
       </div>
       <div id="artBlock" class="slide-block shadow-md flex flex-col">
         <h3 class="my-color text-2xl mb-2">作品</h3>
-        <div class="grow flex justify-evenly items-center h-full space-x-2">
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/1f8xHCA0Lbg"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/hGRX1qE2QXY"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
+        <div
+          class="grow flex justify-evenly items-center h-full space-x-2 space-y-2 flex-wrap"
+        >
+          <div class="youtube">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/1f8xHCA0Lbg"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="youtube">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/hGRX1qE2QXY"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
       </div>
     </div>
@@ -290,5 +295,14 @@ export default defineComponent({
 }
 .app-modal-body {
   min-height: 75vh;
+}
+.youtube {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-width: 560px;
+}
+.youtube iframe {
+  width: 100%;
+  height: 100%;
 }
 </style>
