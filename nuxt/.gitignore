@@ -8,4 +8,5 @@ node_modules
 dist
 *.png
 *.svg
-public**
+public/*
+!public/favicon64.png
