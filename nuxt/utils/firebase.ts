@@ -8,9 +8,10 @@ export interface TimelineItem {
   thumbnailUrl: string;
   descriptionHtml: string;
   pubDateMs: number;
-  itemType: "note" | "connpass";
+  itemType: "note" | "connpass" | "zenn" | "qiita";
 }
 export async function getTimelineJson(filePath: string) {
+  return getTestTimelinejson();
   let res = await axios.get(storageUrl + filePath);
   let data: TimelineItem[] = res.data;
   return data;

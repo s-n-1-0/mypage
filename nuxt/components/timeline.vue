@@ -17,9 +17,11 @@
             getTimeText(item.pubDateMs)
           }}</time>
           <div class="flex">
-            <div class="px-2">
+            <div class="text-center shrink-0" style="width: 55px">
               <IconNote v-if="item.itemType == 'note'" />
-              <IconConnpass v-else />
+              <IconConnpass v-if="item.itemType == 'connpass'" />
+              <IconZenn v-if="item.itemType == 'zenn'" />
+              <IconQiita v-if="item.itemType == 'qiita'" />
             </div>
             <h3 class="text-md font-semibold">
               {{ getDisplayTitle(item) }}
