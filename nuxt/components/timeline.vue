@@ -1,8 +1,6 @@
 <template>
   <div class="w-full">
     <div id="timeline" class="px-5 mx-auto" style="max-width: 1000px">
-      <h1 class="text-2xl pt-1 font-medium">Activity</h1>
-      <hr />
       <ol class="relative border-l border-gray-200">
         <a
           v-for="(item, i) in timelineItems"
@@ -63,7 +61,9 @@ export default defineComponent({
       getTestTimelinejson()
       */
       getTimelineJson("apps/hello/timeline.json").then((items) => {
-        timelineItemsRef.value = items;
+        timelineItemsRef.value = items.filter((item) => {
+          return item.pubDateMs < Date.now();
+        });
       });
     });
     return {
