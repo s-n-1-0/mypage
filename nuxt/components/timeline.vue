@@ -50,8 +50,8 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, onMounted, Ref } from "vue";
-import { getTimelineJson, TimelineItem } from "~~/utils/firebase";
+import { defineComponent, onMounted, type Ref } from "vue";
+import { getTimelineJson, type TimelineItem } from "~~/utils/firebase";
 
 export default defineComponent({
   setup() {
