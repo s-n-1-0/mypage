@@ -52,7 +52,7 @@ export default defineNuxtConfig({
     "@/assets/css/tailwind.css",
     "@fortawesome/fontawesome-svg-core/styles.css",
   ],
-  modules: ["@nuxtjs/tailwindcss"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxt/content"],
   vite: {
     plugins: [
       svgLoader({
