@@ -1,16 +1,17 @@
 import * as path from "path";
 import svgLoader from "vite-svg-loader";
 import genSitemap from "./scripts/gen-sitemap";
+import getContentRoutes from "./scripts/get-content";
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   ssr: true,
-
   nitro: {
     output: {
       publicDir: path.join(__dirname, "../firebase/public"),
     },
-    hooks: {
-      compiled: genSitemap,
+    hooks: { compiled: genSitemap },
+    prerender: {
+      routes: [].concat(getContentRoutes()),
     },
   },
   app: {
