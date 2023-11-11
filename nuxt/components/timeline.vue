@@ -54,9 +54,16 @@ import { defineComponent, onMounted, type Ref } from "vue";
 import { getTimelineJson, type TimelineItem } from "~~/utils/firebase";
 
 export default defineComponent({
-  setup() {
+  props: {
+    open2Start: {
+      default: false,
+      type: Boolean,
+    },
+  },
+  setup(props) {
+    const { open2Start } = toRefs(props);
     const timelineItemsRef: Ref<TimelineItem[]> = ref([]);
-    const isShowAllTimelineRef = ref(false);
+    const isShowAllTimelineRef = ref(open2Start);
     onMounted(() => {
       /*
       NOTE: apps/hello/timeline.json
