@@ -42,7 +42,7 @@
     </div>
     <div>
       <h5
-        class="mb-0 font-semibold leading-normal p-4"
+        class="mb-0 font-semibold leading-normal p-4 cursor-pointer"
         data-te-offcanvas-toggle
         data-te-target="#offcanvasTop"
         aria-controls="offcanvasTop"

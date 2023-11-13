@@ -22,6 +22,12 @@
               <IconConnpass v-if="item.itemType == 'connpass'" />
               <IconZenn v-if="item.itemType == 'zenn'" />
               <IconQiita v-if="item.itemType == 'qiita'" />
+              <span
+                v-if="item.itemType == 'here'"
+                class="tomato mx-auto inline"
+                style="width: 32px"
+                >🍅</span
+              >
             </div>
             <h3 class="text-md font-semibold">
               {{ getDisplayTitle(item) }}
@@ -73,6 +79,9 @@ export default defineComponent({
           .filter((item) => {
             return item.pubDateMs < Date.now();
           });
+        nextTick(() => {
+          parseTwemoji(document);
+        });
       });
     });
     return {
@@ -85,7 +94,8 @@ export default defineComponent({
       getDiffTimeText(u: number) {
         let now = Date.now();
         let diffMs = now - u;
-        return Math.floor(diffMs / 1000 / 60 / 60 / 24).toString() + " day ago";
+        let t = Math.floor(diffMs / 1000 / 60 / 60 / 24);
+        return t == 0 ? "today" : t.toString() + " day ago";
       },
       getDisplayTitle(item: TimelineItem) {
         switch (item.itemType) {
@@ -102,5 +112,8 @@ export default defineComponent({
 <style scoped>
 h1 {
   color: #ff2727;
+}
+::v-deep(.tomato > img) {
+  display: inline;
 }
 </style>
