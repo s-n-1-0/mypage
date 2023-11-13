@@ -146,7 +146,7 @@
 <script lang="ts">
 import iconPath from "@/assets/sub/apps/diary/favicon32.png";
 import { defineComponent, ref } from "vue";
-import { TimelineItem, getTimelineJson } from "~~/utils/firebase";
+import { getTimelineJson, type TimelineItem } from "~~/utils/firebase";
 
 export default defineComponent({
   setup() {

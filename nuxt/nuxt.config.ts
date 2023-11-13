@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     },
     hooks: { compiled: genSitemap },
     prerender: {
-      routes: [].concat(getContentRoutes()),
+      routes: getContentRoutes(),
     },
   },
   app: {

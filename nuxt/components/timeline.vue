@@ -65,14 +65,14 @@ export default defineComponent({
     const timelineItemsRef: Ref<TimelineItem[]> = ref([]);
     const isShowAllTimelineRef = ref(open2Start);
     onMounted(() => {
-      /*
-      NOTE: apps/hello/timeline.json
-      getTestTimelinejson()
-      */
-      getTimelineJson("apps/hello/timeline.json").then((items) => {
-        timelineItemsRef.value = items.filter((item) => {
-          return item.pubDateMs < Date.now();
-        });
+      getTimelineJson("notes.json", "/").then(async (items) => {
+        const items2 = await getTimelineJson("apps/hello/timeline.json");
+        timelineItemsRef.value = items
+          .concat(items2)
+          .sort((a, b) => b.pubDateMs - a.pubDateMs)
+          .filter((item) => {
+            return item.pubDateMs < Date.now();
+          });
       });
     });
     return {
