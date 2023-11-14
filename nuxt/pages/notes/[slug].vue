@@ -6,6 +6,7 @@
       id="offcanvasTop"
       aria-labelledby="offcanvasTopLabel"
       data-te-offcanvas-init
+      ref="offcanvasDomRef"
     >
       <div class="flex items-center justify-between p-4">
         <h5 class="mb-0 font-semibold leading-normal" id="offcanvasTopLabel">
@@ -37,17 +38,13 @@
         </button>
       </div>
       <div class="flex-grow overflow-y-auto p-4">
-        <Timeline :open2Start="true" />
+        <Timeline v-if="isLoadedTimelineRef" :open2Start="true" />
       </div>
     </div>
     <div>
       <h5
         class="mb-0 font-semibold leading-normal p-4 cursor-pointer"
-        data-te-offcanvas-toggle
-        data-te-target="#offcanvasTop"
-        aria-controls="offcanvasTop"
-        data-te-ripple-init
-        data-te-ripple-color="light"
+        v-on:click="openOffcanvas"
       >
         <u>sn-10.net</u>
       </h5>
@@ -81,14 +78,29 @@
 </template>
 
 <script>
+import Timeline from "~/components/timeline.vue";
 import { parseTwemoji } from "~~/utils/twemoji";
 export default defineComponent({
   async setup() {
+    const offcanvasDomRef = ref(null);
+    const offcanvasRef = ref(null);
+    const isLoadedTimelineRef = ref(false);
     onMounted(async () => {
       const { Offcanvas, Ripple, initTE } = await import("tw-elements");
       initTE({ Offcanvas, Ripple });
       parseTwemoji(document);
+      offcanvasRef.value = new Offcanvas(offcanvasDomRef.value);
     });
+    return {
+      offcanvasDomRef,
+      isLoadedTimelineRef,
+      openOffcanvas() {
+        if (offcanvasRef.value) {
+          offcanvasRef.value.show();
+          isLoadedTimelineRef.value = true;
+        }
+      },
+    };
   },
 });
 </script>
