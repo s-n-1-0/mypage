@@ -1,3 +1,6 @@
 [submodule "nuxt/assets/sub"]
 	path = nuxt/assets/sub
 	url = https://github.com/s-n-1-0/mypage_assets.git
+[submodule "nuxt/content"]
+	path = nuxt/content
+	url = https://github.com/s-n-1-0/mypage_notes.git
