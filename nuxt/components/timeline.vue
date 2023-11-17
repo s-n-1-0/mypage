@@ -24,7 +24,7 @@
               <IconQiita v-if="item.itemType == 'qiita'" />
               <span
                 v-if="item.itemType == 'here'"
-                class="tomato mx-auto inline"
+                class="tomato mx-auto inline-block"
                 style="width: 32px"
                 >🍅</span
               >
