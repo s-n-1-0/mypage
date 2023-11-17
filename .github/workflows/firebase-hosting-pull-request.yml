@@ -20,6 +20,8 @@ jobs:
         with:
           token: "${{secrets.SUBMODULE_TOKEN}}"
           submodules: true
+      - name: update submodules
+        run: git submodule update --remote
       - name: generate nuxt
         run: npm ci && npm run build && npm run generate
         working-directory: nuxt

@@ -5,7 +5,7 @@
 import { writeFileSync } from "fs";
 import type { Nitro } from "nitropack";
 import path from "path";
-import { SitemapItem, SitemapStream, streamToPromise } from "sitemap";
+import { SitemapStream, streamToPromise, type SitemapItem } from "sitemap";
 import { Readable } from "stream";
 
 // 最後スラッシュ不要

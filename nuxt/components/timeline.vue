@@ -22,6 +22,12 @@
               <IconConnpass v-if="item.itemType == 'connpass'" />
               <IconZenn v-if="item.itemType == 'zenn'" />
               <IconQiita v-if="item.itemType == 'qiita'" />
+              <span
+                v-if="item.itemType == 'here'"
+                class="tomato mx-auto inline-block"
+                style="width: 32px"
+                >🍅</span
+              >
             </div>
             <h3 class="text-md font-semibold">
               {{ getDisplayTitle(item) }}
@@ -50,21 +56,31 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, onMounted, Ref } from "vue";
-import { getTimelineJson, TimelineItem } from "~~/utils/firebase";
+import { defineComponent, onMounted, type Ref } from "vue";
+import { getTimelineJson, type TimelineItem } from "~~/utils/firebase";
 
 export default defineComponent({
-  setup() {
+  props: {
+    open2Start: {
+      default: false,
+      type: Boolean,
+    },
+  },
+  setup(props) {
+    const { open2Start } = toRefs(props);
     const timelineItemsRef: Ref<TimelineItem[]> = ref([]);
-    const isShowAllTimelineRef = ref(false);
+    const isShowAllTimelineRef = ref(open2Start);
     onMounted(() => {
-      /*
-      NOTE: apps/hello/timeline.json
-      getTestTimelinejson()
-      */
-      getTimelineJson("apps/hello/timeline.json").then((items) => {
-        timelineItemsRef.value = items.filter((item) => {
-          return item.pubDateMs < Date.now();
+      getTimelineJson("notes.json", "/").then(async (items) => {
+        const items2 = await getTimelineJson("apps/hello/timeline.json");
+        timelineItemsRef.value = items
+          .concat(items2)
+          .sort((a, b) => b.pubDateMs - a.pubDateMs)
+          .filter((item) => {
+            return item.pubDateMs < Date.now();
+          });
+        nextTick(() => {
+          parseTwemoji(document);
         });
       });
     });
@@ -78,7 +94,8 @@ export default defineComponent({
       getDiffTimeText(u: number) {
         let now = Date.now();
         let diffMs = now - u;
-        return Math.floor(diffMs / 1000 / 60 / 60 / 24).toString() + " day ago";
+        let t = Math.floor(diffMs / 1000 / 60 / 60 / 24);
+        return t == 0 ? "today" : t.toString() + " day ago";
       },
       getDisplayTitle(item: TimelineItem) {
         switch (item.itemType) {
@@ -95,5 +112,8 @@ export default defineComponent({
 <style scoped>
 h1 {
   color: #ff2727;
+}
+::v-deep(.tomato > img) {
+  display: inline;
 }
 </style>
