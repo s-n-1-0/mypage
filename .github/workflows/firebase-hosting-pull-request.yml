@@ -7,9 +7,14 @@ on:
     branches:
       - main
     types: [closed]
+  workflow_dispatch:
+    inputs:
+      is_manual:
+        required: true
+        default: true
 jobs:
   build_and_preview:
-    if: "${{ github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.merged == true}}"
+    if: "${{ (github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.merged == true) || github.event.inputs.is_manual == true}}"
     runs-on: ubuntu-latest
     strategy:
       matrix:
