@@ -56,6 +56,9 @@
             >
             <span>{{ doc.title }}</span>
           </h1>
+          <p v-if="doc.date" class="text-end text-sm text-secondary">
+            {{ convertDateText(new Date(doc.date)) }}
+          </p>
           <hr
             style="
               background-image: linear-gradient(
@@ -67,6 +70,7 @@
               height: 3px;
               border: none;
             "
+            :class="{ 'mt-0': doc.date }"
           />
           <div class="mx-1">
             <ContentRenderer :value="doc" />
@@ -77,7 +81,7 @@
   </main>
 </template>
 
-<script>
+<script lang="ts">
 import Timeline from "~/components/timeline.vue";
 import { parseTwemoji } from "~~/utils/twemoji";
 export default defineComponent({
@@ -96,9 +100,16 @@ export default defineComponent({
       isLoadedTimelineRef,
       openOffcanvas() {
         if (offcanvasRef.value) {
+          //@ts-ignore
           offcanvasRef.value.show();
           isLoadedTimelineRef.value = true;
         }
+      },
+      convertDateText(date: Date) {
+        let formatDay = `${date.getFullYear()}年${
+          date.getMonth() + 1
+        }月${date.getDate()}日`;
+        return formatDay;
       },
     };
   },
