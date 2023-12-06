@@ -69,7 +69,7 @@ export default defineComponent({
   setup(props) {
     const { open2Start } = toRefs(props);
     const timelineItemsRef: Ref<TimelineItem[]> = ref([]);
-    const isShowAllTimelineRef = ref(open2Start);
+    const isShowAllTimelineRef = ref(open2Start.value);
     onMounted(() => {
       getTimelineJson("notes.json", "/").then(async (items) => {
         const items2 = await getTimelineJson("apps/hello/timeline.json");
