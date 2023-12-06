@@ -80,7 +80,7 @@ export default defineComponent({
             return item.pubDateMs < Date.now();
           });
         nextTick(() => {
-          parseTwemoji(document);
+          parseTwemoji(document.getElementById("timeline"));
         });
       });
     });
