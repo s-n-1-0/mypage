@@ -50,7 +50,7 @@
       </h5>
       <ContentDoc :path="$route.path.split('/')[2]" v-slot="{ doc }">
         <div class="prose mx-auto">
-          <h1 class="text-2xl flex justify-center items-center">
+          <h1 class="flex justify-center items-center">
             <span class="not-prose mr-2" style="width: 2rem; height: 2rem"
               >🍅</span
             >
@@ -115,3 +115,14 @@ export default defineComponent({
   },
 });
 </script>
+<style scoped>
+::v-deep(h1) {
+  @apply text-2xl;
+}
+::v-deep(h2) {
+  @apply text-xl;
+}
+::v-deep(h3) {
+  @apply text-lg;
+}
+</style>
