@@ -6,17 +6,19 @@ export default defineEventHandler(async (event) => {
     .then((docs) => {
       return Buffer.from(
         JSON.stringify(
-          docs.map((doc) => {
-            let item: TimelineItem = {
-              title: doc.title ?? "",
-              url: "/notes" + doc._path,
-              thumbnailUrl: "",
-              descriptionHtml: doc.description ?? "",
-              pubDateMs: new Date(doc.date).getTime(),
-              itemType: "here",
-            };
-            return item;
-          })
+          docs
+            .filter((doc) => doc.timeline !== "ignore")
+            .map((doc) => {
+              let item: TimelineItem = {
+                title: doc.title ?? "",
+                url: "/notes" + doc._path,
+                thumbnailUrl: "",
+                descriptionHtml: doc.description ?? "",
+                pubDateMs: new Date(doc.date).getTime(),
+                itemType: "here",
+              };
+              return item;
+            })
         )
       );
     });
