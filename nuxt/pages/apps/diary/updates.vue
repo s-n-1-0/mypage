@@ -35,9 +35,19 @@
         >【予定】ちくわ日記+(定期購読)は4月1日に価格改定を行います。</a
       >
     </p>
-    <div>
+    <div class="max-w-[800px] mx-auto">
       <div class="section">
-        <div v-for="note in noteList.slice(0, 2)" class="p-2">
+        <div class="relative p-2 md:max-w-xl mx-auto">
+          <div class="absolute right-0 bottom-0 pb-3 pe-3 text-stone-500">
+            <FontAwesomeIcon
+              :icon="['solid', 'paperclip']"
+              class="text-lg pe-1"
+            />
+            <span class="text-sm font-bold">固定された記事</span>
+          </div>
+          <NoteCard :note="pinnedNote" />
+        </div>
+        <div v-for="note in noteList.slice(0, 1)" class="p-2">
           <NoteCard :note="note" />
         </div>
       </div>
@@ -50,7 +60,7 @@
         <div style="color: grey">※★のみでも大丈夫です!<br /></div>
       </div>
       <div class="section">
-        <div v-for="note in noteList.slice(2)" class="w-full p-2">
+        <div v-for="note in noteList.slice(1)" class="w-full p-2">
           <NoteCard :note="note" />
         </div>
       </div>
@@ -90,20 +100,33 @@
 </template>
 <script lang="ts">
 import iconPath from "@/assets/sub/apps/diary/favicon32.png";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { defineComponent, ref } from "vue";
 import { getTimelineJson, type TimelineItem } from "~~/utils/firebase";
 
 export default defineComponent({
   setup() {
+    const pinnedNote: TimelineItem = {
+      title: "日記を継続するアップデート【ちくわ日記2.3】",
+      url: "https://note.com/sn_10/n/n430555523905",
+      thumbnailUrl:
+        "https://assets.st-note.com/production/uploads/images/132697678/rectangle_large_type_2_90b11bff31376d3e3648a8e4f866fb14.png?width=800",
+      pubDateMs: 1709571009000,
+      descriptionHtml: "",
+      itemType: "note",
+    };
     const iconRef = ref();
     const noteListRef = ref<TimelineItem[]>([]);
     iconRef.value = iconPath;
     onMounted(() => {
       getTimelineJson("apps/hello/chikuwa_diary.json").then((items) => {
-        noteListRef.value = items.slice(0, 10);
+        noteListRef.value = items
+          .slice(0, 10)
+          .filter((item) => pinnedNote.pubDateMs != item.pubDateMs); //固定記事は外す
       });
     });
     return {
+      pinnedNote,
       noteList: noteListRef,
       iconRef, //nuxt3 rc1でLikタグでアイコンを指定できないため仮処置
     };
