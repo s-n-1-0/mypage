@@ -35,40 +35,20 @@
         >【予定】ちくわ日記+(定期購読)は4月1日に価格改定を行います。</a
       >
     </p>
-    <div>
+    <div class="max-w-[800px] mx-auto">
       <div class="section">
-        <div v-for="note in noteList.slice(0, 2)" class="w-full p-2">
-          <a
-            v-if="note.thumbnailUrl != ''"
-            :href="note.url"
-            class="mx-auto flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100"
-          >
-            <img
-              class="object-contain w-full rounded-t-lg h-auto md:h-full md:max-h-28 md:w-auto md:rounded-none md:rounded-l-lg"
-              :src="note.thumbnailUrl"
-              alt=""
+        <div class="relative p-2 md:max-w-xl mx-auto">
+          <div class="absolute right-0 bottom-0 pb-3 pe-3 text-stone-500">
+            <FontAwesomeIcon
+              :icon="['solid', 'paperclip']"
+              class="text-lg pe-1"
             />
-            <div class="flex flex-col justify-between p-4 leading-normal">
-              <h5
-                class="mb-2 text-xl font-bold tracking-tight text-gray-900 line-clamp-2"
-              >
-                {{ note.title }}
-              </h5>
-              <!-- <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                content
-              </p> -->
-            </div>
-          </a>
-          <div v-else>
-            <div
-              class="mx-auto block md:max-w-xl p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100"
-            >
-              <p
-                class="font-normal text-gray-700 dark:text-gray-400"
-                v-html="fixDescriptionHtml(note.descriptionHtml)"
-              ></p>
-            </div>
+            <span class="text-sm font-bold">固定された記事</span>
           </div>
+          <NoteCard :note="pinnedNote" />
+        </div>
+        <div v-for="note in noteList.slice(0, 1)" class="p-2">
+          <NoteCard :note="note" />
         </div>
       </div>
       <div class="section">
@@ -80,38 +60,8 @@
         <div style="color: grey">※★のみでも大丈夫です!<br /></div>
       </div>
       <div class="section">
-        <div v-for="note in noteList.slice(2)" class="w-full p-2">
-          <a
-            v-if="note.thumbnailUrl != ''"
-            :href="note.url"
-            class="mx-auto flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100"
-          >
-            <img
-              class="object-contain w-full rounded-t-lg h-auto md:h-full md:max-h-28 md:w-auto md:rounded-none md:rounded-l-lg"
-              :src="note.thumbnailUrl"
-              alt=""
-            />
-            <div class="flex flex-col justify-between p-4 leading-normal">
-              <h5
-                class="mb-2 text-xl font-bold tracking-tight text-gray-900 line-clamp-2"
-              >
-                {{ note.title }}
-              </h5>
-              <!-- <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                content
-              </p> -->
-            </div>
-          </a>
-          <div v-else>
-            <div
-              class="mx-auto block md:max-w-xl p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100"
-            >
-              <p
-                class="font-normal text-gray-700 dark:text-gray-400"
-                v-html="fixDescriptionHtml(note.descriptionHtml)"
-              ></p>
-            </div>
-          </div>
+        <div v-for="note in noteList.slice(1)" class="w-full p-2">
+          <NoteCard :note="note" />
         </div>
       </div>
       <div class="section">
@@ -150,30 +100,35 @@
 </template>
 <script lang="ts">
 import iconPath from "@/assets/sub/apps/diary/favicon32.png";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { defineComponent, ref } from "vue";
 import { getTimelineJson, type TimelineItem } from "~~/utils/firebase";
 
 export default defineComponent({
   setup() {
+    const pinnedNote: TimelineItem = {
+      title: "日記を継続するアップデート【ちくわ日記2.3】",
+      url: "https://note.com/sn_10/n/n430555523905",
+      thumbnailUrl:
+        "https://assets.st-note.com/production/uploads/images/132697678/rectangle_large_type_2_90b11bff31376d3e3648a8e4f866fb14.png?width=800",
+      pubDateMs: 1709571009000,
+      descriptionHtml: "",
+      itemType: "note",
+    };
     const iconRef = ref();
     const noteListRef = ref<TimelineItem[]>([]);
     iconRef.value = iconPath;
     onMounted(() => {
       getTimelineJson("apps/hello/chikuwa_diary.json").then((items) => {
-        noteListRef.value = items.slice(0, 10);
+        noteListRef.value = items
+          .slice(0, 10)
+          .filter((item) => pinnedNote.pubDateMs != item.pubDateMs); //固定記事は外す
       });
     });
     return {
+      pinnedNote,
       noteList: noteListRef,
       iconRef, //nuxt3 rc1でLikタグでアイコンを指定できないため仮処置
-      fixDescriptionHtml: (descriptionHtml: string) => {
-        return descriptionHtml
-          .replaceAll("\n", "<br>")
-          .replace(
-            "<a href='https://note.com",
-            "<br><br><a class='inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800' href='https://note.com"
-          );
-      },
     };
   },
 });
