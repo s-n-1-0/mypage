@@ -30,11 +30,6 @@
       </div>
     </div>
     <hr />
-    <p class="text-center text-white pt-1">
-      <a href="/notes/chikuwa-pricing-202403" class="underline"
-        >【予定】ちくわ日記+(定期購読)は4月1日に価格改定を行います。</a
-      >
-    </p>
     <div class="max-w-[800px] mx-auto">
       <div class="section">
         <div class="relative p-2 md:max-w-xl mx-auto">
