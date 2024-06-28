@@ -60,8 +60,11 @@
         </div>
       </div>
       <div class="section">
-        <h3>大きな過去の更新</h3>
+        <h3 class="py-3">過去の大きな更新</h3>
         <div style="margin-left: auto; margin-right: auto">
+          <a class="button" href="https://note.com/sn_10/n/n430555523905"
+            >2.3.0</a
+          ><br />
           <a class="button" href="https://note.com/sn_10/n/nd67f494894de"
             >2.2.0</a
           ><br />
@@ -102,11 +105,11 @@ import { getTimelineJson, type TimelineItem } from "~~/utils/firebase";
 export default defineComponent({
   setup() {
     const pinnedNote: TimelineItem = {
-      title: "日記を継続するアップデート【ちくわ日記2.3】",
-      url: "https://note.com/sn_10/n/n430555523905",
+      title: "こんな感じに活動量のサムネイルを作れるようにした",
+      url: "https://note.com/sn_10/n/n4527d5c5e68d",
       thumbnailUrl:
-        "https://assets.st-note.com/production/uploads/images/132697678/rectangle_large_type_2_90b11bff31376d3e3648a8e4f866fb14.png?width=800",
-      pubDateMs: 1709571009000,
+        "https://assets.st-note.com/production/uploads/images/138946689/rectangle_large_type_2_9d9c3acb88086b52fb748f7131d8b6fe.jpeg?width=800",
+      pubDateMs: 1714472228000,
       descriptionHtml: "",
       itemType: "note",
     };
