@@ -98,18 +98,17 @@
 </template>
 <script lang="ts">
 import iconPath from "@/assets/sub/apps/diary/favicon32.png";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { defineComponent, ref } from "vue";
 import { getTimelineJson, type TimelineItem } from "~~/utils/firebase";
 
 export default defineComponent({
   setup() {
     const pinnedNote: TimelineItem = {
-      title: "日記を継続するアップデート！【ちくわ日記v2.5.0】",
-      url: "https://note.com/sn_10/n/n0572ed18deae",
+      title: "日記の装飾機能を強化しました【ちくわ日記】",
+      url: "https://note.com/sn_10/n/n6c72654ef639",
       thumbnailUrl:
-        "https://assets.st-note.com/production/uploads/images/155788552/rectangle_large_type_2_0c02595da99d5af9d031c5361dbcb47a.png?width=800",
-      pubDateMs: 1727375717000,
+        "https://assets.st-note.com/production/uploads/images/176243534/rectangle_large_type_2_3e02530009d2b63e5089b6e89122d41f.png?width=800",
+      pubDateMs: 1740455211000,
       descriptionHtml: "",
       itemType: "note",
     };
