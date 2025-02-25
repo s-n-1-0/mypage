@@ -23,7 +23,7 @@
         </h2>
         <a
           style="color: gray"
-          href="https://scrapbox.io/diary10/%E3%82%A2%E3%83%83%E3%83%97%E3%83%87%E3%83%BC%E3%83%88%E6%83%85%E5%A0%B1%E9%80%9A%E7%9F%A5%E3%82%92%E9%9D%9E%E8%A1%A8%E7%A4%BA%E3%81%AB%E3%81%99%E3%82%8B"
+          href="https://fast-magpie-e3a.notion.site/1a5397b7de8e80ec90a9e33bee436f4f"
         >
           アップデートの通知をしない場合</a
         >
