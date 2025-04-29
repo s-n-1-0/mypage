@@ -74,6 +74,9 @@
 </template>
 
 <script lang="ts" setup>
+import en from "~/assets/json/localize/apps/en.json";
+import ja from "~/assets/json/localize/apps/ja.json";
+
 interface LocalizedText {
   express: string;
   sending: string;
@@ -88,13 +91,8 @@ const sendingMode = toRef<"yet" | "now" | "already">("yet");
 const route = useRoute();
 const message = toRef("");
 const isJa = !route.query["lang"] || route.query["lang"] == "ja";
-const { localized } = defineProps<{
-  localized: {
-    ja: LocalizedText;
-    en: LocalizedText;
-  };
-}>();
-const localizedText = isJa ? localized.ja : localized.en;
+
+const localizedText: LocalizedText = isJa ? ja : en;
 
 async function sendFeedback() {
   sendingMode.value = "now";
