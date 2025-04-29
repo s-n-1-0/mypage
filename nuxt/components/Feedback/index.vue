@@ -1,7 +1,7 @@
 <template>
   <div>
     <Head>
-      <Title>ちくわ日記 - 要望・報告</Title>
+      <Title>{{ appName }} - 要望・報告</Title>
     </Head>
     <div style="max-width: 1200px" class="mx-auto p-3">
       <p class="text-sky-500 text-sm">
@@ -10,11 +10,7 @@
       </p>
       <p class="text-xl">{{ localizedText.title }}</p>
       <hr />
-      <img
-        src="https://user-images.githubusercontent.com/72431055/119313937-160a3b00-bcaf-11eb-9af6-5ff1938c00ff.png"
-        style="max-width: 120px"
-        class="mx-auto my-2"
-      />
+      <img :src="iconSrc" style="max-width: 120px" class="mx-auto my-2" />
       <div style="max-width: 500px" class="mx-auto">
         <div v-html="localizedText.context"></div>
         <div v-if="!(sendingMode == 'now')">
@@ -91,7 +87,10 @@ const sendingMode = toRef<"yet" | "now" | "already">("yet");
 const route = useRoute();
 const message = toRef("");
 const isJa = !route.query["lang"] || route.query["lang"] == "ja";
-
+const { appName, iconSrc } = defineProps<{
+  appName: string;
+  iconSrc: string;
+}>();
 const localizedText: LocalizedText = isJa ? ja : en;
 
 async function sendFeedback() {
