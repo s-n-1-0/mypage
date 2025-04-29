@@ -20,8 +20,9 @@ export async function getTestTimelinejson() {
   let data: TimelineItem[] = res.data;
   return data;
 }
+export type AppId = "ChikuwaDiary";
 export interface AppFeedbackBody {
-  app_id: "ChikuwaDiary";
+  app_id: AppId;
   message: String;
   [prop: string]: any;
 }

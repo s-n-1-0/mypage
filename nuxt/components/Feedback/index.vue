@@ -72,6 +72,7 @@
 <script lang="ts" setup>
 import en from "~/assets/json/localize/apps/en.json";
 import ja from "~/assets/json/localize/apps/ja.json";
+import type { AppId } from "~/utils/firebase";
 
 interface LocalizedText {
   express: string;
@@ -87,7 +88,8 @@ const sendingMode = toRef<"yet" | "now" | "already">("yet");
 const route = useRoute();
 const message = toRef("");
 const isJa = !route.query["lang"] || route.query["lang"] == "ja";
-const { appName, iconSrc } = defineProps<{
+const { appId, appName, iconSrc } = defineProps<{
+  appId: AppId;
   appName: string;
   iconSrc: string;
 }>();
@@ -97,7 +99,7 @@ async function sendFeedback() {
   sendingMode.value = "now";
   await sendAppFeedback({
     ...route.query,
-    app_id: "ChikuwaDiary",
+    app_id: appId,
     message: message.value,
   });
   message.value = "";
