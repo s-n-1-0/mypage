@@ -6,7 +6,6 @@ node_modules
 .output
 .env
 dist
-*.png
 *.svg
 public/*
 !public/favicon64.png
