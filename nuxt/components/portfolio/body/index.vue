@@ -3,7 +3,7 @@
     <div class="mx-auto" style="max-width: 1000px">
       <div id="appsBlock" class="text-center flex flex-col justify-between">
         <h3 class="text-white text-left text-2xl mb-2 font-bold">アプリ</h3>
-        <div class="grow flex justify-evenly items-center h-100 flex-wrap my-5">
+        <div class="grow flex justify-evenly items-center h-100 flex-wrap">
           <apps-cell
             title="日記アプリ"
             link-url="#"
@@ -33,6 +33,26 @@
             platform="web"
           ></apps-cell>
         </div>
+        <a
+          href="https://fast-magpie-e3a.notion.site/Vaulted-Items-b0aa0c00433d415590db1f765fa6943e"
+          style="cursor: pointer"
+        >
+          <div
+            class="bg-white rounded-xl flex justify-around py-2 px-10 mx-auto mt-7 mb-5"
+            style="width: 250px"
+          >
+            <img :src="sleepIconPath" :style="`max-width:45px;`" />
+            <img
+              :src="spaceIconPath"
+              :style="`max-width:45px;`"
+              class="rounded-xl"
+            />
+            <img
+              :src="rokuroIconPath"
+              :style="`max-width:45px;`"
+              class="rounded-xl"
+            /></div
+        ></a>
       </div>
       <div id="codeBlock" class="slide-block shadow-md">
         <h3 class="my-color-dark text-2xl font-bold">投稿</h3>
@@ -141,7 +161,9 @@
 import booksIconPath from "@/assets/sub/apps/books/icon_r_x512.png";
 import lifeCompassIconPath from "@/assets/sub/apps/life-compass/icon_r_x512.png";
 import sleepIconPath from "@/assets/sub/apps/sleep/icon_r_x512.png";
+import spaceIconPath from "@/assets/sub/apps/space/icon_x256.png";
 import salmonAppIconPath from "@/assets/sub/apps/subscription-manager/icon_r_x512.png";
+import rokuroIconPath from "@/assets/sub/games/rokuro/icon_x512.jpg";
 import qiitaIconPath from "@/assets/sub/links/qiita-icon.png";
 import zennIconPath from "@/assets/sub/links/zenn-icon.svg";
 import { defineComponent } from "vue";
@@ -153,6 +175,8 @@ export default defineComponent({
     return {
       salmonAppIconPath,
       lifeCompassIconPath,
+      spaceIconPath,
+      rokuroIconPath,
       sleepIconPath,
       booksIconPath,
       qiitaIconPath,
