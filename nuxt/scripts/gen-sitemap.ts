@@ -9,7 +9,7 @@ import { SitemapStream, streamToPromise, type SitemapItem } from "sitemap";
 import { Readable } from "stream";
 
 // 最後スラッシュ不要
-const domain = "https://hello.sn-10.net";
+const domain = "https://sn-10.net";
 
 export default async function genSitemap(nitro: Nitro) {
   if (!nitro._prerenderedRoutes) {

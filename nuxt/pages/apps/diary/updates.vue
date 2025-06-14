@@ -2,7 +2,7 @@
   <Head>
     <Title>ちくわ日記 - アップデート情報</Title>
     <Link id="favicon" rel="icon" type="image/png" :href="iconRef" />
-    <Link rel="canonical" href="https://hello.sn-10.net/apps/diary/updates" />
+    <Link rel="canonical" href="https://sn-10.net/apps/diary/updates" />
     <Link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
