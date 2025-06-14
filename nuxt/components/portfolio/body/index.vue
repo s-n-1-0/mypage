@@ -9,7 +9,6 @@
             link-url="#"
             image-url="https://user-images.githubusercontent.com/72431055/119313937-160a3b00-bcaf-11eb-9af6-5ff1938c00ff.png"
             platform="ios"
-            :max-cell-width-px="150"
             v-on:click="clickedModalButton(chikuwaAppModal)"
           ></apps-cell>
           <apps-cell
@@ -17,24 +16,21 @@
             link-url="#"
             :image-url="salmonAppIconPath"
             platform="ios"
-            :max-cell-width-px="150"
             :is-paid="true"
             v-on:click="clickedModalButton(salmonAppModal)"
           ></apps-cell>
           <apps-cell
-            title="z-umon"
+            title="メモアプリ"
             link-url="#"
-            image-url="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F515818%2Fafacf6a3-a7a2-4b69-8b56-7cd96deb4e87.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&w=1400&fit=max&s=b892f131eabb4f471fd6a28ede9f0ebc"
-            platform="web"
-            :max-cell-width-px="300"
+            :image-url="lifeCompassIconPath"
+            platform="ios"
             v-on:click="clickedModalButton(zumonAppModal)"
           ></apps-cell>
           <apps-cell
             title="書籍共有サイト"
             link-url="https://books.sn-10.net/ja/share?isbn=9784088831909&from=openbd&comment=%E9%9D%A2%E7%99%BD%E3%81%84%E3%81%A7%E3%81%99%E3%82%88%E3%80%82"
-            image-url="https://i.gyazo.com/3a5ed159f6d511b6fdd1aa061c4e37b3.png"
+            :image-url="booksIconPath"
             platform="web"
-            :max-cell-width-px="300"
           ></apps-cell>
         </div>
       </div>
@@ -142,6 +138,9 @@
   </div>
 </template>
 <script lang="ts">
+import booksIconPath from "@/assets/sub/apps/books/icon_r_x512.png";
+import lifeCompassIconPath from "@/assets/sub/apps/life-compass/icon_r_x512.png";
+import sleepIconPath from "@/assets/sub/apps/sleep/icon_r_x512.png";
 import salmonAppIconPath from "@/assets/sub/apps/subscription_manager/icon_r_x512.png";
 import qiitaIconPath from "@/assets/sub/links/qiita-icon.png";
 import zennIconPath from "@/assets/sub/links/zenn-icon.svg";
@@ -153,6 +152,9 @@ export default defineComponent({
     let zumonAppModal = ref(null);
     return {
       salmonAppIconPath,
+      lifeCompassIconPath,
+      sleepIconPath,
+      booksIconPath,
       qiitaIconPath,
       zennIconPath,
       chikuwaAppModal,
