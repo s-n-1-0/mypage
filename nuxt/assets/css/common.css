@@ -7,3 +7,7 @@ body {
 .my-color {
   color: #4d6a87ff;
 }
+
+.my-color-dark {
+  color: rgb(48, 66, 83);
+}
