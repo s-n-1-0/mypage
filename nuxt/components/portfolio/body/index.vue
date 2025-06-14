@@ -141,7 +141,7 @@
 import booksIconPath from "@/assets/sub/apps/books/icon_r_x512.png";
 import lifeCompassIconPath from "@/assets/sub/apps/life-compass/icon_r_x512.png";
 import sleepIconPath from "@/assets/sub/apps/sleep/icon_r_x512.png";
-import salmonAppIconPath from "@/assets/sub/apps/subscription_manager/icon_r_x512.png";
+import salmonAppIconPath from "@/assets/sub/apps/subscription-manager/icon_r_x512.png";
 import qiitaIconPath from "@/assets/sub/links/qiita-icon.png";
 import zennIconPath from "@/assets/sub/links/zenn-icon.svg";
 import { defineComponent } from "vue";
