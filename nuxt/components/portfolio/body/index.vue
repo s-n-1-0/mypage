@@ -5,7 +5,7 @@
         id="appsBlock"
         class="slide-block shadow-md text-center flex flex-col justify-between"
       >
-        <h3 class="my-color text-left text-2xl mb-2">制作アプリ</h3>
+        <h3 class="my-color-dark text-left text-2xl mb-2 font-bold">アプリ</h3>
         <div class="grow flex justify-evenly items-center h-100 flex-wrap">
           <apps-cell
             title="ちくわ日記"
@@ -46,7 +46,7 @@
         </div>
       </div>
       <div id="codeBlock" class="slide-block shadow-md">
-        <h3 class="my-color text-2xl">投稿</h3>
+        <h3 class="my-color-dark text-2xl font-bold">投稿</h3>
         <div class="flex justify-center">
           <a class="mr-2" href="https://qiita.com/ttttpzm">
             <img
@@ -62,7 +62,7 @@
           </a>
         </div>
         <hr class="my-2" />
-        <h3 class="my-color text-2xl">配布パッケージ</h3>
+        <h3 class="my-color-dark text-2xl font-bold">配布パッケージ</h3>
         <p class="text-end mb-0" style="font-size: 1.5rem">
           <a class="text-body" href="https://github.com/s-n-1-0"
             ><FontAwesomeIcon :icon="['fab', 'github']" class="pr-2"
@@ -117,7 +117,7 @@
         <p class="text-end">その他のライブラリは、GitHubを参照ください。</p>
       </div>
       <div id="artBlock" class="slide-block shadow-md flex flex-col">
-        <h3 class="my-color text-2xl mb-2">作品</h3>
+        <h3 class="my-color-dark text-2xl mb-2 font-bold">作品</h3>
         <div
           class="grow flex justify-evenly items-center h-full space-x-2 space-y-2 flex-wrap"
         >
