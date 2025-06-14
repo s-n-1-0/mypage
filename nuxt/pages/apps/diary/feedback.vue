@@ -3,5 +3,5 @@
 </template>
 
 <script lang="ts" setup>
-import icon from "@/assets/apps/diary/icon_512.png";
+import icon from "@/assets/sub/apps/diary/icon_512.png";
 </script>
