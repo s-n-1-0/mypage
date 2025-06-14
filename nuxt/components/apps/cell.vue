@@ -2,19 +2,12 @@
   <a :href="linkUrl" class="no-underline block">
     <div>
       <div class="relative mx-auto w-fit">
-        <img :src="imageUrl" :style="`max-width:${maxCellWidthPx}px;`" />
-        <span
-          v-if="isPaid"
-          class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 absolute top-0 left-full translate-middle"
-          >Paid</span
-        >
+        <img :src="imageUrl" :style="`max-width:100px;`" />
       </div>
-      <br />
-      <span class="font-bold">{{ title }}</span
-      ><br /><small class="text-gray-600"
-        ><FontAwesomeIcon :icon="makeAppIconClass()" />
-        {{ getPlatformName() }}</small
-      >
+      <p class="font-bold text-white text-sm">{{ title }}</p>
+      <p class="text-white text-xs">
+        <FontAwesomeIcon :icon="makeAppIconClass()" /> {{ getPlatformName() }}
+      </p>
     </div>
   </a>
 </template>
@@ -25,10 +18,6 @@ export default defineComponent({
     title: String,
     linkUrl: String,
     imageUrl: String,
-    maxCellWidthPx: {
-      default: 75,
-      type: Number,
-    },
     platform: String, //"ios","web"
     isPaid: {
       default: false,

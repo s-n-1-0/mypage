@@ -1,14 +1,11 @@
 <template>
   <div class="h-100 w-100">
     <div class="mx-auto" style="max-width: 1000px">
-      <div
-        id="appsBlock"
-        class="slide-block shadow-md text-center flex flex-col justify-between"
-      >
-        <h3 class="my-color-dark text-left text-2xl mb-2 font-bold">アプリ</h3>
-        <div class="grow flex justify-evenly items-center h-100 flex-wrap">
+      <div id="appsBlock" class="text-center flex flex-col justify-between">
+        <h3 class="text-white text-left text-2xl mb-2 font-bold">アプリ</h3>
+        <div class="grow flex justify-evenly items-center h-100 flex-wrap my-5">
           <apps-cell
-            title="ちくわ日記"
+            title="日記アプリ"
             link-url="#"
             image-url="https://user-images.githubusercontent.com/72431055/119313937-160a3b00-bcaf-11eb-9af6-5ff1938c00ff.png"
             platform="ios"
@@ -16,7 +13,7 @@
             v-on:click="clickedModalButton(chikuwaAppModal)"
           ></apps-cell>
           <apps-cell
-            title="サーモンマネージャー(サブスク管理)"
+            title="サブスク管理アプリ"
             link-url="#"
             :image-url="salmonAppIconPath"
             platform="ios"
@@ -39,10 +36,6 @@
             platform="web"
             :max-cell-width-px="300"
           ></apps-cell>
-        </div>
-        <div>
-          <hr class="m-2" />
-          その他のアプリは、アーカイブや各配信プラットフォームの開発者ページを参照ください。
         </div>
       </div>
       <div id="codeBlock" class="slide-block shadow-md">
