@@ -2,43 +2,51 @@
   <div class="h-100 w-100">
     <div class="mx-auto" style="max-width: 1000px">
       <div id="appsBlock" class="text-center flex flex-col justify-between">
-        <h3 class="text-white text-left text-2xl mb-2 font-bold">アプリ</h3>
-        <div class="grow flex justify-evenly items-center h-100 flex-wrap">
-          <apps-cell
-            title="日記アプリ"
-            link-url="#"
-            image-url="https://user-images.githubusercontent.com/72431055/119313937-160a3b00-bcaf-11eb-9af6-5ff1938c00ff.png"
-            platform="ios"
-            v-on:click="clickedModalButton(chikuwaAppModal)"
-          ></apps-cell>
-          <apps-cell
-            title="サブスク管理アプリ"
-            link-url="#"
-            :image-url="salmonAppIconPath"
-            platform="ios"
-            :is-paid="true"
-            v-on:click="clickedModalButton(salmonAppModal)"
-          ></apps-cell>
-          <apps-cell
-            title="メモアプリ"
-            link-url="#"
-            :image-url="lifeCompassIconPath"
-            platform="ios"
-            v-on:click="clickedModalButton(zumonAppModal)"
-          ></apps-cell>
-          <apps-cell
-            title="書籍共有サイト"
-            link-url="https://books.sn-10.net/ja/share?isbn=9784088831909&from=openbd&comment=%E9%9D%A2%E7%99%BD%E3%81%84%E3%81%A7%E3%81%99%E3%82%88%E3%80%82"
-            :image-url="booksIconPath"
-            platform="web"
-          ></apps-cell>
+        <h3 class="ml-4 text-white text-left text-2xl mb-2 font-bold">
+          アプリ
+        </h3>
+        <div class="overflow-x-auto">
+          <div
+            class="grow flex justify-evenly items-center h-100 flex-wrap mx-auto"
+            style="width: 600px"
+          >
+            <apps-cell
+              title="日記アプリ"
+              link-url="https://apps.apple.com/jp/app/id1506707650?platform=iphone"
+              image-url="https://user-images.githubusercontent.com/72431055/119313937-160a3b00-bcaf-11eb-9af6-5ff1938c00ff.png"
+              platform="ios"
+              v-on:click="clickedModalButton(chikuwaAppModal)"
+            ></apps-cell>
+            <apps-cell
+              title="サブスク管理アプリ"
+              link-url="https://note.com/sn_10/n/n77990534106b"
+              :image-url="salmonAppIconPath"
+              platform="ios"
+              :is-paid="true"
+              v-on:click="clickedModalButton(salmonAppModal)"
+            ></apps-cell>
+            <apps-cell
+              title="メモアプリ"
+              link-url="https://apps.apple.com/jp/app/id6747004995?platform=iphone"
+              :image-url="lifeCompassIconPath"
+              platform="ios"
+              v-on:click="clickedModalButton(zumonAppModal)"
+            ></apps-cell>
+            <apps-cell
+              title="書籍共有サイト"
+              link-url="https://books.sn-10.net/ja/share?isbn=9784088831909&from=openbd&comment=%E9%9D%A2%E7%99%BD%E3%81%84%E3%81%A7%E3%81%99%E3%82%88%E3%80%82"
+              :image-url="booksIconPath"
+              platform="web"
+            ></apps-cell>
+          </div>
         </div>
         <a
           href="https://fast-magpie-e3a.notion.site/Vaulted-Items-b0aa0c00433d415590db1f765fa6943e"
           style="cursor: pointer"
+          class="w-fit mx-auto"
         >
           <div
-            class="bg-white rounded-xl flex justify-around py-2 px-10 mx-auto mt-7 mb-5"
+            class="bg-white rounded-xl flex justify-around py-2 px-10 mt-7 mb-5"
             style="width: 250px"
           >
             <img :src="sleepIconPath" :style="`max-width:45px;`" />
