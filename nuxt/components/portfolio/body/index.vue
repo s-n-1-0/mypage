@@ -43,24 +43,25 @@
         <a
           href="https://fast-magpie-e3a.notion.site/Vaulted-Items-b0aa0c00433d415590db1f765fa6943e"
           style="cursor: pointer"
-          class="w-fit mx-auto"
+          class="w-fit mx-auto mt-7 mb-5"
         >
-          <div
-            class="bg-white rounded-xl flex justify-around py-2 px-10 mt-7 mb-5"
-            style="width: 250px"
-          >
-            <img :src="sleepIconPath" :style="`max-width:45px;`" />
-            <img
-              :src="spaceIconPath"
-              :style="`max-width:45px;`"
-              class="rounded-xl"
-            />
-            <img
-              :src="rokuroIconPath"
-              :style="`max-width:45px;`"
-              class="rounded-xl"
-            /></div
-        ></a>
+          <div class="bg-white rounded-xl py-2 text-secondary">
+            <div class="flex justify-around px-10" style="width: 250px">
+              <img :src="sleepIconPath" :style="`max-width:45px;`" />
+              <img
+                :src="spaceIconPath"
+                :style="`max-width:45px;`"
+                class="rounded-xl"
+              />
+              <img
+                :src="rokuroIconPath"
+                :style="`max-width:45px;`"
+                class="rounded-xl"
+              />
+            </div>
+            <p class="my-0 text-sm pt-1">- OTHERS -</p>
+          </div>
+        </a>
       </div>
       <div id="codeBlock" class="slide-block shadow-md">
         <div class="mb-4">
