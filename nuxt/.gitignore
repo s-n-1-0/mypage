@@ -9,3 +9,4 @@ dist
 *.svg
 public/*
 !public/favicon64.png
+!public/app-ads.txt

@@ -7,7 +7,7 @@ useHead(() => ({
   link: [
     {
       rel: "canonical",
-      href: "https://hello.sn-10.net" + route.path,
+      href: "https://sn-10.net" + route.path,
     },
   ],
 }));
