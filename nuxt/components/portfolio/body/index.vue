@@ -63,31 +63,26 @@
         ></a>
       </div>
       <div id="codeBlock" class="slide-block shadow-md">
-        <h3 class="my-color-dark text-2xl font-bold">投稿</h3>
-        <div class="flex justify-center">
-          <a class="mr-2" href="https://qiita.com/ttttpzm">
-            <img
-              :src="qiitaIconPath"
-              style="width: 50px; height: 50px; object-fit: contain"
-            />
-          </a>
-          <a href="https://zenn.dev/sn10">
-            <img
-              :src="zennIconPath"
-              style="width: 50px; height: 50px; object-fit: contain"
-            />
-          </a>
+        <div class="mb-4">
+          <h3 class="my-color-dark text-2xl font-bold">投稿</h3>
+          <div class="flex justify-center">
+            <a class="mr-2" href="https://qiita.com/ttttpzm">
+              <img
+                :src="qiitaIconPath"
+                style="width: 50px; height: 50px; object-fit: contain"
+              />
+            </a>
+            <a href="https://zenn.dev/sn10">
+              <img
+                :src="zennIconPath"
+                style="width: 50px; height: 50px; object-fit: contain"
+              />
+            </a>
+          </div>
         </div>
         <hr class="my-2" />
-        <h3 class="my-color-dark text-2xl font-bold">配布パッケージ</h3>
-        <p class="text-end mb-0" style="font-size: 1.5rem">
-          <a class="text-body" href="https://github.com/s-n-1-0"
-            ><FontAwesomeIcon :icon="['fab', 'github']" class="pr-2"
-          /></a>
-          <a class="text-body" href="https://www.npmjs.com/~sn-10">
-            <FontAwesomeIcon :icon="['fab', 'npm']" class="pr-2" />
-          </a>
-        </p>
+        <h3 class="my-color-dark text-2xl font-bold mb-4">配布パッケージ</h3>
+
         <div class="bg-white rounded-lg border border-gray-200 text-gray-900">
           <tools-lib-item
             title="tw-modal.vue"
@@ -132,6 +127,14 @@
           </tools-lib-item>
         </div>
         <p class="text-end">その他のライブラリは、GitHubを参照ください。</p>
+        <p class="text-end my-0" style="font-size: 1.5rem">
+          <a class="text-body" href="https://github.com/s-n-1-0"
+            ><FontAwesomeIcon :icon="['fab', 'github']" class="pr-2"
+          /></a>
+          <a class="text-body" href="https://www.npmjs.com/~sn-10">
+            <FontAwesomeIcon :icon="['fab', 'npm']" class="pr-2" />
+          </a>
+        </p>
       </div>
       <div id="artBlock" class="slide-block shadow-md flex flex-col">
         <h3 class="my-color-dark text-2xl mb-2 font-bold">作品</h3>
