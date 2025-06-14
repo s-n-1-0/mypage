@@ -147,112 +147,6 @@
       </div>
     </div>
   </div>
-  <tw-modal ref="chikuwaAppModal" :modal-dialog-settings="[]" class="tw-modal">
-    <template v-slot:header><h3 class="text-xl">ちくわ日記</h3></template>
-    <portfolio-body-modal-template
-      :images="[
-        'https://i.gyazo.com/e57fbae410f85a3407427d0c6f149b35.png',
-        'https://i.gyazo.com/0fbcf5599c161b942a378589008f96d3.png',
-        'https://i.gyazo.com/f7bd6b65e4287eb921a5f6cf49b6b11e.png',
-      ]"
-    >
-      <template v-slot:lt>
-        このアプリは大学2年生の頃にコロナ禍で暇だったので作りました。<br />
-        日記はもちろん書籍記録などいろいろ機能がついてます。
-        <br />
-        詳細はnoteを参照ください。
-        <div class="text-end p-2">
-          <a
-            href="https://note.com/sn_10/m/md21633e1f57b"
-            class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
-            >詳細note</a
-          >
-        </div>
-      </template>
-      <template v-slot:lt-app>
-        <apps-cell
-          title="ちくわ日記"
-          link-url="https://apps.apple.com/jp/app/id1506707650?platform=iphone"
-          image-url="https://user-images.githubusercontent.com/72431055/119313937-160a3b00-bcaf-11eb-9af6-5ff1938c00ff.png"
-          platform="ios"
-          :max-cell-width-px="150"
-        ></apps-cell>
-      </template>
-      <template v-slot:lt-techs>
-        <span>v1 : Realm Swift(UIKit)</span><br />
-        <span>v2 : CoreData Swift(SwiftUI)</span>
-      </template>
-    </portfolio-body-modal-template>
-  </tw-modal>
-  <tw-modal ref="salmonAppModal" :modal-dialog-settings="[]" class="tw-modal">
-    <template v-slot:header
-      ><h3>
-        サーモンマネージャー
-        <span class="badge bg-info">Paid</span>
-      </h3></template
-    >
-    <portfolio-body-modal-template
-      :images="[
-        'https://i.gyazo.com/598a25edb1821860002d592bace8dbcd.png',
-        'https://i.gyazo.com/32f5bf537a5a0576eb4ff798aa5306b5.png',
-        'https://i.gyazo.com/9c08e2d713a7ace733d19b628aa96412.png',
-      ]"
-    >
-      <template v-slot:lt>
-        サブスクリプションの自動更新を忘れて意図しない課金を防ぐために制作しました。
-        <br />
-        詳細はnoteを参照ください。
-        <div class="text-end p-2">
-          <a
-            href="https://note.com/sn_10/n/n77990534106b"
-            class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
-            >詳細note</a
-          >
-        </div>
-      </template>
-      <template v-slot:lt-app>
-        <apps-cell
-          title="サーモンマネージャー(サブスク管理)"
-          link-url="#"
-          :image-url="salmonAppIconPath"
-          platform="ios"
-          :max-cell-width-px="150"
-        ></apps-cell>
-      </template>
-      <template v-slot:lt-techs>
-        <span>CoreData Swift(SwiftUI)</span>
-      </template>
-    </portfolio-body-modal-template>
-  </tw-modal>
-  <tw-modal ref="zumonAppModal" :modal-dialog-settings="[]" class="tw-modal">
-    <template v-slot:header><h3>z-umon</h3></template>
-    <portfolio-body-modal-template
-      :images="[
-        'https://i.gyazo.com/1ae5feb2ac4838aae000bd87abfd365f.jpg',
-        'https://i.gyazo.com/843ae5b2d8af615b1df499e51d4d773d.jpg',
-      ]"
-    >
-      <template v-slot:lt>
-        マークダウン投稿サイトです。<br />
-        サーバーレスWebアプリを作ってみたかったので開発しました。
-      </template>
-      <template v-slot:lt-app-else>
-        <div class="text-center">
-          <a
-            type="button"
-            class="bg-transparent hover:bg-gray-500 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded"
-            href="https://z-umon.sn-10.net"
-          >
-            サイトリンク
-          </a>
-        </div>
-      </template>
-      <template v-slot:lt-techs>
-        <span>TypeScript</span><br />
-        <span>Express,Firebase</span>
-      </template>
-    </portfolio-body-modal-template>
-  </tw-modal>
 </template>
 <script lang="ts">
 import salmonAppIconPath from "@/assets/sub/apps/subscription_manager/icon_r_x512.png";
@@ -279,10 +173,6 @@ export default defineComponent({
 });
 </script>
 <style scoped>
-.tw-modal {
-  background: rgba(41, 41, 41, 0.781);
-}
-
 .slide-block {
   position: relative;
   overflow-wrap: break-word;
