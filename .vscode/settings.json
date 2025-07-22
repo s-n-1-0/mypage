@@ -1,8 +1,12 @@
 {
-    "typescript.format.enable": false,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
-    "editor.formatOnType": true,
-    "editor.formatOnPaste": true,
-    "editor.codeActionsOnSave": ["source.organizeImports", "source.fixAll.eslint"]
-  }
+  "typescript.format.enable": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.formatOnPaste": true,
+  "editor.codeActionsOnSave": [
+    "source.organizeImports",
+    "source.fixAll.eslint"
+  ],
+  "cSpell.words": ["nuxt"]
+}
