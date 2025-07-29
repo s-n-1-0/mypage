@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@nuxt/content": "^2.9.0",
-    "axios": "^1.2.0",
+    "axios": "^1.11.0",
     "nuxt": "^3.6.0",
     "tw-elements": "^1.0.0",
     "uuid": "^9.0.0"
